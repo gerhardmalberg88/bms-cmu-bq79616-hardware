@@ -1,0 +1,6 @@
+Supporting ERC summary; native report is in the dated manufacturing package.
+KiCad: 10.0.4
+Check date: 2026-10-24T13:24:51
+Configured violations: 0
+Existing ignored categories: single_global_label, four_way_junction, simulation_model_issue, footprint_filter
+See supplemental-erc.json and readiness.md for the disabled-category audit.

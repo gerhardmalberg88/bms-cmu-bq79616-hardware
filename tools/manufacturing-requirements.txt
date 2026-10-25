@@ -1,0 +1,4 @@
+xlsxwriter==3.3.0
+reportlab==5.1.0
+pypdf==6.21.2
+pygerber==2.4.3

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+    "pcb",
+    "export",
+    "gerbers",
+    "--layers",
+    "F.Paste",
+    "--use-drill-file-origin",
+    "-o",
+    "C:\\Users\\gerha\\OneDrive\\Documents\\GitHub\\temp_electric_vehicle\\ElectricVehicleSystem\\bms-cmu-bq79616-hardware\\bms-cmu-bq79616-hardware\\manufacturing\\rev0.1-2026-10-24\\assembly\\stencil\\",
+    "C:\\Users\\gerha\\OneDrive\\Documents\\GitHub\\temp_electric_vehicle\\ElectricVehicleSystem\\bms-cmu-bq79616-hardware\\bms-cmu-bq79616-hardware\\build\\manufacturing-rev0.1-2026-10-24\\design\\battery_management_system_cell_monitoring_unit-stencil.kicad_pcb"
+  ],
+  "returncode": 0,
+  "stdout": "Plotted to 'C:\\Users\\gerha\\OneDrive\\Documents\\GitHub\\temp_electric_vehicle\\ElectricVehicleSystem\\bms-cmu-bq79616-hardware\\bms-cmu-bq79616-hardware\\manufacturing\\rev0.1-2026-10-24\\assembly\\stencil\\battery_management_system_cell_monitoring_unit-stencil-F_Paste.gtp'.\n",
+  "stderr": "13:26:11: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: Access is denied.)\n13:26:11: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: The system cannot find the file specified.)\n"
+}

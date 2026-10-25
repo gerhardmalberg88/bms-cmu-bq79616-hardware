@@ -1,0 +1,30 @@
+* text=auto eol=lf
+
+*.kicad_pro text eol=lf
+*.kicad_sch text eol=lf
+*.kicad_pcb text eol=lf
+*.kicad_sym text eol=lf
+*.kicad_mod text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+
+*.pdf binary
+*.png binary
+*.zip binary
+*.step binary
+*.stp binary
+*.STEP binary
+*.STP binary
+*.FCStd binary
+
+# Manufacturing checksums cover exact bytes; do not normalize release files.
+manufacturing/** -text
+# Preserve saved source hashes and documentation bytes in the source snapshot.
+design/*.kicad_sch -text
+design/*.kicad_pcb -text
+design/*-lib-table -text
+docs/** -text
+*.stl binary
+*.xlsx binary

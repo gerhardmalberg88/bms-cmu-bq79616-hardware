@@ -1,0 +1,10 @@
+# Third-party SPICE models are NOT redistributed with this repository.
+#
+# Files here are fetched at run time by each simulation's run.sh. Every model
+# still gets a row in ../MODELS_PROVENANCE.csv recording its source, licence and
+# redistribution status, even though the file itself is absent from git.
+#
+# Original models authored for this project belong in ../models/ or ../va/,
+# which are tracked normally.
+*
+!.gitignore

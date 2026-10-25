@@ -1,0 +1,28 @@
+# KiCad backups, locks, caches, and local session state
+*-backups/
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+*.lck
+*.lock
+*.tmp
+fp-info-cache
+~$*
+
+# Prevent stale projects from being regenerated at repository root
+/*.kicad_pro
+
+# Generated working outputs
+/build/
+
+# Editor and operating-system metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+
+# VS Code Local History extension
+.history/

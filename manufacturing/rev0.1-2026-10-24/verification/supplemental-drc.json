@@ -1,0 +1,407 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-24T13:25:32",
+    "ignored_checks": [],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.4",
+    "schematic_parity": [
+        {
+            "description": "custom_footprints:Harwin_Datamate_M80-5001642_2x08_P2.00mm_Vertical_MinimalSilkscreen doesn't match symbol's footprint filters (Connector*:*_2x??_*)",
+            "items": [
+                {
+                    "description": "Footprint J201",
+                    "pos": {
+                        "x": 283.1,
+                        "y": 101.4
+                    },
+                    "uuid": "929a712b-d997-4f99-823c-00331c06412d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R304",
+                    "pos": {
+                        "x": 260.1,
+                        "y": 153.5
+                    },
+                    "uuid": "227d1760-438b-432d-bc1e-ffb6937406a6"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R312",
+                    "pos": {
+                        "x": 266.4,
+                        "y": 153.5
+                    },
+                    "uuid": "fc845954-7cdc-4c81-aa6a-eb637d00745f"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R313",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 103.4
+                    },
+                    "uuid": "4b1fc415-4fcc-4ce3-9535-601d40c3fb19"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R319",
+                    "pos": {
+                        "x": 272.7,
+                        "y": 153.5
+                    },
+                    "uuid": "0bb8c568-8833-49bd-85e7-dd55fa5cfd80"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R320",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 109.7
+                    },
+                    "uuid": "94086ac9-09b7-4f5a-8ba5-fd6a42de374e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R326",
+                    "pos": {
+                        "x": 279.0,
+                        "y": 153.5
+                    },
+                    "uuid": "e72a7ece-1f46-413e-b9e7-63cb997270e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R327",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 116.0
+                    },
+                    "uuid": "41661a52-4fe2-42c1-a1ac-1409f76b7ee9"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R333",
+                    "pos": {
+                        "x": 285.3,
+                        "y": 153.5
+                    },
+                    "uuid": "5d98daa5-bc31-4899-a3d4-d3c639926cdd"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R334",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 122.3
+                    },
+                    "uuid": "2cdf57c7-e435-434d-986f-57ad9a8ca872"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R340",
+                    "pos": {
+                        "x": 291.6,
+                        "y": 153.5
+                    },
+                    "uuid": "fadf325c-5fb5-4064-a555-d7d3cb2c1fa6"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R341",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 128.6
+                    },
+                    "uuid": "f430340e-b7f5-4062-b3db-56e29bbdd2d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R347",
+                    "pos": {
+                        "x": 297.9,
+                        "y": 153.5
+                    },
+                    "uuid": "c674e401-970a-4e51-9813-1b3436ecbf08"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R348",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 134.9
+                    },
+                    "uuid": "a249f59f-a041-4bf8-9a92-d7e3f412f55e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R354",
+                    "pos": {
+                        "x": 304.2,
+                        "y": 153.5
+                    },
+                    "uuid": "d454f156-47eb-43fe-b5a6-217d88cf2e25"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R355",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 141.2
+                    },
+                    "uuid": "042b3bbc-ac42-42fe-b680-18258b1290f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R361",
+                    "pos": {
+                        "x": 310.5,
+                        "y": 153.5
+                    },
+                    "uuid": "8e1f0113-0151-4088-ac95-b11de44bc78e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm doesn't match symbol's footprint filters (R_*)",
+            "items": [
+                {
+                    "description": "Footprint R362",
+                    "pos": {
+                        "x": 251.2,
+                        "y": 147.5
+                    },
+                    "uuid": "de254cab-1f02-4513-b136-4e461753eb0d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Harwin_Datamate_M80-5002042_2x10_P2.00mm_Vertical doesn't match symbol's footprint filters (Connector*:*_2x??_*)",
+            "items": [
+                {
+                    "description": "Footprint J401",
+                    "pos": {
+                        "x": 232.8,
+                        "y": 128.1
+                    },
+                    "uuid": "a6b885f3-b3ef-4120-8595-99dd0b9259fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Bourns_CDSOD323-TxxC_SOD-323_Compact_MinimalSilkscreen doesn't match symbol's footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+            "items": [
+                {
+                    "description": "Footprint D501",
+                    "pos": {
+                        "x": 305.0,
+                        "y": 118.43
+                    },
+                    "uuid": "afe3ff3c-cc0f-428a-9a13-5d1fc8a6b3b8"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Bourns_CDSOD323-TxxC_SOD-323_Compact_MinimalSilkscreen doesn't match symbol's footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+            "items": [
+                {
+                    "description": "Footprint D502",
+                    "pos": {
+                        "x": 305.0,
+                        "y": 121.98
+                    },
+                    "uuid": "fe3ecf0a-f984-41ce-adeb-1594f5dbaf88"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Bourns_CDSOD323-TxxC_SOD-323_Compact_MinimalSilkscreen doesn't match symbol's footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+            "items": [
+                {
+                    "description": "Footprint D503",
+                    "pos": {
+                        "x": 305.05,
+                        "y": 137.5
+                    },
+                    "uuid": "b10d6a33-8ae8-457c-bc20-eabdfa91ac1d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Bourns_CDSOD323-TxxC_SOD-323_Compact_MinimalSilkscreen doesn't match symbol's footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+            "items": [
+                {
+                    "description": "Footprint D504",
+                    "pos": {
+                        "x": 305.05,
+                        "y": 133.74
+                    },
+                    "uuid": "922a7985-3a0f-4595-8b0e-dd49475bcacb"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Harwin_Datamate_M80-5T10442MC_2x02_P2.00mm_Vertical_MinimalSilkscreen doesn't match symbol's footprint filters (Connector*:*_2x??_*)",
+            "items": [
+                {
+                    "description": "Footprint J501",
+                    "pos": {
+                        "x": 321.2,
+                        "y": 120.25
+                    },
+                    "uuid": "296df536-11b4-41f3-9448-823bcdfb0720"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Harwin_Datamate_M80-5T10442MC_2x02_P2.00mm_Vertical_MinimalSilkscreen doesn't match symbol's footprint filters (Connector*:*_2x??_*)",
+            "items": [
+                {
+                    "description": "Footprint J502",
+                    "pos": {
+                        "x": 321.19,
+                        "y": 135.72
+                    },
+                    "uuid": "c1c3552b-a9c4-4008-ab1d-bf7becce3040"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        },
+        {
+            "description": "custom_footprints:Bourns_SMBJ-Q_DO-214AA doesn't match symbol's footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+            "items": [
+                {
+                    "description": "Footprint D601",
+                    "pos": {
+                        "x": 320.5,
+                        "y": 109.5
+                    },
+                    "uuid": "b4aa4349-72bb-46ff-89a6-1a67a0ba7eee"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_filters_mismatch"
+        }
+    ],
+    "source": "battery_management_system_cell_monitoring_unit.kicad_pcb",
+    "unconnected_items": [],
+    "violations": []
+}

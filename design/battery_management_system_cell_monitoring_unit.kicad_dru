@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: CERN-OHL-P-2.0
+# Source and rationale: docs/CMU-005-layout-constraints.md, section 5.2.
+# Eurocircuits: https://www.eurocircuits.com/technical-guidelines/pcb-design-guidelines/classification/
+(version 1)
+
+# Retained project margin for component pads. Class 6 requires 0.125 mm
+# from the production tool, equivalent to 0.175 mm from the finished hole.
+(rule "Plated component pad annular ring"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'")
+  (constraint annular_width (min 0.254mm)))
+
+# https://www.eurocircuits.com/technical-guidelines/pcb-design-guidelines/legend-print/
+(rule "Eurocircuits legend to routed board edge"
+  (condition "A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS'")
+  (constraint edge_clearance (min 0.25mm)))

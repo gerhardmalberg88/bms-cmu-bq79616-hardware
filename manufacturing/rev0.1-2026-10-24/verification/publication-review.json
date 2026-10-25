@@ -1,0 +1,74 @@
+{
+  "review_date": "2026-10-24",
+  "README_scope": "Requested navigation, gallery, diagram and affected references/listings; unrelated prose preserved",
+  "design_source_files_unchanged": 48,
+  "existing_manufacturing_data_files_unchanged": 32,
+  "additional_native_drawing_PDFs_preserved": 5,
+  "dimension_overview": {
+    "status": "PDF regenerated during documentation finalization; drawing content unchanged",
+    "validation": "Drawing operators, page dimensions and font resources match the backed-up generator with unchanged component inventory",
+    "prior_intermediate_pdf_sha256": "e01935cf5efdde481ae37dd4feaece0d05aa410c8fb3c3fed31fd995dd6687a9",
+    "current_sha256": "e83fd25c3d27148e622318943786ac5b443187877a939bf896df46f7948d3a85",
+    "prevention": "Finalization now preserves an existing dimensions.pdf"
+  },
+  "local_markdown_links_checked": 193,
+  "broken_links": [],
+  "imported_assets": 38,
+  "matching_symbol_blocks": 5,
+  "byte_identical_footprints_and_models": 33,
+  "manifest_blob_ids_match": true,
+  "generated_tables": "check passed",
+  "provenance_check": "passed",
+  "license": "CERN-OHL-P-2.0 unchanged; KiCad third-party terms retained",
+  "standalone_archives_include_notices": true,
+  "publication_performed": false,
+  "engineering_qualification": "open; see readiness and CMU-009",
+  "rendering": {
+    "pixels": [
+      2400,
+      1600
+    ],
+    "fitted": 157,
+    "DNP_omitted": 37,
+    "visual_review": "No missing models or clipping observed; angled top orientation, neutral background and empty DNP positions checked"
+  },
+  "markdown_preview": {
+    "mermaid": "11.12.0",
+    "diagrams": [
+      {
+        "file": "README.md",
+        "index": 0
+      },
+      {
+        "file": "docs/CMU-001-requirements.md",
+        "index": 0
+      },
+      {
+        "file": "docs/CMU-002-power-budget.md",
+        "index": 0
+      },
+      {
+        "file": "docs/CMU-002-power-budget.md",
+        "index": 1
+      },
+      {
+        "file": "docs/CMU-003-fmea.md",
+        "index": 0
+      },
+      {
+        "file": "docs/CMU-008-interface-control.md",
+        "index": 0
+      },
+      {
+        "file": "docs/CMU-008-interface-control.md",
+        "index": 1
+      }
+    ],
+    "gallery": {
+      "columns": 3,
+      "images": 1,
+      "loaded": true,
+      "text": "PCB — rev 0.1, 16S\tEM simulation\tThermal simulation\n\tComing soon\tComing soon"
+    }
+  }
+}

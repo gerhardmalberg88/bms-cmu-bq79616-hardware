@@ -1,0 +1,92 @@
+[
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+    "sha256": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1",
+    "bytes": 43450
+  },
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+    "sha256": "9a669c1a2f1ea25b88b401acef6efeaa80a067bd7da9db6993de719a7fbe155c",
+    "bytes": 43618
+  },
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+    "sha256": "11e948c72c90e2b6322436b72745f40ff4e8ba0da64fb2a0df943dfa61e89c1a",
+    "bytes": 43450
+  },
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+    "sha256": "f8510481c5044113cf49b0fa6dd54ddab9224508bd6808e1afab8ef0cefdefc9",
+    "bytes": 43502
+  },
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-223.step",
+    "sha256": "77ad6dbacc493cb619c728f26d2ddcf461eb0feb6b977b47d01d51e67016f654",
+    "bytes": 65065
+  },
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+    "sha256": "1875571c326d0d9e96f36b4efeb8094068ef7619f0a449c781caf0b49c2e5861",
+    "bytes": 40618
+  },
+  {
+    "model": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+    "sha256": "ded342cdb394fb45395227beaaa75cc390613cf2581b29cd6d22c12abd6103b2",
+    "bytes": 40592
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/BQ79616-Q1.step",
+    "sha256": "41b99cd7e32a69e6e3da87575abfb2f5ed00fc2688880b8f00a260158521884c",
+    "bytes": 2199416
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_CDSOD323-TxxC_SOD-323.step",
+    "sha256": "5b29fb8b5dd86221571a10578f7f264d105f1c6280618da7ee0e6fd3201f97fe",
+    "bytes": 93158
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_SMBJ-Q_DO-214AA.step",
+    "sha256": "3225f341ec46e1b6f3e6a42b91edc047326aeedce45c3f48c67a5c1f89d0c655",
+    "bytes": 63037
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5001642.step",
+    "sha256": "a64015144fb948042acb7ffe41719916c4f4680959d3bf409dd7d463f331e85b",
+    "bytes": 233407
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5002042.step",
+    "sha256": "147a5b52db77f30e274437e5c3405f40d35fddf308390d3755e67ce9eb0e5426",
+    "bytes": 283384
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5T10442MC.step",
+    "sha256": "d9e3c29bafd8378310180b20ad4395b272146228313e4a69d25d32bc76badddb",
+    "bytes": 83455
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/LTC3639_MSE16-12.step",
+    "sha256": "8fa7bc9b18da5da93552dfac7c4a877a187990f59e769f51c672e79d55e747ec",
+    "bytes": 220334
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/L_Wuerth_WE-PD-Robust-7332.step",
+    "sha256": "dbd2c78dd97e3461c1e9513aad11f8f7e74ae6c95b1b94ce51d5dcb1418ad1f9",
+    "bytes": 132846
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Littelfuse_470-Series_Fuse.step",
+    "sha256": "794bd63f8def800dc09ddfd7d10e234be1538f42423c78880e7cc59fe4e28c4b",
+    "bytes": 28896
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/SM91502AL.step",
+    "sha256": "4541f0e9c35b25d518ae435a1999c5bfd00563061cc62ab779ca532fe8f840d6",
+    "bytes": 283786
+  },
+  {
+    "model": "${KIPRJMOD}/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Vishay_RCL1225_2W.step",
+    "sha256": "ddd50019864c40a6873fe497016d99e4c5f6fda81f049036c8d82e546d26350d",
+    "bytes": 35669
+  }
+]

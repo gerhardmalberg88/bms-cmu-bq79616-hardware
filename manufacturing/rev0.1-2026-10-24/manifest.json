@@ -1,0 +1,22 @@
+{
+  "board": "BMS CMU BQ79616-Q1",
+  "revision": "0.1",
+  "variant": "16S",
+  "export_date": "2026-10-24",
+  "design_issue_date": "2026-09-04",
+  "manufacturer": "Eurocircuits",
+  "kicad_version": "10.0.4",
+  "source_commit": null,
+  "provenance": "Exact source hashes and source-snapshot.zip; uncommitted working tree",
+  "fitted_components": 157,
+  "DNP_purchased_not_fitted": 37,
+  "purchase_quantity": 194,
+  "status": "Prototype manufacturing package; supplier/process and engineering confirmations remain open",
+  "source_unchanged": true,
+  "origin": [
+    226.5,
+    158.1
+  ],
+  "units": "mm",
+  "ipc_d356_units": "CUST 0: 0.0001 inch"
+}

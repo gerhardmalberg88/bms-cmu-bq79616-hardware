@@ -1,0 +1,24 @@
+{
+  "python": "3.11.5 (main, Jan 23 2026, 07:39:48) [MSC v.1944 64 bit (AMD64)]",
+  "kicad": "10.0.4",
+  "packages": {
+    "xlsxwriter": "3.3.0",
+    "reportlab": "5.1.0",
+    "pypdf": "6.21.2",
+    "pygerber": "2.4.3",
+    "numpy": "2.4.6",
+    "pillow": "13.0.0"
+  },
+  "script_sha256": {
+    "audit_manufacturing.py": "8e36b435e2ae256ee0c2fed1c389c1094bb462328a07bef004c5d6d4649aa6ca",
+    "digikey-packaging.json": "695a727c1a7a2d1112bb3f07f348ef250d091258f8b971ac518ef7b0ca059677",
+    "estimate_com_cross_section.cpp": "f0fffb1ec218045c5b11beec359d6549d93dcee6e8bbf1c4fe9e4fc3ef840444",
+    "estimate_com_impedance.py": "d45ffc1e6c309743267acd5c5a5c70d4510219929c81e53ee10665b9d2f860b8",
+    "estimate_com_keepout_impedance.py": "32f0b1916bc04b97209bb7adaa32ba4cc58b60fd7b27ac6e5af89d4b6e07c714",
+    "export_library_provenance.py": "65d8fdb27809c28fe379a8d48188544c5abcda7bea0a5bc710e59fb19dbc22be",
+    "gen_doc_tables.py": "9cd3483524a5020c76574367077c8dbaf5d6ce9d006fe28d0430d267d12cf254",
+    "manufacturing-requirements.txt": "1509625a7b08c22c802b2586de1cefc378c87c0ccd3dcaf3062387ccd58f77e2",
+    "manufacturing_release.py": "461a93a8b01f3837f011f853de53f2ba7cb0b096edfbdf98e16abdda65ea4913",
+    "release_documents.py": "a06fa38c6b711492376e6ab8c6402563161fd9a1c528b55ac3f5d5c9861e7fd8"
+  }
+}

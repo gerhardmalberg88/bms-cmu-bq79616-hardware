@@ -1,0 +1,13 @@
+KiCad Library Exception
+=======================
+
+To the extent that the creation of electronic designs that use 'Licensed
+Material' can be considered to be 'Adapted Material', then the copyright
+holder waives article 3 of the license with respect to these designs and any
+generated files which use data provided as part of the 'Licensed Material'.
+
+Source: https://gitlab.com/kicad/libraries/kicad-footprints/-/blob/master/LICENSE.md
+
+This exception applies only where the asset's provenance and license expressly
+say that it applies. It is not a license for NOASSERTION assets.
+

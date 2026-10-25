@@ -1,0 +1,67 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-24T13:24:51",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.4",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54",
+            "violations": []
+        },
+        {
+            "path": "/bq79616/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/231e2394-b031-42e4-9898-537e12a43c10",
+            "violations": []
+        },
+        {
+            "path": "/balance/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/41de0930-7261-49c2-a5fd-63965d7660c6",
+            "violations": []
+        },
+        {
+            "path": "/cells/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/749c695e-829e-4cef-8f09-73fd0dfbea42",
+            "violations": []
+        },
+        {
+            "path": "/com/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/a79a3925-cb21-4487-b958-9a05a84bf473",
+            "violations": []
+        },
+        {
+            "path": "/batterypositive_to_8V8/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/8e8ad9ff-5248-4f1e-b405-c0f581870fe4",
+            "violations": []
+        },
+        {
+            "path": "/mechanical/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/6c6ca66b-8d38-4944-af8b-dd53d96a020e",
+            "violations": []
+        }
+    ],
+    "source": "battery_management_system_cell_monitoring_unit.kicad_sch"
+}

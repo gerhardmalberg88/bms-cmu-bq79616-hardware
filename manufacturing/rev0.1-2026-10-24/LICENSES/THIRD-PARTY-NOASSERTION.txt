@@ -1,0 +1,15 @@
+Third-party NOASSERTION notice
+==============================
+
+NOASSERTION is ownership and provenance metadata. It means that the repository
+does not currently have reliable evidence identifying the copyright holder,
+source, upstream license, or redistribution permission for the affected asset.
+
+NOASSERTION is not a license, waiver, public-domain dedication, fair-use
+decision, or permission to copy, publish, sublicense, sell, or redistribute.
+The original rightsholder retains every right not demonstrably granted.
+
+Assets marked unverified or restricted must remain in the private repository
+and must not be included in public branches, releases, packages, or subtree
+exports until the missing evidence is obtained or the asset is removed.
+

@@ -1,0 +1,2104 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-24T13:25:23",
+    "ignored_checks": [],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.4",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54",
+            "violations": [
+                {
+                    "description": "Four items connected at 1346200, 1333500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0889 mm",
+                            "pos": {
+                                "x": 1.3462,
+                                "y": 1.3335
+                            },
+                            "uuid": "55e00212-50da-4ab1-b729-272eca29162d"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0635 mm",
+                            "pos": {
+                                "x": 1.2827,
+                                "y": 1.3335
+                            },
+                            "uuid": "d21aad50-7882-42b1-ab6b-33c751264d9d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2146300, 1612900",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.1463,
+                                "y": 1.6129
+                            },
+                            "uuid": "4cf5fe79-de0b-4bd7-b384-07cc7e17f2c2"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.1463,
+                                "y": 1.6129
+                            },
+                            "uuid": "623f727b-529b-449c-b9a0-7a8a3eb5290d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2552700, 1460500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.5527,
+                                "y": 1.4605
+                            },
+                            "uuid": "22ddd38c-ae41-4256-8548-2b419bba771b"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,1397 mm",
+                            "pos": {
+                                "x": 2.5527,
+                                "y": 1.4605
+                            },
+                            "uuid": "295f3323-573a-4911-acdf-02f6db7cce49"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3302000, 1333500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.302,
+                                "y": 1.3081
+                            },
+                            "uuid": "31a18974-cc56-49ff-82af-c674b0e229a6"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 3.302,
+                                "y": 1.3335
+                            },
+                            "uuid": "6e966a1f-615e-40cf-a987-81715d7bf2bc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Assigned footprint (bourns_smbj-q_do-214aa) doesn't match footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+                    "items": [
+                        {
+                            "description": "Symbol D601 [D_Zener]",
+                            "pos": {
+                                "x": 3.302,
+                                "y": 1.4097
+                            },
+                            "uuid": "9c07a732-84d9-4388-a419-fecf75189b47"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (harwin_datamate_m80-5002042_2x10_p2.00mm_vertical) doesn't match footprint filters (Connector*:*_2x??_*)",
+                    "items": [
+                        {
+                            "description": "Symbol J401 [Conn_02x10_Top_Bottom]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 0.6858
+                            },
+                            "uuid": "36705d2a-8028-4e15-98b4-2e4479301f77"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (jst_xh_b20b-xh-a_1x20_p2.50mm_vertical) doesn't match footprint filters (Connector*:*_1x??_*)",
+                    "items": [
+                        {
+                            "description": "Symbol J402 [Conn_01x20_Pin]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 1.5621
+                            },
+                            "uuid": "976fcf3e-f346-4044-9675-f3aff75f4bf3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (jst_xh_b20b-xh-a_1x20_p2.50mm_vertical) doesn't match footprint filters (Connector*:*_1x??_*)",
+                    "items": [
+                        {
+                            "description": "Symbol J403 [Conn_01x20_Pin]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 2.1336
+                            },
+                            "uuid": "f49f7697-604b-42f5-aac5-1c0c1c0a3e0d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Four items connected at 469900, 584200",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 0.4699,
+                                "y": 0.5842
+                            },
+                            "uuid": "2cd1eee4-e60b-4650-9e78-0bfe8df25330"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 0.4191,
+                                "y": 0.5842
+                            },
+                            "uuid": "c3021fab-b83d-4dc7-bcf5-e59d207fb93a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 736600, 355600",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1778 mm",
+                            "pos": {
+                                "x": 0.7366,
+                                "y": 0.1778
+                            },
+                            "uuid": "34d36da8-1ab0-42bc-a403-69c022df3d02"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2667 mm",
+                            "pos": {
+                                "x": 0.4699,
+                                "y": 0.3556
+                            },
+                            "uuid": "6d9b6f5a-8f98-4f51-9bad-2755674b6c00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R304 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 0.4572
+                            },
+                            "uuid": "581eed06-014b-48ff-9961-559b14e834fb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R312 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 0.6858
+                            },
+                            "uuid": "9cbc67cd-a01d-4f4d-affd-1577c93b401a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R319 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 0.9144
+                            },
+                            "uuid": "895fc76b-3bdf-487e-aed8-ca4863078ce0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R326 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.143
+                            },
+                            "uuid": "373d0be1-a821-4427-a51f-edd20ec36e6c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R333 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.3716
+                            },
+                            "uuid": "52ab409d-9446-4be6-8877-db57994ab39f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R340 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.6002
+                            },
+                            "uuid": "78311073-6dc4-47c0-b23b-11ba7d49d122"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R347 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.8288
+                            },
+                            "uuid": "b7f66a7b-40f8-4919-82c1-ae03c414a382"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R354 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 2.0574
+                            },
+                            "uuid": "7c48e875-e744-4117-8063-69c0e890d031"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R361 [R]",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 2.2987
+                            },
+                            "uuid": "261f725c-b7bb-4549-9216-cada6e424e10"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Four items connected at 1117600, 457200",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4191 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.4572
+                            },
+                            "uuid": "7a37c69f-1edb-4b96-b22a-35d5160b99fc"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.2159
+                            },
+                            "uuid": "93c513b3-ed52-4d86-9316-ce6ebb8f71b7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 685800",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4191 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.6858
+                            },
+                            "uuid": "dfa1b997-298e-4622-8671-2d97ef3b2341"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.7112
+                            },
+                            "uuid": "1bdfbf85-4253-47c0-8e60-0f3629bc97bb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 914400",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4572 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.9144
+                            },
+                            "uuid": "72c690c2-f1b6-4450-8c0e-6270dee37419"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.9398
+                            },
+                            "uuid": "714417bb-37c5-4a3e-9244-c7520ad77354"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 1143000",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.016
+                            },
+                            "uuid": "6f42bcc9-c059-41c4-85b2-d3c5174310ab"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.1684
+                            },
+                            "uuid": "e449c2ac-ccdb-4ec1-92f3-abe3701cc121"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 1371600",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4572 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.3716
+                            },
+                            "uuid": "e131d394-f0fb-4aef-ab20-9e1400d599c1"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.397
+                            },
+                            "uuid": "b2b2e5f3-2cd8-4328-9a88-daa2e10835eb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 1600200",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 1.6002
+                            },
+                            "uuid": "ee0051a9-4a86-4d7a-bf7f-13c568febf33"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.6256
+                            },
+                            "uuid": "05792f9c-80bf-469e-81a4-76fa8e552a39"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 1828800",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.8542
+                            },
+                            "uuid": "6b944e33-39b2-4e88-9965-775550786b02"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4572 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.8288
+                            },
+                            "uuid": "6ee0238a-2209-4026-81b6-89ddd92fc929"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 2057400",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.9304
+                            },
+                            "uuid": "8ac4dbca-4e89-4e5b-8af6-922289586dad"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4572 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 2.0574
+                            },
+                            "uuid": "1f6bb6e7-7a8e-4acd-8c18-67039527048f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1117600, 2298700",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4572 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 2.2987
+                            },
+                            "uuid": "f61a1dab-015c-4941-9ac4-0a0cda43b5bb"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1397 mm",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 2.159
+                            },
+                            "uuid": "21af07a3-f81d-4365-b5f6-364cd8acd91f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 355600",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.4826
+                            },
+                            "uuid": "268ece65-b6a3-46d1-8502-fbade5a21728"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1016 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.254
+                            },
+                            "uuid": "64a7c211-58c2-4210-ac26-5d101c0b7257"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 584200",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4699 mm",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 0.5842
+                            },
+                            "uuid": "8173f2aa-d942-4100-9bdf-af6e63618ea5"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.5842
+                            },
+                            "uuid": "9de448f5-62e4-41ea-82ca-300387d23eb5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 812800",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.7874
+                            },
+                            "uuid": "6d8e646a-4740-40f6-98dd-559150859ce4"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4699 mm",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 0.8128
+                            },
+                            "uuid": "b6074ade-ed2e-4fae-ae47-b727536ec0f1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 1041400",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4699 mm",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 1.0414
+                            },
+                            "uuid": "83cff0cb-8acc-4cd6-b72a-55534e2a7b49"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2794 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.0414
+                            },
+                            "uuid": "69656d08-251d-4832-b4be-911c942c28a0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 1270000",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.397
+                            },
+                            "uuid": "4b05e55e-9e1b-4a7a-9d0d-9226880bebf7"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4699 mm",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 1.27
+                            },
+                            "uuid": "2ac52cff-3d80-45f6-a4b3-b5ef3900f154"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 1498600",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2794 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.4986
+                            },
+                            "uuid": "cd082e49-e940-48f8-b5fb-a84c89bbbe9c"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4699 mm",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 1.4986
+                            },
+                            "uuid": "72e33506-4f65-492e-a767-1919935c069b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 1727200",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2794 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.7272
+                            },
+                            "uuid": "39c17cc7-f718-498e-b869-19c49fe29bda"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.8542
+                            },
+                            "uuid": "4c29abe8-c18f-4b0e-9f93-7f4ae8332091"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 1955800",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.9304
+                            },
+                            "uuid": "022bbb1d-57d3-4c45-87fa-3f3c8cc198be"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2794 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.9558
+                            },
+                            "uuid": "7fb6a12a-52b2-4bc2-bc6b-932f78db7eb6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1295400, 2197100",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 2.159
+                            },
+                            "uuid": "0797c729-b8c3-401f-8270-09b53234e0ef"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2794 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 2.1971
+                            },
+                            "uuid": "778a976c-44a8-4e0f-9cc2-0fea5c906d00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1536700, 457200",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.4572
+                            },
+                            "uuid": "0bb7b3d8-1310-4d18-bd6a-688b7ab0f2b8"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.4445
+                            },
+                            "uuid": "3ad4cec9-00fd-4962-8e40-981a4b0c3c57"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1536700, 584200",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.5842
+                            },
+                            "uuid": "02b80fcc-ee1c-473b-8ebb-0b379cdc79c8"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.5842
+                            },
+                            "uuid": "9de448f5-62e4-41ea-82ca-300387d23eb5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 825500",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 0.8255
+                            },
+                            "uuid": "4ee081f7-4c51-4d1a-9c44-08400af22010"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2667 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 0.8255
+                            },
+                            "uuid": "ae63d80c-f08e-428a-8b71-575c99b8b10e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 1054100",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2667 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 1.0541
+                            },
+                            "uuid": "58c78207-b77d-42f5-98e9-cc6dcc1aa54e"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.0541
+                            },
+                            "uuid": "1160a47b-e511-45c2-a501-ba0a7e6da72d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 1282700",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2667 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 1.2827
+                            },
+                            "uuid": "136fa07b-71b2-4495-ac1b-baf17a5445b6"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.2827
+                            },
+                            "uuid": "75263aad-73e1-4efb-aead-e2e39e64b9f7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 1511300",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2667 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 1.5113
+                            },
+                            "uuid": "59627ea3-259e-49db-a607-33add427b637"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 1.5113
+                            },
+                            "uuid": "791ee7d8-9405-46f9-b083-87cfbd3ece6c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 1739900",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1397 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 1.6002
+                            },
+                            "uuid": "14ec1065-d546-450e-a1d6-dd42a686b6ae"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.7399
+                            },
+                            "uuid": "2ee07dbb-71d4-48c4-8bde-2b164f7885b8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 1968500",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.9685
+                            },
+                            "uuid": "35e0f21f-f715-495f-94fd-62c07a612923"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1397 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 1.8288
+                            },
+                            "uuid": "579a9e0e-518a-4e1a-b6d4-7406046f0958"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2133600, 2197100",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0508 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 2.1971
+                            },
+                            "uuid": "565451bd-6b23-414b-8a53-e98bbe03ea32"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 2.1336,
+                                "y": 2.1971
+                            },
+                            "uuid": "b06d0df3-3a38-4fad-93b4-758088e14e78"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R313 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 0.6985
+                            },
+                            "uuid": "45a180a9-4bec-4d48-920d-f7782e1ae841"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R320 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 0.9271
+                            },
+                            "uuid": "f8deb7f1-98d8-4cea-ad61-b5c17dffb440"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R327 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.1557
+                            },
+                            "uuid": "3e6cce24-ea4b-4c83-a126-241649b4aeea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R334 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.3843
+                            },
+                            "uuid": "0d13ba84-060c-40dc-80b8-e99fef0cfcc9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R341 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.6129
+                            },
+                            "uuid": "b730f3aa-bc5f-473f-bde7-edffbedcaceb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R348 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.8415
+                            },
+                            "uuid": "46069226-1dd9-4ef7-b037-6ac1ac89f554"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R355 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 2.0701
+                            },
+                            "uuid": "08b7df64-9ef3-4932-b8e1-a4462cec6f48"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (vishay_rcl1225_2w_3.2x6.3mm) doesn't match footprint filters (R_*)",
+                    "items": [
+                        {
+                            "description": "Symbol R362 [R]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 2.2987
+                            },
+                            "uuid": "f2547926-c7a3-4d23-8f46-b4f9f9ed60a6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Four items connected at 2781300, 927100",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 2.4892,
+                                "y": 0.9271
+                            },
+                            "uuid": "a7d9a22e-213a-4a67-bde4-a5664be2a6ea"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4191 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 0.9271
+                            },
+                            "uuid": "825c0727-6acf-43d1-86d2-33aff72f0155"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2781300, 1155700",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,4191 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 1.1557
+                            },
+                            "uuid": "f468879d-4784-45bc-99c9-0947cec50b65"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 2.4892,
+                                "y": 1.1557
+                            },
+                            "uuid": "9a5bad5d-0a9a-4e8f-9a58-2ea0551d02b6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2781300, 1384300",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 1.4097
+                            },
+                            "uuid": "18387ecf-590c-4973-b68e-663d5c0619a7"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 1.2573
+                            },
+                            "uuid": "2839fd15-b105-4e51-addd-902fc8b765e6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2781300, 1612900",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 1.4859
+                            },
+                            "uuid": "2f922a0b-7097-474e-a36d-18a50039343d"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 2.4892,
+                                "y": 1.6129
+                            },
+                            "uuid": "ade16e37-d68d-4c06-a6aa-18cf3b37643a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2781300, 1841500",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 2.4892,
+                                "y": 1.8415
+                            },
+                            "uuid": "db0aafdb-8b92-4814-8f29-3868cbe7a263"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4191 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 1.8415
+                            },
+                            "uuid": "875c8fd5-cc67-4c86-a341-1228e312f90e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2781300, 2070100",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 1.9431
+                            },
+                            "uuid": "1a952f6c-0ee3-43ed-8763-774815a5e8cb"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 2.4892,
+                                "y": 2.0701
+                            },
+                            "uuid": "82e6c5e8-6541-4788-b26d-44fee973d20c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2781300, 2298700",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 2.1717
+                            },
+                            "uuid": "8488bcf6-54ee-4bdb-90d3-de33ac8d87b7"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,4191 mm",
+                            "pos": {
+                                "x": 2.7813,
+                                "y": 2.2987
+                            },
+                            "uuid": "f3c4aa56-0c2e-45db-bf9a-325e152764bf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 825500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 0.8001
+                            },
+                            "uuid": "e2b1689f-13cb-4a01-8d02-8b742c6ac21f"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 0.9525
+                            },
+                            "uuid": "417ba341-4018-4ad3-b2f8-6c0d807d2e2e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 1054100",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.0541
+                            },
+                            "uuid": "a42b68dd-cc44-4b36-b345-340181deff28"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.1811
+                            },
+                            "uuid": "bcda99cc-17e5-47c3-96a4-16dba9d6055c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 1282700",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.2573
+                            },
+                            "uuid": "0d9c73d7-83ac-4d8a-b3cc-004db35d4304"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.2827
+                            },
+                            "uuid": "01b336dd-a716-454e-b49d-2bfc89c92005"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 1511300",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.5113
+                            },
+                            "uuid": "744c56bc-602b-49b2-b97c-ce6fae1d8ed9"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.6383
+                            },
+                            "uuid": "1112a98c-268b-47d7-bb19-6e79ac0617bd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 1739900",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.8669
+                            },
+                            "uuid": "0d224dca-bf84-49ad-9533-8518958ab6c3"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.7399
+                            },
+                            "uuid": "7bda678d-a4d0-4f02-a3ac-b26934e5a3b3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 1968500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.9431
+                            },
+                            "uuid": "6c175b7f-4d91-4fd0-bd40-e706c6603f53"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1270 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 2.0955
+                            },
+                            "uuid": "debf2d27-2538-44bb-948a-9a3fda574238"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2959100, 2197100",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 2.1717
+                            },
+                            "uuid": "02937c3b-e83c-4bf6-8327-2e1bdc18baca"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 2.1971
+                            },
+                            "uuid": "f527d8c3-d984-4899-b852-147854105943"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 698500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 0.6985
+                            },
+                            "uuid": "94962c23-1a4a-4b4d-a14b-26db940c107b"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 0.6858
+                            },
+                            "uuid": "f6d0e3a4-793c-48e2-b5ab-cf8e49ffcfb9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 825500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 0.8255
+                            },
+                            "uuid": "5a2c8396-a7e8-4411-bf53-b14bf6d98333"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 0.8255
+                            },
+                            "uuid": "8e1e4a18-ed8e-45dd-bf32-b0f30c273b71"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 927100",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 0.9144
+                            },
+                            "uuid": "0a77e01c-f821-48e4-923e-e6e3d4b14ae9"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 0.9271
+                            },
+                            "uuid": "a1433e23-debb-4f13-a3d1-f212f7955b2f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1054100",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.0541
+                            },
+                            "uuid": "a42b68dd-cc44-4b36-b345-340181deff28"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.0287
+                            },
+                            "uuid": "cc2bb030-cdcb-4f62-b9c8-16e01897ec48"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1155700",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.1557
+                            },
+                            "uuid": "748cd8dd-8809-4ab4-b1a6-0284b299b137"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.1557
+                            },
+                            "uuid": "f81ba95c-f86d-4459-ab8d-4f35f677c1b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1282700",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.2827
+                            },
+                            "uuid": "ea8d0db1-8bec-4092-a568-fa9cc1c765f5"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.2827
+                            },
+                            "uuid": "01b336dd-a716-454e-b49d-2bfc89c92005"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1384300",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.3843
+                            },
+                            "uuid": "719e6ee9-7fef-4eab-9873-6830966acfc1"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.3716
+                            },
+                            "uuid": "f31a9d7b-6583-471f-ba9d-0ca7fffdd4b8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1511300",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.5113
+                            },
+                            "uuid": "441ce954-5202-49c4-b593-19b0f8d833ad"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.5113
+                            },
+                            "uuid": "47c825b2-6a26-4fbc-98df-67b51eda457d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1612900",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.6129
+                            },
+                            "uuid": "23e6ef1a-49a2-47ee-a8f7-9ac8ffef7eb3"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0127 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.6002
+                            },
+                            "uuid": "17d72273-9014-42fd-a183-a75a54fe9c8b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1739900",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.7399
+                            },
+                            "uuid": "2838f4d2-bd22-43da-90f1-34347bde3ce0"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.7145
+                            },
+                            "uuid": "e20619da-f040-4bb1-a089-e65e800221a3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1841500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.8415
+                            },
+                            "uuid": "23a3ba1a-5034-471d-9980-51bb879c25eb"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.8415
+                            },
+                            "uuid": "4cbf2330-acfc-45ef-8044-fb16d197a2de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 1968500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 1.9431
+                            },
+                            "uuid": "161c2197-dda6-45b2-8ac9-a55c71cff3e3"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.9685
+                            },
+                            "uuid": "e3d8f64b-8932-4cd4-9d1c-d7da47b90176"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 2070100",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0381 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 2.0701
+                            },
+                            "uuid": "c461036a-fed0-4ee3-b529-ae69b1ee73c1"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 2.0701
+                            },
+                            "uuid": "fb3a8db1-1020-4669-84c7-8c396f73bab6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 3200400, 2197100",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 3.2004,
+                                "y": 2.1717
+                            },
+                            "uuid": "af47c818-c990-4d5e-b3c6-ced8647961f3"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 2.1971
+                            },
+                            "uuid": "f527d8c3-d984-4899-b852-147854105943"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 914400, 812800",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,3429 mm",
+                            "pos": {
+                                "x": 1.2573,
+                                "y": 0.8128
+                            },
+                            "uuid": "993fa819-1aaa-4c51-8ceb-4df93f181810"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 0.9144,
+                                "y": 0.7874
+                            },
+                            "uuid": "d92f27e6-1f36-4b62-9e7f-73e0b1292be1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1155700, 1092200",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 1.0922
+                            },
+                            "uuid": "95c7bbe6-9475-4c5c-9451-abee42864415"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 1.0922
+                            },
+                            "uuid": "ad935225-7160-48f3-b956-88fcf6cda6da"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1778000, 1866900",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 1,2573 mm",
+                            "pos": {
+                                "x": 1.778,
+                                "y": 1.8669
+                            },
+                            "uuid": "cd86177a-1492-40c2-a91a-73cb43dd4b75"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0254 mm",
+                            "pos": {
+                                "x": 1.778,
+                                "y": 1.8415
+                            },
+                            "uuid": "44d508cd-a450-4fef-913f-9641732102de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1854200, 1905000",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0,0889 mm",
+                            "pos": {
+                                "x": 1.7653,
+                                "y": 1.905
+                            },
+                            "uuid": "eb99a56c-c6b6-4d3e-be8c-04ce228af0cf"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,0635 mm",
+                            "pos": {
+                                "x": 1.8542,
+                                "y": 1.905
+                            },
+                            "uuid": "2edceab6-16e4-46fc-81b5-b26b7e7e33db"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 1930400, 1943100",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1016 mm",
+                            "pos": {
+                                "x": 1.9304,
+                                "y": 1.8415
+                            },
+                            "uuid": "dabbb1b4-4c5f-40f3-a281-3ded5e026e6e"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,1651 mm",
+                            "pos": {
+                                "x": 1.9304,
+                                "y": 1.9431
+                            },
+                            "uuid": "ea809ab1-bbb4-4368-8a26-4251963e0578"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2006600, 1981200",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1397 mm",
+                            "pos": {
+                                "x": 2.0066,
+                                "y": 1.8415
+                            },
+                            "uuid": "1de7e4fb-be7c-4afb-b041-6388b2148563"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,2413 mm",
+                            "pos": {
+                                "x": 2.0066,
+                                "y": 1.9812
+                            },
+                            "uuid": "56b1e86b-de94-45f2-ae31-3739d0404e00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2082800, 2019300",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1397 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 2.0193
+                            },
+                            "uuid": "1702d990-d08d-434a-ac24-997d06b225dc"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,1778 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.8415
+                            },
+                            "uuid": "f5c28945-86eb-45fb-a6a3-c3b7ddea4a0c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2159000, 2057400",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,1016 mm",
+                            "pos": {
+                                "x": 2.159,
+                                "y": 2.0574
+                            },
+                            "uuid": "dc86468a-db9a-4f88-bfe0-a8cc53a3b748"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,3937 mm",
+                            "pos": {
+                                "x": 2.159,
+                                "y": 2.0574
+                            },
+                            "uuid": "936013ca-d184-4ec1-a30c-7f2d5c083da2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2235200, 2095500",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,0635 mm",
+                            "pos": {
+                                "x": 2.2352,
+                                "y": 2.0955
+                            },
+                            "uuid": "336a32d3-747f-4624-8891-886daa6295c9"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0,2540 mm",
+                            "pos": {
+                                "x": 2.2352,
+                                "y": 1.8415
+                            },
+                            "uuid": "ba2d0102-b74b-4b47-abc1-e05e1ab9f78e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Four items connected at 2311400, 2133600",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0,2921 mm",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 2.1336
+                            },
+                            "uuid": "c7b3d0f1-a5bc-4942-830b-cd903454bb7d"
+                        },
+                        {
+                            "description": "Horizontal Wire, length 0,5461 mm",
+                            "pos": {
+                                "x": 1.7653,
+                                "y": 2.1336
+                            },
+                            "uuid": "b49f4931-f62f-4f3d-b56f-b191de3fb08e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "four_way_junction"
+                },
+                {
+                    "description": "Assigned footprint (harwin_datamate_m80-5001642_2x08_p2.00mm_vertical_minimalsilkscreen) doesn't match footprint filters (Connector*:*_2x??_*)",
+                    "items": [
+                        {
+                            "description": "Symbol J201 [Conn_02x08_Top_Bottom]",
+                            "pos": {
+                                "x": 3.4798,
+                                "y": 1.9431
+                            },
+                            "uuid": "59303328-c2df-4e3a-a843-126ae4ef493a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (bourns_cdsod323-txxc_sod-323_compact_minimalsilkscreen) doesn't match footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+                    "items": [
+                        {
+                            "description": "Symbol D501 [D_TVS]",
+                            "pos": {
+                                "x": 0.8636,
+                                "y": 0.6604
+                            },
+                            "uuid": "79005ab1-29ce-5a5c-8f2d-7af7ed7d4f28"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (bourns_cdsod323-txxc_sod-323_compact_minimalsilkscreen) doesn't match footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+                    "items": [
+                        {
+                            "description": "Symbol D502 [D_TVS]",
+                            "pos": {
+                                "x": 0.8636,
+                                "y": 1.1684
+                            },
+                            "uuid": "2fcde031-4a3f-5c1a-853c-cad8f699414d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (bourns_cdsod323-txxc_sod-323_compact_minimalsilkscreen) doesn't match footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+                    "items": [
+                        {
+                            "description": "Symbol D503 [D_TVS]",
+                            "pos": {
+                                "x": 0.8636,
+                                "y": 1.6764
+                            },
+                            "uuid": "8e8c5bb6-8dd7-544f-b0e2-ea9595da9441"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (bourns_cdsod323-txxc_sod-323_compact_minimalsilkscreen) doesn't match footprint filters (TO-???* *_Diode_* *SingleDiode* D_*)",
+                    "items": [
+                        {
+                            "description": "Symbol D504 [D_TVS]",
+                            "pos": {
+                                "x": 0.8636,
+                                "y": 2.1844
+                            },
+                            "uuid": "b78543ab-1951-5fa8-8729-b59989958d1b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (harwin_datamate_m80-5t10442mc_2x02_p2.00mm_vertical_minimalsilkscreen) doesn't match footprint filters (Connector*:*_2x??_*)",
+                    "items": [
+                        {
+                            "description": "Symbol J501 [Conn_02x02_Top_Bottom]",
+                            "pos": {
+                                "x": 1.8542,
+                                "y": 0.9017
+                            },
+                            "uuid": "b41474dc-3919-49f6-a0f4-1958aab0c88b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Assigned footprint (harwin_datamate_m80-5t10442mc_2x02_p2.00mm_vertical_minimalsilkscreen) doesn't match footprint filters (Connector*:*_2x??_*)",
+                    "items": [
+                        {
+                            "description": "Symbol J502 [Conn_02x02_Top_Bottom]",
+                            "pos": {
+                                "x": 1.8542,
+                                "y": 1.9431
+                            },
+                            "uuid": "e89eef60-6192-4431-891c-d6ad877315ac"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                }
+            ]
+        },
+        {
+            "path": "/bq79616/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/231e2394-b031-42e4-9898-537e12a43c10",
+            "violations": []
+        },
+        {
+            "path": "/balance/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/41de0930-7261-49c2-a5fd-63965d7660c6",
+            "violations": []
+        },
+        {
+            "path": "/cells/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/749c695e-829e-4cef-8f09-73fd0dfbea42",
+            "violations": []
+        },
+        {
+            "path": "/com/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/a79a3925-cb21-4487-b958-9a05a84bf473",
+            "violations": []
+        },
+        {
+            "path": "/batterypositive_to_8V8/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/8e8ad9ff-5248-4f1e-b405-c0f581870fe4",
+            "violations": []
+        },
+        {
+            "path": "/mechanical/",
+            "uuid_path": "/9b5ff517-aaeb-49bb-8f91-cee45b7ddc54/6c6ca66b-8d38-4944-af8b-dd53d96a020e",
+            "violations": []
+        }
+    ],
+    "source": "battery_management_system_cell_monitoring_unit.kicad_sch"
+}

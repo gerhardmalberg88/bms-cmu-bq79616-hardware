@@ -1,0 +1,254 @@
+{
+  "Header": {
+    "GenerationSoftware": {
+      "Vendor": "KiCad",
+      "Application": "Pcbnew",
+      "Version": "10.0.4"
+    },
+    "CreationDate": "2026-10-24T13:25:58+03:00"
+  },
+  "GeneralSpecs": {
+    "ProjectId": {
+      "Name": "battery_management_system_cell_monitoring_unit",
+      "GUID": "62617474-6572-4795-9f6d-616e6167656d",
+      "Revision": "0.1"
+    },
+    "Size": {
+      "X": 99.05,
+      "Y": 61.05
+    },
+    "LayerNumber": 8,
+    "BoardThickness": 1.708,
+    "Finish": "HAL lead-free"
+  },
+  "DesignRules": [
+    {
+      "Layers": "Outer",
+      "PadToPad": 0.19,
+      "PadToTrack": 0.19,
+      "TrackToTrack": 0.19,
+      "MinLineWidth": 0.21,
+      "TrackToRegion": 0.508,
+      "RegionToRegion": 0.508
+    },
+    {
+      "Layers": "Inner",
+      "PadToPad": 0.19,
+      "PadToTrack": 0.19,
+      "TrackToTrack": 0.19,
+      "MinLineWidth": 0.25,
+      "TrackToRegion": 0.508,
+      "RegionToRegion": 0.508
+    }
+  ],
+  "FilesAttributes": [
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-F_Cu.gtl",
+      "FileFunction": "Copper,L1,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-In1_Cu.g1",
+      "FileFunction": "Copper,L2,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-In2_Cu.g2",
+      "FileFunction": "Copper,L3,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-In3_Cu.g3",
+      "FileFunction": "Copper,L4,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-In4_Cu.g4",
+      "FileFunction": "Copper,L5,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-In5_Cu.g5",
+      "FileFunction": "Copper,L6,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-In6_Cu.g6",
+      "FileFunction": "Copper,L7,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-B_Cu.gbl",
+      "FileFunction": "Copper,L8,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-F_Silkscreen.gto",
+      "FileFunction": "Legend,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-F_Mask.gts",
+      "FileFunction": "SolderMask,Top",
+      "FilePolarity": "Negative"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-B_Mask.gbs",
+      "FileFunction": "SolderMask,Bot",
+      "FilePolarity": "Negative"
+    },
+    {
+      "Path": "battery_management_system_cell_monitoring_unit-Edge_Cuts.gm1",
+      "FileFunction": "Profile",
+      "FilePolarity": "Positive"
+    }
+  ],
+  "MaterialStackup": [
+    {
+      "Type": "Legend",
+      "Color": "White",
+      "Name": "Top Silk Screen"
+    },
+    {
+      "Type": "SolderPaste",
+      "Name": "Top Solder Paste"
+    },
+    {
+      "Type": "SolderMask",
+      "Color": "Green",
+      "Thickness": 0.035,
+      "Name": "Top Solder Mask"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "F.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.07,
+      "Material": "FR-4 Improved PR1080",
+      "Name": "F.Cu/In1.Cu (1/2)",
+      "Notes": "Type: dielectric layer 1 - 1/2 (from F.Cu to In1.Cu)"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.12,
+      "Material": "FR-4 Improved PR2116",
+      "Name": "F.Cu/In1.Cu (2/2)",
+      "Notes": "Type: dielectric layer 1 - 2/2 (from F.Cu to In1.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.018,
+      "Name": "In1.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.2,
+      "Material": "FR-4 Improved Tg 145-150 C",
+      "Name": "In1.Cu/In2.Cu",
+      "Notes": "Type: dielectric layer 2 (from In1.Cu to In2.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.018,
+      "Name": "In2.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.12,
+      "Material": "FR-4 Improved PR2116",
+      "Name": "In2.Cu/In3.Cu (1/2)",
+      "Notes": "Type: dielectric layer 3 - 1/2 (from In2.Cu to In3.Cu)"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.12,
+      "Material": "FR-4 Improved PR2116",
+      "Name": "In2.Cu/In3.Cu (2/2)",
+      "Notes": "Type: dielectric layer 3 - 2/2 (from In2.Cu to In3.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.018,
+      "Name": "In3.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.2,
+      "Material": "FR-4 Improved Tg 145-150 C",
+      "Name": "In3.Cu/In4.Cu",
+      "Notes": "Type: dielectric layer 4 (from In3.Cu to In4.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.018,
+      "Name": "In4.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.12,
+      "Material": "FR-4 Improved PR2116",
+      "Name": "In4.Cu/In5.Cu (1/2)",
+      "Notes": "Type: dielectric layer 5 - 1/2 (from In4.Cu to In5.Cu)"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.12,
+      "Material": "FR-4 Improved PR2116",
+      "Name": "In4.Cu/In5.Cu (2/2)",
+      "Notes": "Type: dielectric layer 5 - 2/2 (from In4.Cu to In5.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.018,
+      "Name": "In5.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.2,
+      "Material": "FR-4 Improved Tg 145-150 C",
+      "Name": "In5.Cu/In6.Cu",
+      "Notes": "Type: dielectric layer 6 (from In5.Cu to In6.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.018,
+      "Name": "In6.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.12,
+      "Material": "FR-4 Improved PR2116",
+      "Name": "In6.Cu/B.Cu (1/2)",
+      "Notes": "Type: dielectric layer 7 - 1/2 (from In6.Cu to B.Cu)"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.07,
+      "Material": "FR-4 Improved PR1080",
+      "Name": "In6.Cu/B.Cu (2/2)",
+      "Notes": "Type: dielectric layer 7 - 2/2 (from In6.Cu to B.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "B.Cu"
+    },
+    {
+      "Type": "SolderMask",
+      "Color": "Green",
+      "Thickness": 0.035,
+      "Name": "Bottom Solder Mask"
+    },
+    {
+      "Type": "SolderPaste",
+      "Name": "Bottom Solder Paste"
+    },
+    {
+      "Type": "Legend",
+      "Name": "Bottom Silk Screen"
+    }
+  ]
+}

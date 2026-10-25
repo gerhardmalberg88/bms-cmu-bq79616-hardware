@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+    "pcb",
+    "render",
+    "--width",
+    "2432",
+    "--height",
+    "1632",
+    "--side",
+    "top",
+    "--quality",
+    "high",
+    "--background",
+    "opaque",
+    "--preset",
+    "CMU neutral",
+    "--perspective",
+    "--rotate",
+    "325,0,25",
+    "--zoom",
+    "1",
+    "-o",
+    "C:\\Users\\gerha\\OneDrive\\Documents\\GitHub\\temp_electric_vehicle\\ElectricVehicleSystem\\bms-cmu-bq79616-hardware\\bms-cmu-bq79616-hardware\\build\\manufacturing-rev0.1-2026-10-24\\render\\native-raytraced.png",
+    "C:\\Users\\gerha\\OneDrive\\Documents\\GitHub\\temp_electric_vehicle\\ElectricVehicleSystem\\bms-cmu-bq79616-hardware\\bms-cmu-bq79616-hardware\\build\\manufacturing-rev0.1-2026-10-24\\render\\design\\battery_management_system_cell_monitoring_unit.kicad_pcb"
+  ],
+  "returncode": 0,
+  "stdout": "Loading…\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 2,206 s\nRendering: 4 \nRendering: 7 \nRendering: 9 \nRendering: 10 \nRendering: 12 \nRendering: 13 \nRendering: 15 \nRendering: 16 \nRendering: 17 \nRendering: 18 \nRendering: 20 \nRendering: 22 \nRendering: 25 \nRendering: 30 \nRendering: 35 \nRendering: 39 \nRendering: 43 \nRendering: 45 \nRendering: 49 \nRendering: 53 \nRendering: 57 \nRendering: 60 \nRendering: 61 \nRendering: 63 \nRendering: 63 \nRendering: 65 \nRendering: 66 \nRendering: 67 \nRendering: 69 \nRendering: 69 \nRendering: 70 \nRendering: 71 \nRendering: 73 \nRendering: 74 \nRendering: 75 \nRendering: 78 \nRendering: 81 \nRendering: 86 \nRendering: 90 \nRendering: 95 \nRendering: 99 \nRendering: 100 \nRendering: Post processing shader\nRendering time 32,490 s\nSuccessfully created 3D render image\n",
+  "stderr": "17:29:37: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: Access is denied.)\n17:29:37: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: The system cannot find the file specified.)\n"
+}
