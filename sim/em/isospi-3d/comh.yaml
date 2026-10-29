@@ -1,0 +1,84 @@
+{
+  "name": "comh-connector-3d",
+  "mode": "3d",
+  "analysis": "driven",
+  "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
+  "project_root": "../../..",
+  "output": "../../results/em/comh-connector-3d",
+  "execution": {
+    "backend": "auto",
+    "threads_per_rank": 1,
+    "gpu_count": 1
+  },
+  "materials": {
+    "substrate_epsilon_r": 4.5,
+    "soldermask_epsilon_r": 3.3
+  },
+  "mesh": {
+    "fine_mm": 0.15,
+    "coarse_mm": 2,
+    "order": 1,
+    "scale": 1.0,
+    "threads": 1
+  },
+  "assumptions": [
+    "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+    "Connector pins are editable 0.5 mm square, 5 mm tall approximations; housing omitted.",
+    "PEC sheet copper; conductor loss is not predicted.",
+    "Uniform soldermask slabs; pad-window geometry is not extracted.",
+    "Connector through-holes have ideal PEC solder fill joining each contact to its barrel.",
+    "The eight-frequency 1\u201310 MHz sweep exercises network fitting; it does not characterize fast-edge bandwidth or establish transient accuracy.",
+    "The input calibration plane is on the straight secondary traces near the connector; copper back to the cropped transformer pads remains as open stubs. No transformer winding network is included."
+  ],
+  "region_mm": [
+    316.3,
+    116.5,
+    323.3,
+    124.0
+  ],
+  "air_margin_mm": 3,
+  "frequencies_hz": [
+    1000000.0,
+    2000000.0,
+    3000000.0,
+    4000000.0,
+    5000000.0,
+    6000000.0,
+    8000000.0,
+    10000000.0
+  ],
+  "connectors": [
+    {
+      "ref": "J501",
+      "height_mm": 5,
+      "pin_width_mm": 0.5
+    }
+  ],
+  "ports": [
+    {
+      "name": "secondary-trace-calibration",
+      "positive": "T501:6",
+      "negative": "T501:4",
+      "reference_ohms": 100,
+      "positive_xy_mm": [
+        319.1,
+        119.25
+      ],
+      "negative_xy_mm": [
+        319.1,
+        121.25
+      ],
+      "positive_net": "/com/ISO_COMHP",
+      "negative_net": "/com/ISO_COMHN"
+    },
+    {
+      "name": "connector-contact",
+      "positive": "J501:1",
+      "negative": "J501:2",
+      "reference_ohms": 100,
+      "positive_net": "/com/ISO_COMHP",
+      "negative_net": "/com/ISO_COMHN"
+    }
+  ],
+  "engineering_context": "CMU-007 sections 2 and 4: bounded PCB communication routing and connector coupling; no full-link acceptance"
+}

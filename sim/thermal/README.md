@@ -13,6 +13,18 @@ models, verified power losses and balancing schedules, ambient temperature,
 enclosure, mounting and airflow. Evaluate the distributed balancing resistors,
 supply/AFE components, sensor heating and the relevant fault cases.
 
+## First case and workflow
+
+- [Cell balancing resistors](cell-balancing-resistors/README.md): placeholder
+  for distributed resistor heating, nearby component temperatures and NTC impact.
+- [Thermal Mermaid workflow](../../../pcb-em-lab/README.md#thermal-workflow):
+  self-contained description in the sibling workflow repository.
+
+The planned toolchain follows that diagram: KiCad STEP/positions → Gmsh →
+Elmer → ParaView, with FreeCAD for optional mechanical parts. CLI/Python and
+GUI work will share the same case files and saved views. `config.yaml` and
+`run.py` are planned interfaces, not files supplied by this placeholder.
+
 Future results must identify the source revision/hashes, boundary conditions,
 power assumptions and convergence checks. Only reviewed figures will replace
 the README gallery's “Coming soon” entry. Hardware temperature measurements

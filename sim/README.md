@@ -1,8 +1,11 @@
 # CMU simulations
 
 Planned simulations for the CMU design in `../design/`.
-[EM](em/README.md) and [thermal](thermal/README.md) work is **coming soon**;
-those pages define scope and inputs without selecting a solver or claiming results.
+[EM](em/README.md) cases use the sibling
+[pcb-em-lab](../../pcb-em-lab/README.md) toolchain. All eight supplied
+EM CPU pipelines passed; see its [validation record](../../pcb-em-lab/docs/validation.md)
+for CUDA status and model limitations. [Thermal](thermal/README.md) remains a
+documentation placeholder. No reviewed EM or thermal result is supplied.
 The circuit cases below use the existing Qucs-S/ngspice scaffolding.
 
 > **Every planned simulation must verify a claim made in `../docs/`.** A simulation
@@ -11,7 +14,7 @@ The circuit cases below use the existing Qucs-S/ngspice scaffolding.
 
 ## Tooling
 
-**No completed simulation is supplied.** Each circuit case currently contains notes
+**No completed circuit simulation is supplied.** Each circuit case currently contains notes
 and a launcher, with no circuit netlist, checked baseline or validated model.
 `run.sh` exits 2 until its netlist exists. The routed PCB and manufacturing
 exports do not change this status. Local tool installation is not a property
@@ -57,8 +60,12 @@ sim/
 │  ├─ vendor/                  third-party models - GITIGNORED, fetched at run time
 │  ├─ MODELS_PROVENANCE.csv    one row per model, including absent vendor ones
 │  └─ common.inc               shared params, traced to ../docs/
-├─ em/                        coming soon; scope and inputs only
-├─ thermal/                   coming soon; scope and inputs only
+├─ em/                         Palace cases; shared workflow in sibling repository
+│  ├─ isospi-2d/               COMH/COML cross-section inputs
+│  ├─ isospi-3d/               bounded routing and connector-contact inputs
+│  └─ internal-magnetics/      approximate T501/T502/CMC and L601 inputs
+├─ thermal/                    planned Elmer workflow
+│  └─ cell-balancing-resistors/ distributed resistor heating placeholder
 ├─ transient/
 │  ├─ buck-fail-short/
 │  ├─ cell-tap-mis-mate/
@@ -70,8 +77,10 @@ sim/
 ```
 
 The following is the intended structure once a case is implemented. Currently
-only `run.sh` and `notes.md` are present in each circuit case; EM/thermal
-folders have only scope READMEs:
+only `run.sh` and `notes.md` are present in each circuit case. EM/thermal
+folders document their scope; EM includes case inputs for the shared pipeline.
+Workflow diagrams are Mermaid charts in the sibling repository README. The table below applies
+to circuit cases:
 
 | File | Committed? | Why |
 |---|---|---|
@@ -91,8 +100,8 @@ is not evidence.
 
 | Simulation | Verifies | Status |
 |---|---|---|
-| [EM](em/README.md) | CMU-007 SI/PI: coupling, impedance, supply distribution and returns | Coming soon |
-| [Thermal](thermal/README.md) | CMU-006: balancing and supply heating in the enclosure | Coming soon |
+| [isoSPI communication — 2D EM](em/isospi-2d/README.md) | CMU-007 §§2.1/2.3 and §4: communication cross-sections against the provisional impedance target | CPU pipeline and mesh/domain sweeps passed; physical assumptions and target acceptance remain open |
+| [Cell balancing resistors — thermal](thermal/cell-balancing-resistors/README.md) | CMU-006 §§4–5: resistor temperature rise, nearby parts and NTC heating, using verified losses from CMU-002 §8 | Documentation placeholder; Elmer workflow planned |
 | `transient/buck-fail-short` | CMU-003 F-01 and CMU-002 §9 — 6.7 A through the ~8 Ω loop, F601 clearing in ~640 µs, energy into D601 | skeleton |
 | `transient/cell-tap-mis-mate` | CMU-003 F-14 and CMU-004 §5.1 — re-derive the fault current and check the `CBn` to `CBn-1` excursion; the historical ~133 mA estimate is unverified | skeleton |
 | `transient/startup-inrush` | CMU-002 §4 — 20 mA `ISTARTUP` against the rail and the VCollector ≥ 8 V floor | skeleton |

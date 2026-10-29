@@ -13,6 +13,9 @@ license: CERN-OHL-P-2.0
 **EM simulations: coming soon.** Planned electromagnetic SI/PI models and
 results will live in [`sim/em/`](../sim/em/README.md). The preliminary
 cross-section calculations below are not a completed board-level EM validation.
+The [isoSPI communication 2D cases](../sim/em/isospi-2d/README.md)
+use the shared KiCad/Palace pipeline to evaluate the sections 2.1/2.3
+cross-sections and provisional impedance target; numerical validation is in progress.
 
 > **2026-10-24 status:** the routed PCB passes the configured, refilled DRC and its manufacturing files are prepared. This does not establish measured or supplier-guaranteed impedance. See [CMU-009](CMU-009-manufacturing.md).
 

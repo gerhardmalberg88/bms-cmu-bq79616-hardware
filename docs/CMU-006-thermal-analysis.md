@@ -12,6 +12,9 @@ license: CERN-OHL-P-2.0
 
 **Thermal simulations: coming soon.** Planned models and results will live in
 [`sim/thermal/`](../sim/thermal/README.md). No thermal simulation result is supplied.
+The [cell balancing resistor placeholder](../sim/thermal/cell-balancing-resistors/README.md)
+records the supplied Elmer workflow for the resistor heating and NTC cases
+in sections 4-5; implementation is pending.
 
 > **2026-10-24 status:** the routed PCB passes the configured, refilled DRC and its manufacturing files are prepared. This does not close the thermal analysis or establish a measured operating envelope. See [CMU-009](CMU-009-manufacturing.md).
 

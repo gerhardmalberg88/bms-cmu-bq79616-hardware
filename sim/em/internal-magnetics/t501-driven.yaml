@@ -1,0 +1,117 @@
+{
+  "name": "t501-internal-driven",
+  "mode": "3d",
+  "analysis": "magnetic-driven",
+  "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
+  "project_root": "../../..",
+  "output": "../../results/em/t501-internal-driven",
+  "execution": {
+    "backend": "auto",
+    "threads_per_rank": 1,
+    "gpu_count": 1
+  },
+  "materials": {
+    "substrate_epsilon_r": 4.5,
+    "soldermask_epsilon_r": 3.3
+  },
+  "mesh": {
+    "fine_mm": 0.18,
+    "coarse_mm": 2,
+    "order": 1,
+    "scale": 1.0
+  },
+  "assumptions": [
+    "Exploratory internal geometry: supplier CAD describes the package, not the windings or core.",
+    "Linear, isotropic core permeability is assumed; saturation, hysteresis, losses and temperature dependence are excluded.",
+    "Separate gapped sheet turns approximate windings; helical pitch connections, leads and PCB copper are omitted.",
+    "No turn count or core geometry has been verified by the manufacturer; inductance agreement alone cannot validate internal field distributions."
+  ],
+  "component": "T501",
+  "magnetics": {
+    "domain_half_size_mm": 7,
+    "cores": [
+      {
+        "name": "transformer-core",
+        "center_mm": [
+          -2,
+          0,
+          0
+        ],
+        "radius_mm": 0.9,
+        "height_mm": 2.6,
+        "mu_r": 500
+      },
+      {
+        "name": "common-mode-choke-core",
+        "center_mm": [
+          2,
+          0,
+          0
+        ],
+        "radius_mm": 0.65,
+        "height_mm": 2.0,
+        "mu_r": 500
+      }
+    ],
+    "windings": [
+      {
+        "name": "primary",
+        "center_mm": [
+          -2,
+          0,
+          -0.45
+        ],
+        "turns": 2,
+        "radius_mm": 1.15,
+        "width_mm": 0.15,
+        "pitch_mm": 0.45,
+        "sign": 1
+      },
+      {
+        "name": "secondary",
+        "center_mm": [
+          -2,
+          0,
+          0.45
+        ],
+        "turns": 2,
+        "radius_mm": 1.15,
+        "width_mm": 0.15,
+        "pitch_mm": 0.45,
+        "sign": 1
+      },
+      {
+        "name": "cmc-positive",
+        "center_mm": [
+          2,
+          0,
+          -0.3
+        ],
+        "turns": 2,
+        "radius_mm": 0.9,
+        "width_mm": 0.12,
+        "pitch_mm": 0.3,
+        "sign": 1
+      },
+      {
+        "name": "cmc-negative",
+        "center_mm": [
+          2,
+          0,
+          0.3
+        ],
+        "turns": 2,
+        "radius_mm": 0.9,
+        "width_mm": 0.12,
+        "pitch_mm": 0.3,
+        "sign": 1
+      }
+    ]
+  },
+  "frequencies_hz": [
+    100000.0,
+    4000000.0,
+    10000000.0
+  ],
+  "engineering_context": "Exploratory linear internal-field workflow; unverified supplier internals, not component qualification."
+}

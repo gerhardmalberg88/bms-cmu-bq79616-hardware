@@ -1,0 +1,49 @@
+{
+  "name": "comh-2d",
+  "mode": "2d",
+  "analysis": "boundary-mode",
+  "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
+  "project_root": "../../..",
+  "output": "../../results/em/comh-2d",
+  "frequency_hz": 4000000.0,
+  "execution": {
+    "backend": "auto",
+    "threads_per_rank": 1,
+    "gpu_count": 1
+  },
+  "cross_section": {
+    "line_mm": [
+      [
+        292,
+        123
+      ],
+      [
+        302,
+        123
+      ]
+    ],
+    "pair": [
+      "/bq79616/COMHP",
+      "/bq79616/COMHN"
+    ],
+    "air_margin_mm": 6,
+    "target_index": 1.8,
+    "modes": 2
+  },
+  "materials": {
+    "substrate_epsilon_r": 4.5,
+    "soldermask_epsilon_r": 3.3
+  },
+  "mesh": {
+    "fine_mm": 0.05,
+    "coarse_mm": 1.5,
+    "order": 2,
+    "scale": 1.0
+  },
+  "assumptions": [
+    "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+    "Flat soldermask approximation; ideal PEC copper.",
+    "4 MHz is an exploratory operating point, not an agreed communications band."
+  ],
+  "verifies": "CMU-007 sections 2 and 4; actual saved cross-section, not netclass defaults"
+}

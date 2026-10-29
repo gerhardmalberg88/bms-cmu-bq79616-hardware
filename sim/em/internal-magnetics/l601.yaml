@@ -1,0 +1,62 @@
+{
+  "name": "l601-internal",
+  "mode": "3d",
+  "analysis": "magnetostatic",
+  "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
+  "project_root": "../../..",
+  "output": "../../results/em/l601-internal",
+  "execution": {
+    "backend": "auto",
+    "threads_per_rank": 1,
+    "gpu_count": 1
+  },
+  "materials": {
+    "substrate_epsilon_r": 4.5,
+    "soldermask_epsilon_r": 3.3
+  },
+  "mesh": {
+    "fine_mm": 0.18,
+    "coarse_mm": 2,
+    "order": 1,
+    "scale": 1.0
+  },
+  "assumptions": [
+    "Exploratory internal geometry: supplier CAD describes the package, not the windings or core.",
+    "Linear, isotropic core permeability is assumed; saturation, hysteresis, losses and temperature dependence are excluded.",
+    "Separate gapped sheet turns approximate windings; helical pitch connections, leads and PCB copper are omitted.",
+    "No turn count or core geometry has been verified by the manufacturer; inductance agreement alone cannot validate internal field distributions."
+  ],
+  "component": "L601",
+  "magnetics": {
+    "domain_half_size_mm": 9,
+    "cores": [
+      {
+        "name": "inductor-core",
+        "center_mm": [
+          0,
+          0,
+          0
+        ],
+        "radius_mm": 1.5,
+        "height_mm": 3.5,
+        "mu_r": 100
+      }
+    ],
+    "windings": [
+      {
+        "name": "winding",
+        "center_mm": [
+          0,
+          0,
+          0
+        ],
+        "turns": 4,
+        "radius_mm": 1.85,
+        "width_mm": 0.2,
+        "pitch_mm": 0.6,
+        "sign": 1
+      }
+    ]
+  },
+  "engineering_context": "Exploratory linear internal-field workflow; unverified supplier internals, not component qualification."
+}
