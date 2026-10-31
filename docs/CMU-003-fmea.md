@@ -25,8 +25,10 @@ a "layout consequence" column, and those feed
 [CMU-005](CMU-005-layout-constraints.md).
 
 **Criticality (FMECA) is deferred.** Ranking needs part failure rates, which
-depend on junction temperature, which needs [CMU-006](CMU-006-thermal-analysis.md).
-Close the criticality column after layout.
+depend on junction temperature. [CMU-006](CMU-006-thermal-analysis.md) records
+a closed resistor-only simulation scope with provisional results; it does not
+supply validated component junction temperatures. Criticality remains unresolved
+pending suitable component-temperature and failure-rate evidence.
 
 **Diagnostic coverage (FMEDA) is blocked**, not deferred. It needs system safety
 goals; an agreed BMU safety allocation is not recorded here. See
@@ -138,7 +140,7 @@ clamping must be established before assigning a fault-current limit.
 | O-1 | F-16 reverse insertion is unmitigated — confirm connector polarisation |
 | O-2 | F-10/F-13 remain unmitigated. Candidate: LDOIN-to-AVSS clamp above the OTP operating voltage (~8 V) and below the 9 V absolute maximum under fault current. No part specified; tolerance, dynamic clamp voltage and dissipation need review. F601/D601 are upstream of Q201 and do not bound its emitter. F-13 also exposes NPNB and requires a separate protection-path analysis |
 | O-3 | Coverage: 194 physical component positions (157 fitted, 37 DNP), ~16 analysed. Extend to the balance network, NTC chain, COM interface, and every connector |
-| O-4 | Criticality column blocked on CMU-006 |
+| O-4 | Criticality remains unresolved: validated component-temperature and failure-rate evidence is missing; closing the CMU-006 simulation scope does not close this item |
 | O-5 | FMEDA blocked on BMU safety goals |
 | O-6 | F-14 remains unvalidated. Cell-tap TVS were historically not adopted because leakage across individual cells, temperature dependence and mismatch affect storage life and imbalance. Reconsider when storage requirements and leakage at actual cell voltage are characterised, or fault/transient evidence shows additional clamping is necessary. No safe residual-risk conclusion is established |
 | O-7 | F-01 and F-14 have simulations planned in [`../sim/`](../sim/); neither mitigation has been checked against anything but arithmetic |

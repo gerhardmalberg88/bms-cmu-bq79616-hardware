@@ -331,9 +331,13 @@ The dominant term is not on the supply rail at all:
 **Placement and validation.** The saved PCB distributes the 17 balance
 resistors along two sides. The 3.7 W figure is a preliminary thermal allocation,
 not a calculation of the BQ79616's permitted simultaneous balancing schedule.
-Shared-node currents, balancing control, voltage/tolerance corners and duty
-cycle must be reconciled before claiming a maximum in [CMU-006](CMU-006-thermal-analysis.md).
-The available copper and resulting temperature rise remain to be evaluated.
+The completed resistor-only study in [CMU-006](CMU-006-thermal-analysis.md)
+verifies nominal CB-node current sharing and uses 3.285485 W at fixed 4.2 V
+cells with alternating odd/even operation. Its steady predictions remain
+provisional because local domain convergence failed. That simulation scope is
+closed; no further thermal runs are planned. Voltage/tolerance corners, actual
+balancing control and allowed duty remain unverified operating conditions, so
+these results do not establish a universal maximum or hardware qualification.
 
 ## 9. Fault-mode currents
 

@@ -1,31 +1,23 @@
-# Thermal simulations — coming soon
+# Thermal simulations — scope closed
 
 Copyright (C) 2021-2026 Gerhard Malberg.
 SPDX-License-Identifier: CERN-OHL-P-2.0
 
-This directory is reserved for thermal models and reviewed results. No solver
-setup, predicted temperature map or measured correlation is supplied yet.
-The cases and acceptance work are in
-[CMU-006 — Thermal Analysis](../../docs/CMU-006-thermal-analysis.md).
+The completed study is [cell balancing resistor heating and PCB cooling](cell-balancing-resistors/README.md).
+It contains twelve CPU steady cases: automatic, odd-only and even-only balancing
+at h = 5/10/20/50 W/m²K, plus recorded mesh and limited detail comparisons.
+Case inputs, figures and a compact CSV/provenance snapshot are ready for Git.
+Large native results remain ignored under `sim/results/thermal/`.
 
-Inputs will include PCB copper and material properties, component thermal
-models, verified power losses and balancing schedules, ambient temperature,
-enclosure, mounting and airflow. Evaluate the distributed balancing resistors,
-supply/AFE components, sensor heating and the relevant fault cases.
+**No further BMS thermal simulations are planned.** Transient heating/cooling,
+additional domain refinement, backend experiments and other component/fault
+thermal studies have been removed from the plan. See the
+[scope-closure record](../../docs/CMU-006-thermal-analysis.md) for their disposition.
+The standalone `pcb-thermal` CLI can reproduce the retained steady cases; no
+sibling-checkout arrangement is required.
 
-## First case and workflow
-
-- [Cell balancing resistors](cell-balancing-resistors/README.md): placeholder
-  for distributed resistor heating, nearby component temperatures and NTC impact.
-- [Thermal Mermaid workflow](../../../pcb-em-lab/README.md#thermal-workflow):
-  self-contained description in the sibling workflow repository.
-
-The planned toolchain follows that diagram: KiCad STEP/positions → Gmsh →
-Elmer → ParaView, with FreeCAD for optional mechanical parts. CLI/Python and
-GUI work will share the same case files and saved views. `config.yaml` and
-`run.py` are planned interfaces, not files supplied by this placeholder.
-
-Future results must identify the source revision/hashes, boundary conditions,
-power assumptions and convergence checks. Only reviewed figures will replace
-the README gallery's “Coming soon” entry. Hardware temperature measurements
-and model correlation remain separate validation steps.
+All twelve steady solves pass heat accounting, but the 10/20 mm detail check
+fails local hotspot convergence (1.831 °C, 5.03% of rise). The results therefore
+remain provisional. Closing the simulation scope does not resolve this model
+limitation or establish measured temperatures, transient peaks, junction
+limits, sensor accuracy or hardware qualification.

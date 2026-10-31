@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "name": "balancing-even",
+  "project_root": "../../..",
+  "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
+  "output": "../../results/thermal/cell-balancing-resistors/even-h10",
+  "analysis": "steady",
+  "sources": {
+    "kind": "balancing",
+    "refs": [
+      "R304",
+      "R312",
+      "R313",
+      "R319",
+      "R320",
+      "R326",
+      "R327",
+      "R333",
+      "R334",
+      "R340",
+      "R341",
+      "R347",
+      "R348",
+      "R354",
+      "R355",
+      "R361",
+      "R362"
+    ],
+    "schedule": "even",
+    "cell_voltage_v": 4.2,
+    "resistance_ohm": 20.0,
+    "switch_resistance_ohm": 1.45,
+    "phase_s": 5.0
+  },
+  "geometry": {
+    "mode": "hybrid",
+    "detail_margin_mm": 10.0,
+    "tile_mm": 5.0,
+    "plating_mm": 0.025,
+    "solder_mm": 0.1,
+    "resistor_body_mm": [
+      3.2,
+      6.3,
+      0.7
+    ],
+    "terminal_width_mm": 0.8
+  },
+  "mesh": {
+    "fine_mm": 0.5,
+    "coarse_mm": 3.0,
+    "scale": 1.0,
+    "chord_mm": 0.01
+  },
+  "cooling": {
+    "ambient_c": 25.0,
+    "h_w_m2k": 10.0,
+    "radiation": false
+  },
+  "materials": {
+    "copper": {
+      "k": [
+        400,
+        400,
+        400
+      ],
+      "density": 8960,
+      "heat_capacity": 385
+    },
+    "fr4": {
+      "k": [
+        0.8,
+        0.8,
+        0.3
+      ],
+      "density": 1850,
+      "heat_capacity": 1100
+    },
+    "soldermask": {
+      "k": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "density": 1200,
+      "heat_capacity": 1000
+    },
+    "resistor": {
+      "k": [
+        25,
+        25,
+        25
+      ],
+      "density": 3900,
+      "heat_capacity": 880
+    },
+    "terminal": {
+      "k": [
+        67,
+        67,
+        67
+      ],
+      "density": 7310,
+      "heat_capacity": 230
+    },
+    "solder": {
+      "k": [
+        50,
+        50,
+        50
+      ],
+      "density": 7400,
+      "heat_capacity": 230
+    }
+  },
+  "execution": {
+    "backend": "auto",
+    "mpi_ranks": 2,
+    "threads_per_rank": 1,
+    "gpu_count": 1
+  },
+  "numerics": {
+    "linear_tolerance": 1e-10,
+    "max_iterations": 5000
+  },
+  "assumptions": [
+    "Material constants are initial engineering assumptions, not manufacturer-certified thermal properties.",
+    "25 um plated barrels and 100 um solder joints; perfect bonded interfaces through the modeled solder.",
+    "Only resistor bodies and terminals are included above the PCB; other component copper remains.",
+    "No radiation, enclosure, mounting conduction, cell depletion or balancing thermal pause.",
+    "Source: BQ79616-Q1 SLUSE81F, section 7.3.3 and electrical characteristics; RCL e3 dimensions from Vishay document 20046."
+  ]
+}

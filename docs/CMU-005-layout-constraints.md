@@ -48,11 +48,12 @@ The board's entire thermal story is the balance network:
 
 | Element | Total | Source |
 |---|---|---|
-| 17 × 20R 2W balance resistors | **3.7 W** preliminary allocation; balancing schedule unverified | CMU-002 §8 |
+| 17 × 20R 2W balance resistors | **3.7 W** preliminary allocation; completed nominal resistor-only study uses **3.285485 W** | CMU-002 §8; CMU-006 |
 | Everything else combined | < 0.5 W | CMU-002 §8 |
 
 - [x] Distribute the 17 balance resistors along two board sides; temperature
-      rise and allowed duty cycle still require CMU-006 validation
+      predictions are recorded in the closed CMU-006 simulation scope; measured
+      temperatures and allowed duty cycle remain unverified
 - [ ] Copper area per resistor
 - [ ] **D601 needs maximum practical copper.** It may sit at ~1.4 W during a
       mis-regulation fault; the land is already oversized against datasheet

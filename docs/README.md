@@ -64,7 +64,7 @@ needed before changing the physical stackup.
 
 | Doc | Title | Status |
 |---|---|---|
-| [CMU-006](CMU-006-thermal-analysis.md) | Thermal Analysis | skeleton |
+| [CMU-006](CMU-006-thermal-analysis.md) | Thermal Analysis | simulation scope closed; provisional steady results |
 | [CMU-007](CMU-007-si-pi-analysis.md) | Signal and Power Integrity Analysis | draft SI estimate; PI work planned |
 | [CMU-009](CMU-009-manufacturing.md) | Manufacturing and prototype release | files prepared; supplier/process confirmations open |
 
@@ -72,8 +72,11 @@ needed before changing the physical stackup.
 
 [`../sim/`](../sim/) holds Qucs-S + ngspice circuit simulations. Each planned case names a claim to verify and is indexed against its document.
 The current simulation scaffolding is not evidence of a completed validation run.
-[EM simulations](../sim/em/README.md) and [thermal simulations](../sim/thermal/README.md)
-are coming soon; neither contains simulated results.
+[EM simulations](../sim/em/README.md) are documented separately.
+[Thermal simulations](../sim/thermal/README.md) contain the completed steady
+study and its published provisional results. The BMS thermal simulation scope
+is closed; the known domain-convergence failure and hardware-validation limits
+remain recorded.
 
 ### Generated
 

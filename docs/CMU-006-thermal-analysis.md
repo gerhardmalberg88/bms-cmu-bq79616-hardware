@@ -2,7 +2,7 @@
 id: CMU-006
 title: Thermal Analysis
 rev: 0.1
-status: skeleton
+status: simulation-scope-closed
 phase: post-layout
 applies_to: bms-cmu-bq79616-hardware rev 0.1
 license: CERN-OHL-P-2.0
@@ -10,77 +10,84 @@ license: CERN-OHL-P-2.0
 
 # CMU-006 — Thermal Analysis
 
-**Thermal simulations: coming soon.** Planned models and results will live in
-[`sim/thermal/`](../sim/thermal/README.md). No thermal simulation result is supplied.
-The [cell balancing resistor placeholder](../sim/thermal/cell-balancing-resistors/README.md)
-records the supplied Elmer workflow for the resistor heating and NTC cases
-in sections 4-5; implementation is pending.
+**Simulation scope closed on 2026-10-31: no further BMS thermal simulations are
+planned.** Twelve resistor-only CPU steady cases are complete and their results
+are ready for Git. Local detailed-region convergence failed, so the predictions
+remain provisional. Scope closure records the decision to stop simulation work;
+it does not convert unperformed or failed validation into a pass.
 
-> **2026-10-24 status:** the routed PCB passes the configured, refilled DRC and its manufacturing files are prepared. This does not close the thermal analysis or establish a measured operating envelope. See [CMU-009](CMU-009-manufacturing.md).
+The [case documentation](../sim/thermal/cell-balancing-resistors/README.md)
+contains assumptions, temperatures, figures, reproduction commands and the
+compact provenance snapshot. Native Elmer results and diagnostic logs remain
+in the ignored thermal results area.
 
+## 1. Completed scope
 
-> **Post-layout.** Junction and board temperatures need copper area, layer
-> stackup, board outline, component placement and airflow. The preliminary
-> Eurocircuits stackup is recorded in [CMU-005](CMU-005-layout-constraints.md#51-eurocircuits-physical-stackup-source);
-> the routed layout is available, while supplier and environmental inputs
-> still require confirmation.
->
-> The preliminary per-component **dissipation** table lives in
-> [CMU-002](CMU-002-power-budget.md) §8, deliberately pulled forward because it
-> constrains placement. This document turns those watts into temperatures.
+Only the 17 balancing resistors generate heat; the whole PCB conducts it.
+Automatic cycle-averaged, continuous odd-only and continuous even-only heating
+were solved at convection coefficients h = 5/10/20/50 W/m²K.
 
-## 1. Scope
+All twelve steady cases pass native solver completion, unchanged source and
+artifact checks, matching converted-mesh checks and <1% heat imbalance.
+Three mesh resolutions pass the selected numerical refinement criterion.
+The limited automatic h=10 comparison at 10/20 mm detail margins completed,
+but failed local hotspot convergence: R361 changes by 1.831 °C, or 5.03% of the
+reference peak temperature rise. The acceptance limits remain <1 °C and <2%.
+No additional detail refinement is planned for this project.
 
-Junction, case and board temperatures at the worst-case ambient from
-[CMU-001](CMU-001-requirements.md), and the resulting derating check.
+## 2. Inputs and interpretation
 
-Closing this document also unblocks the **criticality column in
-[CMU-003](CMU-003-fmea.md)**, since part failure rates are temperature-driven.
-
-## 2. Inputs
-
-| Input | Source | Status |
+| Input | Recorded basis | Limitation |
 |---|---|---|
-| Per-component dissipation | CMU-002 §8 | preliminary estimates; balancing schedule/current sharing unverified |
-| Ambient range | CMU-001 §3 | not yet fixed |
-| Layer stackup | CMU-005 section 5.1 | Eurocircuits build entered: 35 um finished outer / 18 um inner copper; pressed dimensions unconfirmed |
-| Copper area and placement | Saved revision 0.1 PCB | routed; balance resistors distributed along two sides; thermal extraction pending |
-| Airflow and enclosure | CMU-001 §3 | not yet fixed |
+| Resistor power | 4.2 V cells, 20 Ω resistors, 1.45 Ω switch resistance; verified CB connectivity; 3.285485 W resistor heat | Fixed-voltage, resistor-only operating assumption |
+| Ambient/cooling | 25 °C; exposed-surface convection h = 5/10/20/50 | Assumed coefficients, not measured airflow |
+| Geometry | Saved revision 0.1 board; whole-board hybrid model; 10 mm production detail margin | Remote copper/via properties are averaged; detail sensitivity remains unresolved |
+| Materials | Editable engineering constants, 25 µm barrel plating, 100 µm solder | Supplier and environmental inputs are not fully confirmed |
+| Other heat paths | Radiation, enclosure and mounting conduction omitted | Real assembly cooling is not established |
 
-## 3. Method
+The largest steady prediction is about 85.08 °C for odd-only heating at h=5;
+automatic h=10 predicts 61.24 °C. These are model temperatures under the stated
+conditions. They do not establish warm-up time, switching ripple, a universal
+maximum, component junction temperatures or a measured operating envelope.
+The wider component dissipation estimates remain in [CMU-002](CMU-002-power-budget.md).
+The saved stackup and supplier assumptions remain in
+[CMU-005](CMU-005-layout-constraints.md#51-eurocircuits-physical-stackup-source).
 
-- [ ] First pass: datasheet θJA against the actual copper area per part
-- [ ] Second pass: board-level spreading for the distributed balance resistors,
-      using a verified operating envelope; 3.7 W is only the preliminary allocation
-- [ ] Steady state at maximum ambient with all channels balancing
-- [ ] Transient: the mis-regulation fault, where D601 sits at ~1.4 W
+## 3. Removal of remaining simulation plans
 
-## 4. Cases to evaluate
+The following items were identified in the previous plan and are now excluded,
+not queued or marked as passed. No remaining thermal simulation blocks publication
+of the completed provisional results.
 
-- [ ] **17 × 20R:** first verify simultaneous-channel currents, duty cycle and
-      voltage/tolerance corners, then temperature rise and effects on nearby parts
-- [ ] Effect of balance-resistor self-heating on **NTC accuracy** — the CMU's
-      job is measuring cell temperature, and heating its own sensors corrupts
-      that
-- [ ] Q201 SOT-223 in normal operation (0.07 W) and during faults
-- [ ] D601 under sustained mis-regulation: evaluate the preliminary ~1.4 W
-      case in CMU-003 F-06. Its failure mode and safe outcome are unverified;
-      do not assume a reliable fail-short mechanism
-- [ ] LTC3639 junction temperature
-- [ ] Tap fuses: ambient at each fuse against the temperature rerating curve
-      used in CMU-002 §7, which was read off a graph rather than tabulated
-- [ ] BQ79616-Q1 against its 130–152 °C thermal shutdown and 85–115 °C warning
+| Previously planned work | Final disposition |
+|---|---|
+| 1,800 s balancing + 1,800 s cooling; half-step verification | Canceled; transient case file and unused steady-case transient settings removed |
+| Further 10/20/30 mm detail, cropped and fully explicit domain studies | Removed from the BMS plan; the observed detail-convergence failure remains a limitation |
+| BMS CPU/CUDA agreement and GPU tuning | Removed; published cases use CPU; small-fixture GPU checks do not validate the BMS mesh |
+| Direct-solver/transient performance experiments | Removed from the BMS plan; existing diagnostic evidence retained locally |
+| Additional ambient, voltage, tolerance and duty-cycle thermal corners | Excluded; published cases cover only the documented operating assumptions |
+| Combined supply/AFE heating: Q201, LTC3639, BQ79616 and tap fuses | Excluded; their junction temperatures and thermal derating are not established by this study |
+| D601 sustained mis-regulation and other fault-heating cases | Excluded; fault energy, failure mode and protection effectiveness remain unverified |
+| Enclosure, mounting and mechanical cooling variants | Excluded; no mechanical cooling assembly was simulated |
+| NTC error and nearby-component thermal models | Excluded; reported PCB temperatures do not establish sensor measurement error |
 
-## 5. Acceptance
+Reusable transient, crop and backend functionality in the standalone thermal
+lab is retained for other work. It is not an active BMS test plan.
 
-- [ ] No junction temperature exceeds the derating policy at maximum ambient
-- [ ] NTC measurement error from self-heating within the CMU-001 budget
-- [ ] Tap fuse derating confirmed at the measured local ambient
-- [ ] Criticality column in CMU-003 closed
+## 4. Evidence retained for publication
 
-## 6. Validation (post-test)
+- [Steady cases and figures](../sim/thermal/cell-balancing-resistors/README.md).
+- [Twelve-case CSV](../sim/thermal/cell-balancing-resistors/report/summary.csv).
+- [Provenance and numerical comparisons](../sim/thermal/cell-balancing-resistors/report/provenance.json).
 
-- [ ] Thermal camera or thermocouple survey against the predicted map
-- [ ] Distributed balance resistors at the maximum permitted duty/schedule
-- [ ] Correlate and, if they disagree, revise this document rather than the
-      measurement
+No numerical results, image contents, source hashes or acceptance thresholds
+were changed to close the scope. Failed and interrupted native evidence remains
+local and ignored. No further simulation is required by this publication scope.
+
+## 5. Hardware validation remains separate
+
+Measured temperatures, material/environmental correlation, junction derating,
+NTC accuracy, fuse derating and thermal qualification have not been established.
+These remain unresolved engineering evidence, outside the closed simulation
+plan. This document does not close the criticality assessment in
+[CMU-003](CMU-003-fmea.md) or any hardware acceptance requirement.
