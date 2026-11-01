@@ -20,6 +20,20 @@ def digest(path):
     return h.hexdigest()
 
 
+def current_case_path(recorded):
+    """Resolve a historical case label without changing its saved provenance."""
+    path = Path(recorded).resolve()
+    if not path.is_relative_to(ROOT):
+        raise ValueError('Unexpected case source location')
+    if not path.exists() and path.suffix in ('.yaml', '.yml'):
+        path = path.with_suffix('.json').resolve()
+        if not path.is_relative_to(ROOT):
+            raise ValueError('Unexpected case source location')
+    if not path.is_file():
+        raise ValueError('Missing case source: '+str(path.relative_to(ROOT)))
+    return path
+
+
 def verify_case(out, model):
     p = json.loads((out/'provenance.json').read_text())
     if p['status'] != 'complete' or p['backend'] != 'cpu':
@@ -53,14 +67,13 @@ def publish():
                 raise ValueError('Case changed after network composition: '+name)
             geometry = json.loads((out/'mesh/geometry.json').read_text())
             report = json.loads((out/'postprocess/report.json').read_text())
-            config_path = Path(p['case'])
-            if not config_path.is_relative_to(ROOT):
-                raise ValueError('Unexpected case source location')
+            config_path = current_case_path(p['case'])
             current = json.loads(config_path.read_text())
             physical = lambda c: {k:v for k,v in c.items() if k not in ['board','project_root','output','execution']}
             if physical(current) != physical(p['configuration']):
                 raise ValueError('Case inputs changed after the run: '+name)
             snapshots[name] = {'case': str(config_path.relative_to(ROOT)),
+                'recorded_case': str(Path(p['case']).relative_to(ROOT)),
                 'case_sha256': digest(config_path), 'physical_configuration': {k:v for k,v in p['configuration'].items()
                 if k not in ['board','project_root','output','execution']},
                 'execution': p['effective_execution'], 'mesh_sha256':digest(out/'mesh/board.msh'),

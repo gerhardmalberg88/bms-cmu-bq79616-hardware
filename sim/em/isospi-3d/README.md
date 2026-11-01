@@ -3,7 +3,7 @@
 Copyright (C) 2021-2026 Gerhard Malberg.
 SPDX-License-Identifier: CERN-OHL-P-2.0
 
-[comh.yaml](comh.yaml) and [coml.yaml](coml.yaml) model the actual transformer
+[comh.json](comh.json) and [coml.json](coml.json) model the actual transformer
 secondary pads through the saved PCB copper to J501/J502 contact heads. They
 exclude cables, mating connectors, package windings and connector housings.
 Contacts are editable 0.5 mm square, 5 mm tall approximations. Copper is PEC;
@@ -25,8 +25,8 @@ contains no validated 3D field solution from U201 to the transformer primary.
 From the hardware repository root with installed `pcb-em`:
 
 ```bash
-pcb-em run sim/em/isospi-3d/comh.yaml --backend cpu
-pcb-em run sim/em/isospi-3d/coml.yaml --backend cpu
+pcb-em run sim/em/isospi-3d/comh.json --backend cpu
+pcb-em run sim/em/isospi-3d/coml.json --backend cpu
 ```
 
 The solved frequencies are 1, 4 and 10 MHz. Native BREP/MSH, physical tags,

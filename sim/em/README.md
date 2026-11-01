@@ -90,3 +90,8 @@ separate finite crop domains, unqualified meshes and a simplified balanced
 transformer/filter circuit. No acceptance against the provisional 100 Ω intent,
 common-mode behavior, hardware correlation, EMC or electrical isolation is
 established. See [CMU-007](../../docs/CMU-007-si-pi-analysis.md) for the design context.
+
+Case inputs use JSON. Published provenance names the current `.json` inputs;
+`recorded_case` preserves their original names from completed runs. Renaming
+the files did not change their contents or recorded case hashes. Native run
+records remain unchanged.

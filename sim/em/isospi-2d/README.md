@@ -7,8 +7,8 @@ Four Palace BoundaryMode cases read the saved PCB copper, stackup and fills:
 
 | Cases | Position | Pair |
 |---|---|---|
-| `comh.yaml`, `coml.yaml` | y=123 / 132.5 mm | U201-side COMHP/HN and COMLP/LN |
-| `comh-filter.yaml`, `coml-filter.yaml` | x=303.8 mm | FILT_COMHP/HN and FILT_COMLP/LN |
+| `comh.json`, `coml.json` | y=123 / 132.5 mm | U201-side COMHP/HN and COMLP/LN |
+| `comh-filter.json`, `coml-filter.json` | x=303.8 mm | FILT_COMHP/HN and FILT_COMLP/LN |
 
 All solve at 4 MHz. The IC-side routed pair is 0.45 mm wide with a 0.20 mm gap;
 netclass defaults are not substituted for saved geometry. The filtered-side
@@ -20,10 +20,10 @@ impedance result.
 From the hardware repository root with installed `pcb-em`:
 
 ```bash
-pcb-em run sim/em/isospi-2d/comh.yaml --backend cpu
-pcb-em run sim/em/isospi-2d/coml.yaml --backend cpu
-pcb-em run sim/em/isospi-2d/comh-filter.yaml --backend cpu
-pcb-em run sim/em/isospi-2d/coml-filter.yaml --backend cpu
+pcb-em run sim/em/isospi-2d/comh.json --backend cpu
+pcb-em run sim/em/isospi-2d/coml.json --backend cpu
+pcb-em run sim/em/isospi-2d/comh-filter.json --backend cpu
+pcb-em run sim/em/isospi-2d/coml-filter.json --backend cpu
 ```
 
 The [board-path model](../transformer-coupling/README.md) uses each selected

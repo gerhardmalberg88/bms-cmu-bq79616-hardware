@@ -18,7 +18,7 @@
   },
   "cases": {
     "comh-2d": {
-      "case": "sim/em/isospi-2d/comh.yaml",
+      "case": "sim/em/isospi-2d/comh.json",
       "case_sha256": "ecdc141a8d61c23f5c7cf85c607629fcba346d2e7090e49e7661e3be43c4589f",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -96,10 +96,11 @@
         "solve": "3b33644d30697898e6ec84f9cf4ffdc628e4ffda58c566c6736f7bbca8138fb7",
         "postprocess": "98aa090051c247bf85498db65b48b7aabb8cf0397be726a9a0421380c5b4d90a"
       },
-      "latest_invocation_seconds": 0.2163243293762207
+      "latest_invocation_seconds": 0.2163243293762207,
+      "recorded_case": "sim/em/isospi-2d/comh.yaml"
     },
     "comh-filter-2d": {
-      "case": "sim/em/isospi-2d/comh-filter.yaml",
+      "case": "sim/em/isospi-2d/comh-filter.json",
       "case_sha256": "670420bba24d336567eea79011a9c2a47256a9efdda0e68da7552abc927e7aaa",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -178,10 +179,11 @@
         "solve": "84e1f1bd3f185d3e7a10f0f7f81187c10149a828c9f0435dd4922fa19f9b432d",
         "postprocess": "fc7d2751307de71cf6dca53d3c88593290fb20ac97fc4638ddef5941a9cf1c4c"
       },
-      "latest_invocation_seconds": 19.586604595184326
+      "latest_invocation_seconds": 19.586604595184326,
+      "recorded_case": "sim/em/isospi-2d/comh-filter.yaml"
     },
     "comh-connector-3d": {
-      "case": "sim/em/isospi-3d/comh.yaml",
+      "case": "sim/em/isospi-3d/comh.json",
       "case_sha256": "69cca7c711421e87d429cfaebd96ae03c8e62b7ad8566b440bf684d658b861f6",
       "physical_configuration": {
         "air_margin_mm": 3,
@@ -374,10 +376,11 @@
         "solve": "da79c7191f65d40a2cd18a2590e83f0db1d12813325218a36ee6031bb00d69cb",
         "postprocess": "019ca84365e3ddda8b299c2e568c51e292a1eed207b8bc77dbe2bc1697bd92c5"
       },
-      "latest_invocation_seconds": 1.732010841369629
+      "latest_invocation_seconds": 1.732010841369629,
+      "recorded_case": "sim/em/isospi-3d/comh.yaml"
     },
     "coml-2d": {
-      "case": "sim/em/isospi-2d/coml.yaml",
+      "case": "sim/em/isospi-2d/coml.json",
       "case_sha256": "bafc1d504f7ccb6dfca14490286ca334f059c226a18060a1f4f5a5921112299d",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -455,10 +458,11 @@
         "solve": "c8ee4dcdaad8615bdbf03416e12a809726c88f010a082198ae2229f49966078a",
         "postprocess": "4ea49e3f5adcb67723596fd4e64c6fe1c1c75895d2d3bfdbd923261f4a7c909e"
       },
-      "latest_invocation_seconds": 0.2129662036895752
+      "latest_invocation_seconds": 0.2129662036895752,
+      "recorded_case": "sim/em/isospi-2d/coml.yaml"
     },
     "coml-filter-2d": {
-      "case": "sim/em/isospi-2d/coml-filter.yaml",
+      "case": "sim/em/isospi-2d/coml-filter.json",
       "case_sha256": "64e941b58d61de343d6004a67d2c976506a0413646687cedf67c2c95b8e2a785",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -549,10 +553,11 @@
         "solve": "ce99fee97981fab86c1967bc74c0627c7e8ff9e3c60d62660f8025d3011bbd05",
         "postprocess": "4e8b6ce7369f3cf658cb8e0745cb40f53cf0af63401ea0c0a3f3d197c17dd530"
       },
-      "latest_invocation_seconds": 51.91202211380005
+      "latest_invocation_seconds": 51.91202211380005,
+      "recorded_case": "sim/em/isospi-2d/coml-filter.yaml"
     },
     "coml-connector-3d": {
-      "case": "sim/em/isospi-3d/coml.yaml",
+      "case": "sim/em/isospi-3d/coml.json",
       "case_sha256": "b058f25a3bf9a2db26e17389e79900b8e34bff7d55842d13732954a8faaca782",
       "physical_configuration": {
         "air_margin_mm": 3,
@@ -745,7 +750,8 @@
         "solve": "6859b185eb7bbca47d34b2d20e05dad094546d82e5b7cc4bfe62a497d28e0b1c",
         "postprocess": "e2e89b43aac449f694187510d1cee8de3668fa5d08c31e1b5ca613010d56c392"
       },
-      "latest_invocation_seconds": 1.5976011753082275
+      "latest_invocation_seconds": 1.5976011753082275,
+      "recorded_case": "sim/em/isospi-3d/coml.yaml"
     }
   },
   "combined_network": {

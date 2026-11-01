@@ -13,9 +13,9 @@ model predictions, not measured operating limits.
 
 | Case | Applied resistor heating | Meaning |
 |---|---|---|
-| [Automatic](config.yaml) | Cycle-averaged five-second odd/even alternation | Long-term steady prediction for automatic balancing |
-| [Odd only](odd.yaml) | Channels 1, 3, …, 15 continuously active | One phase held indefinitely for comparison |
-| [Even only](even.yaml) | Channels 2, 4, …, 16 continuously active | The other phase held indefinitely for comparison |
+| [Automatic](config.json) | Cycle-averaged five-second odd/even alternation | Long-term steady prediction for automatic balancing |
+| [Odd only](odd.json) | Channels 1, 3, …, 15 continuously active | One phase held indefinitely for comparison |
+| [Even only](even.json) | Channels 2, 4, …, 16 continuously active | The other phase held indefinitely for comparison |
 
 Automatic balancing does **not** turn on all channels simultaneously. Each phase
 heats 16 resistors: the 15 internal tap resistors are shared between phases,
@@ -33,8 +33,8 @@ not pending tests. From this hardware repository's root, with the CLI environmen
 activated:
 
 ```bash
-pcb-thermal run "$PWD/sim/thermal/cell-balancing-resistors/config.yaml" --backend cpu
-pcb-thermal study "$PWD/sim/thermal/cell-balancing-resistors/config.yaml" \
+pcb-thermal run "$PWD/sim/thermal/cell-balancing-resistors/config.json" --backend cpu
+pcb-thermal study "$PWD/sim/thermal/cell-balancing-resistors/config.json" \
   --section steady --schedules automatic odd even --time-budget-minutes 120
 ```
 

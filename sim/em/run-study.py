@@ -12,9 +12,9 @@ import time
 
 HERE = Path(__file__).resolve().parent
 RESULTS = HERE.parent / 'results/em'
-CASES = ['isospi-2d/comh.yaml', 'isospi-2d/coml.yaml',
-         'isospi-2d/comh-filter.yaml', 'isospi-2d/coml-filter.yaml',
-         'isospi-3d/comh.yaml', 'isospi-3d/coml.yaml']
+CASES = ['isospi-2d/comh.json', 'isospi-2d/coml.json',
+         'isospi-2d/comh-filter.json', 'isospi-2d/coml-filter.json',
+         'isospi-3d/comh.json', 'isospi-3d/coml.json']
 
 
 def container_ids(engine):
