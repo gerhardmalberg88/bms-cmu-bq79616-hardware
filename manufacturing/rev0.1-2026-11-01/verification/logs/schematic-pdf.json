@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/bin/kicad-cli",
+    "sch",
+    "export",
+    "pdf",
+    "--no-background-color",
+    "-o",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/documentation/schematic.pdf",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_sch"
+  ],
+  "returncode": 0,
+  "stdout": "Plotted to '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/documentation/schematic.pdf'.\nDone.\n",
+  "stderr": ""
+}

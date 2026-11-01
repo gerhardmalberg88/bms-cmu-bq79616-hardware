@@ -9,11 +9,11 @@ of 3 in a three-repository battery management system.
 | `bms-bmu-stm32-bq79600-hardware` | BMU | STM32H757 + BQ79600-Q1 master, CAN-FD, SoC/SoH |
 | `bms-bjb-bq79631-hardware` | BJB | BQ79631-Q1, shunt, contactor and precharge drivers |
 
-## Current stage — 2026-10-24
+## Current stage — 2026-11-01
 
 The schematic and PCB are complete for the saved 16S prototype population.
 The configured ERC/DRC pass; the manufacturing package is prepared under
-[`../manufacturing/rev0.1-2026-10-24/`](../manufacturing/rev0.1-2026-10-24/README.md).
+[`../manufacturing/rev0.1-2026-11-01/`](../manufacturing/rev0.1-2026-11-01/README.md).
 This does not complete the draft engineering analyses listed below. Supplier
 construction/process confirmation and hardware bring-up remain open.
 
@@ -22,8 +22,8 @@ what was exported, verified, and left unresolved. Purchase 157 fitted components
 plus all 37 DNP parts; the latter remain excluded from assembly.
 
 [NOTICE.md](../NOTICE.md) records licensing and imported-asset provenance.
-The [latest STL](../manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S.stl)
-and [PCB image](../manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S-raytraced.png)
+The [latest STL](../manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S.stl)
+and [PCB image](../manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S-raytraced.png)
 show the fitted assembly.
 
 ## Documents by phase
@@ -81,7 +81,7 @@ remain recorded.
 ### Generated
 
 [`generated/`](generated/) holds supporting source exports and the imported
-library provenance inventory. The dated [manufacturing package](../manufacturing/rev0.1-2026-10-24/README.md)
+library provenance inventory. The dated [manufacturing package](../manufacturing/rev0.1-2026-11-01/README.md)
 is the authoritative set for fabrication, assembly and purchasing. The export
 README records which commands generate each file. **Never hand-edit generated
 tables or CAD exports.**

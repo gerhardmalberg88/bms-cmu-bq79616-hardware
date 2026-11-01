@@ -1,9 +1,9 @@
 (export
 	(version "E")
 	(design
-		(source "C:\\Users\\gerha\\OneDrive\\Documents\\GitHub\\temp_electric_vehicle\\ElectricVehicleSystem\\bms-cmu-bq79616-hardware\\bms-cmu-bq79616-hardware\\build\\manufacturing-rev0.1-2026-10-24\\design\\battery_management_system_cell_monitoring_unit.kicad_sch")
-		(date "2026-10-24T13:25:33")
-		(tool "Eeschema 10.0.4")
+		(source "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_sch")
+		(date "2026-11-01T17:42:03")
+		(tool "Eeschema 10.0.8-10.0.8~ubuntu24.04.1")
 		(textvar
 			(name "BOARD_TITLE") "BMS Cell Monitoring Unit (CMU)")
 		(textvar

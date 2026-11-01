@@ -21,10 +21,10 @@
 
 # Manufacturing checksums cover exact bytes; do not normalize release files.
 manufacturing/** -text
-# Preserve saved source hashes and documentation bytes in the source snapshot.
-design/*.kicad_sch -text
-design/*.kicad_pcb -text
-design/*-lib-table -text
-docs/** -text
+# IPC-D-356 records intentionally contain fixed-width trailing padding.
+manufacturing/**/fabrication/*.d356 whitespace=-blank-at-eol
+manufacturing/**/verification/ipc-native-export.txt whitespace=-blank-at-eol
+# Preserve the native FreeCAD banner, including its final blank line.
+manufacturing/**/verification/freecad-readback.log whitespace=-blank-at-eof
 *.stl binary
 *.xlsx binary

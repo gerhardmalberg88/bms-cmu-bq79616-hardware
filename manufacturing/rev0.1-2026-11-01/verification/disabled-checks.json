@@ -1,0 +1,57 @@
+[
+  {
+    "domain": "erc",
+    "description": "Global label only appears once in the schematic",
+    "key": "single_global_label"
+  },
+  {
+    "domain": "erc",
+    "description": "Four connection points are joined together",
+    "key": "four_way_junction"
+  },
+  {
+    "domain": "erc",
+    "description": "SPICE model issue",
+    "key": "simulation_model_issue"
+  },
+  {
+    "domain": "erc",
+    "description": "Assigned footprint doesn't match footprint filters",
+    "key": "footprint_filter"
+  },
+  {
+    "domain": "drc",
+    "description": "Footprint has no courtyard defined",
+    "key": "missing_courtyard"
+  },
+  {
+    "domain": "drc",
+    "description": "Track endpoint not centered on via",
+    "key": "track_not_centered_on_via"
+  },
+  {
+    "domain": "drc",
+    "description": "Tuning profile track geometries",
+    "key": "tuning_profile_track_geometries"
+  },
+  {
+    "domain": "drc",
+    "description": "Footprint doesn't match symbol's footprint filters",
+    "key": "footprint_filters_mismatch"
+  },
+  {
+    "domain": "drc",
+    "description": "PTH inside courtyard",
+    "key": "pth_inside_courtyard"
+  },
+  {
+    "domain": "drc",
+    "description": "NPTH inside courtyard",
+    "key": "npth_inside_courtyard"
+  },
+  {
+    "domain": "drc",
+    "description": "Footprint component type doesn't match footprint pads",
+    "key": "footprint_type_mismatch"
+  }
+]

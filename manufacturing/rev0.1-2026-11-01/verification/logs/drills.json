@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/usr/bin/kicad-cli",
+    "pcb",
+    "export",
+    "drill",
+    "--format",
+    "excellon",
+    "--drill-origin",
+    "plot",
+    "--excellon-units",
+    "mm",
+    "--excellon-zeros-format",
+    "decimal",
+    "--excellon-oval-format",
+    "route",
+    "--excellon-separate-th",
+    "--generate-map",
+    "--map-format",
+    "pdf",
+    "--generate-report",
+    "--report-path",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/drill-report.txt",
+    "-o",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_pcb"
+  ],
+  "returncode": 0,
+  "stdout": "Created file '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/battery_management_system_cell_monitoring_unit-PTH.drl'\nCreated file '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/battery_management_system_cell_monitoring_unit-NPTH.drl'\nCreated file '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/battery_management_system_cell_monitoring_unit-PTH-drl_map.pdf'.\nCreated file '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/battery_management_system_cell_monitoring_unit-NPTH-drl_map.pdf'.\nDone.\n",
+  "stderr": ""
+}

@@ -74,7 +74,7 @@ N1 node1 node2 mymodel
 ```
 
 Requires ngspice 39 or newer. ADMS is deprecated and should not be used.
-OpenVAF runs on Windows and Linux; there is no macOS build.
+Use the Linux build of OpenVAF.
 
 `run.sh` compiles `.va` to `.osdi` on demand and writes it to
 `../../results/`, which is gitignored — never into `va/`.

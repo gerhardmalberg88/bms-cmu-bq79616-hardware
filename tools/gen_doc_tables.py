@@ -9,8 +9,8 @@ Each generated region is delimited:
     <!-- END GENERATED -->
 
 Usage:
-    python tools/gen_doc_tables.py            rewrite every block in place
-    python tools/gen_doc_tables.py --check    exit 1 if any block is stale
+    python3 tools/gen_doc_tables.py            rewrite every block in place
+    python3 tools/gen_doc_tables.py --check    exit 1 if any block is stale
 
 --check is the form for a pre-commit hook or CI: it regenerates into memory and
 compares, so a schematic edit that has not been reflected in the documents
@@ -35,11 +35,7 @@ DESIGN = os.path.join(ROOT, "design")
 DOCS = os.path.join(ROOT, "docs")
 SCHEMATIC = "battery_management_system_cell_monitoring_unit.kicad_sch"
 
-KICAD_CLI_CANDIDATES = [
-    r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe",
-    r"C:\Program Files\KiCad\9.0\bin\kicad-cli.exe",
-    "kicad-cli",
-]
+
 
 BEGIN = "<!-- BEGIN GENERATED: %s (do not edit by hand) -->"
 END = "<!-- END GENERATED -->"
@@ -53,19 +49,14 @@ BLOCK_RE = re.compile(
 
 # --------------------------------------------------------------- netlist load
 
-def find_kicad_cli():
-    for candidate in KICAD_CLI_CANDIDATES:
-        if os.path.isabs(candidate):
-            if os.path.exists(candidate):
-                return candidate
-        elif shutil.which(candidate):
-            return candidate
-    raise SystemExit("kicad-cli not found; tried:\n  " + "\n  ".join(KICAD_CLI_CANDIDATES))
+def find_kicad_cli(override=None):
+    from linux_tools import executable
+    return executable(override or os.environ.get("KICAD_CLI"), "kicad-cli")
 
 
-def export_netlist():
+def export_netlist(override=None):
     """Export a fresh netlist to a temporary file and return its text."""
-    cli = find_kicad_cli()
+    cli = find_kicad_cli(override)
     fd, path = tempfile.mkstemp(suffix=".net")
     os.close(fd)
     try:
@@ -275,9 +266,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true",
                         help="exit 1 if any generated block is stale")
+    parser.add_argument("--kicad-cli", help="Explicit Linux executable; otherwise KICAD_CLI or PATH")
     args = parser.parse_args()
 
-    pin_net, comps = parse(export_netlist())
+    pin_net, comps = parse(export_netlist(args.kicad_cli))
     # The netlist also contains unbuilt alternatives. PCB population flags are
     # authoritative for the current physical assembly, including DNP links.
     import pcbnew
@@ -295,7 +287,6 @@ def main():
         path = os.path.join(DOCS, name)
         with io.open(path, encoding="utf-8", newline="") as handle:
             raw = handle.read()
-        crlf = "\r\n" in raw
         text = raw.replace("\r\n", "\n")
 
         def replace(match):
@@ -312,7 +303,7 @@ def main():
         new = BLOCK_RE.sub(replace, text)
         if new != text and not args.check:
             with io.open(path, "w", encoding="utf-8", newline="") as handle:
-                handle.write(new.replace("\n", "\r\n") if crlf else new)
+                handle.write(new)
             written.append(name)
 
     for name, block_id in unknown:

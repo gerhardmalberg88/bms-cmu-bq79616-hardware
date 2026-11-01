@@ -24,8 +24,11 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 DESIGN = ROOT / 'design'
 BASE = 'battery_management_system_cell_monitoring_unit'
-sys.path.insert(0, str(ROOT / 'build/python-deps'))
-import pcbnew
+try:
+    import pcbnew
+except ImportError as exc:
+    raise SystemExit('KiCad pcbnew bindings are required; use system Python or a --system-site-packages virtual environment.') from exc
+from linux_tools import executable, add_tool_arguments, freecad_command
 
 
 def dump(path, value):
@@ -125,7 +128,7 @@ def inventory(board):
 
 def csv_write(path, headers, rows):
     with path.open('w', encoding='utf-8-sig', newline='') as handle:
-        w=csv.writer(handle); w.writerow(headers); w.writerows(rows)
+        w=csv.writer(handle, lineterminator="\n"); w.writerow(headers); w.writerows(rows)
 
 
 def binary_stl(path):
@@ -166,11 +169,19 @@ class Release:
         self.stage=self.work/'design'
         self.pcb=self.stage/(BASE+'.kicad_pcb')
         self.sch=self.stage/(BASE+'.kicad_sch')
-        self.cli=Path(args.kicad_cli)
+        self.cli=Path(executable(args.kicad_cli, "kicad-cli"))
+        freecad_command(args, ROOT/"build/tool-cache")
+        import importlib.util
+        missing = [name for name in ('numpy', 'PIL', 'xlsxwriter', 'reportlab', 'pypdf', 'pygerber')
+                   if importlib.util.find_spec(name) is None]
+        if missing:
+            raise SystemExit('Missing manufacturing dependencies: '+', '.join(missing)+
+                             '; install tools/manufacturing-requirements.txt in the isolated environment')
         self.env=dict(os.environ)
         self.env['KICAD_CONFIG_HOME']=str(self.work/'config')
         self.env['KICAD_DOCUMENTS_HOME']=str(self.work/'documents')
-        for name in ('config','documents'):(self.work/name).mkdir(parents=True, exist_ok=True)
+        self.env['XDG_CACHE_HOME']=str(self.work/'cache')
+        for name in ('config','documents','cache'):(self.work/name).mkdir(parents=True, exist_ok=True)
         self.env.setdefault('KICAD10_3DMODEL_DIR',str(self.cli.parent.parent/'share/kicad/3dmodels'))
         self.env.setdefault('KICAD10_FOOTPRINT_DIR',str(self.cli.parent.parent/'share/kicad/footprints'))
         self.env.setdefault('KICAD10_SYMBOL_DIR',str(self.cli.parent.parent/'share/kicad/symbols'))
@@ -378,13 +389,13 @@ class Release:
         dump(config,settings)
         output=self.out/'3d/CMU-rev0.1-16S-raytraced.png'
         from PIL import Image
-        # KiCad 10.0.4 rounds its ray-packet buffer dimensions. A requested
+        # Native KiCad rounds its ray-packet buffer dimensions. A requested
         # 2432 x 1632 produces 2408 x 1600 here. Trim only the empty border to
         # exact delivery size: no resampling, model changes or synthetic pixels.
         raw=self.work/'render/native-raytraced.png'
         result=self.run('pcb-raytrace',['pcb','render','--width','2432',
             '--height','1632','--side','top','--quality','high',
-            '--background','opaque','--preset','CMU neutral',
+            '--background','opaque','--preset','CMU neutral','--use-board-stackup-colors',
             '--perspective','--rotate','325,0,25','--zoom','1','-o',raw,render_board])
         with Image.open(raw) as img:
             actual=list(img.size)
@@ -425,8 +436,8 @@ class Release:
         # Keep exact source snapshot available without including scratch files.
         with zipfile.ZipFile(self.out/'verification/source-snapshot.zip','w',zipfile.ZIP_DEFLATED) as z:
             for p in sorted(source_files()):z.write(p,p.relative_to(ROOT).as_posix())
-            for p in sorted((ROOT/'tools').iterdir()):
-                if p.is_file() and p.suffix in ('.py','.cpp','.h','.json','.txt'):z.write(p,p.relative_to(ROOT).as_posix())
+            for p in sorted((ROOT/'tools').rglob('*')):
+                if '__pycache__' not in p.parts and p.is_file() and p.suffix in ('.py','.cpp','.h','.json','.txt'):z.write(p,p.relative_to(ROOT).as_posix())
             for p in notice_files()+[ROOT/'README.md',ROOT/'.gitignore',ROOT/'.gitattributes']:
                 z.write(p,p.relative_to(ROOT).as_posix())
             for folder in ('docs','sim'):
@@ -441,6 +452,8 @@ class Release:
         version=subprocess.run([str(self.cli),'version'],capture_output=True,text=True,env=self.env).stdout.strip()
         import importlib.metadata
         dump(self.out/'verification/tooling.json',dict(python=sys.version,kicad=version,
+             freecad=json.loads((self.out/"verification/freecad-version.json").read_text()),
+             freecad_appimage_sha256=sha(self.args.freecad_appimage) if self.args.freecad_appimage else None,
              packages={n:importlib.metadata.version(n) for n in ('xlsxwriter','reportlab','pypdf','pygerber','numpy','pillow')},
              script_sha256={p.name:sha(p) for p in sorted((ROOT/'tools').iterdir()) if p.is_file()}))
         commit=subprocess.run(['git','rev-parse','--verify','HEAD'],cwd=ROOT,capture_output=True,text=True)
@@ -474,8 +487,7 @@ def main():
     p.add_argument('--date',required=True,help='Actual local export date YYYY-MM-DD')
     p.add_argument('--phase',choices=['prepare','exports','bom','audit','render','finalize','all'],default='all')
     p.add_argument('--resume',action='store_true')
-    p.add_argument('--kicad-cli',default='C:/Program Files/KiCad/10.0/bin/kicad-cli.exe')
-    p.add_argument('--freecad-python',default='C:/Program Files/FreeCAD 1.1/bin/python.exe')
+    add_tool_arguments(p)
     args=p.parse_args()
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}',args.date):p.error('Invalid date')
     r=Release(args)

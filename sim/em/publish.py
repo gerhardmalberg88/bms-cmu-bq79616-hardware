@@ -6,6 +6,9 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from source_normalization import verify_sources
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -34,7 +37,7 @@ def current_case_path(recorded):
     return path
 
 
-def verify_case(out, model):
+def verify_case(out, model, normalization_manifest=None):
     p = json.loads((out/'provenance.json').read_text())
     if p['status'] != 'complete' or p['backend'] != 'cpu':
         raise ValueError('Incomplete/non-CPU case: '+out.name)
@@ -42,9 +45,7 @@ def verify_case(out, model):
     sources = {str(Path(s).relative_to(original_root)):h for s,h in p['source'].items()}
     if sources != model['source_hashes']:
         raise ValueError('Mixed source inputs: '+out.name)
-    for source, expected in sources.items():
-        if digest(ROOT/source) != expected:
-            raise ValueError('Changed source: '+source)
+    verify_sources(ROOT, sources, normalization_manifest)
     for stage in ['extract','mesh','solve','postprocess']:
         manifest = json.loads((out/stage/'stage.json').read_text())
         for file, expected in manifest['artifacts'].items():
@@ -53,7 +54,7 @@ def verify_case(out, model):
     return p
 
 
-def publish():
+def publish(normalization_manifest=None):
     model = json.loads((RESULTS/'board-path/report.json').read_text())
     if model['model_sha256'] != digest(HERE/'transformer-coupling/model.json') or model['script_sha256'] != digest(HERE/'transformer-coupling/model.py'):
         raise ValueError('Component model changed after the combined run')
@@ -62,7 +63,7 @@ def publish():
         for suffix in ['2d','filter-2d','connector-3d']:
             name = channel+'-'+suffix
             out = RESULTS/name
-            p = verify_case(out, model)
+            p = verify_case(out, model, normalization_manifest)
             if digest(out/'provenance.json') != model['cases'][name]['provenance_sha256']:
                 raise ValueError('Case changed after network composition: '+name)
             geometry = json.loads((out/'mesh/geometry.json').read_text())
@@ -121,7 +122,7 @@ def publish():
         for path in sorted((RESULTS/(channel+'-2d/sweeps/cross_section-air_margin_mm')).glob('run-*')):
             variants.append(('vertical-domain',path))
         for kind,path in variants:
-            prov = verify_case(path,model)
+            prov = verify_case(path,model,normalization_manifest)
             r = json.loads((path/'postprocess/report.json').read_text())
             if len(r['differential_candidates']) != 1:raise ValueError('Ambiguous refinement mode')
             z = r['differential_candidates'][0]['Z_PV[1] (Ohm)']
@@ -173,6 +174,11 @@ def publish():
         import time
         b = json.loads(budget.read_text())
         snapshot['session_timing'] = {'budget_minutes':180, 'elapsed_seconds':time.time()-b['started_unix']}
+    snapshot.update(verify_sources(ROOT, model['source_hashes'], normalization_manifest))
+    previous = destination/'provenance.json'
+    if previous.exists():
+        old = json.loads(previous.read_text())
+        if 'session_timing' in old: snapshot['session_timing'] = old['session_timing']
     snapshot['published_artifacts']={str(p.relative_to(temporary)):digest(p) for p in temporary.iterdir() if p.is_file()}
     (temporary/'provenance.json').write_text(json.dumps(snapshot,indent=2)+'\n')
     if destination.exists():shutil.rmtree(destination)
@@ -181,4 +187,7 @@ def publish():
 
 
 if __name__=='__main__':
-    publish()
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-normalization", type=Path)
+    publish(parser.parse_args().source_normalization)

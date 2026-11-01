@@ -150,7 +150,10 @@ def verify_components(components, pins, config):
     return expected
 
 
-def validate_sources(root, paths):
+def validate_sources(root, paths, normalization_manifest=None):
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+    from source_normalization import verify_sources
     sources = {}
     for out in paths:
         p = json.loads((out / 'provenance.json').read_text())
@@ -164,8 +167,7 @@ def validate_sources(root, paths):
         original_project = (Path(p['case']).parent / p['configuration'].get('project_root', '.')).resolve()
         for source, expected in p['source'].items():
             relative = str(Path(source).relative_to(original_project))
-            if sha(root / relative) != expected:
-                raise ValueError(f'Design input changed: {Path(source).name}')
+            verify_sources(root, {relative: expected}, normalization_manifest)
             if relative in sources and sources[relative] != expected:
                 raise ValueError('Cases use different design inputs')
             sources[relative] = expected
@@ -177,7 +179,7 @@ def validate_sources(root, paths):
     return sources
 
 
-def run(root, output):
+def run(root, output, normalization_manifest=None):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -187,7 +189,7 @@ def run(root, output):
     output.mkdir(parents=True, exist_ok=True)
     cases = [root / 'sim/results/em' / name for ch in config['channels']
              for name in [ch+'-2d', ch+'-filter-2d', ch+'-connector-3d']]
-    sources = validate_sources(root, cases)
+    sources = validate_sources(root, cases, normalization_manifest)
     records, networks = [], {}
     report = {'schema': 1, 'scope': 'Balanced COMH/COML IC-pad to board-connector hybrid EM/circuit model; no cable',
               'assumptions': config['assumptions'], 'configuration': config, 'channels': {},
@@ -306,5 +308,6 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--project', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--source-normalization', type=Path)
     a = p.parse_args()
-    run(a.project, a.output)
+    run(a.project, a.output, a.source_normalization)

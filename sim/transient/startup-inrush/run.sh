@@ -21,13 +21,7 @@ if [[ ! -f "$NETLIST" ]]; then
 fi
 
 # --- locate ngspice ---------------------------------------------------------
-find_ngspice() {
-  if command -v ngspice >/dev/null 2>&1; then command -v ngspice; return; fi
-  for c in     "/c/Program Files/ngspice/bin/ngspice.exe"     "/c/Spice64/bin/ngspice.exe"     "/usr/local/bin/ngspice"; do
-    [[ -x "$c" ]] && { echo "$c"; return; }
-  done
-  return 1
-}
+find_ngspice() { command -v ngspice; }
 
 if ! NGSPICE="$(find_ngspice)"; then
   echo "$NAME: ngspice not found." >&2
@@ -60,7 +54,8 @@ echo "$NAME: running $(basename "$NGSPICE")"
 
 # --- compare against the baseline -------------------------------------------
 if [[ -f "$HERE/check.py" ]]; then
-  python "$HERE/check.py" --raw "$OUT/$NAME.raw" --expected "$HERE/expected"
+  command -v python3 >/dev/null || { echo "python3 is required" >&2; exit 3; }
+  python3 "$HERE/check.py" --raw "$OUT/$NAME.raw" --expected "$HERE/expected"
 else
   echo "$NAME: ran, but no check.py - result not verified against a baseline." >&2
   echo "  A simulation nobody checks is decoration. See notes.md." >&2

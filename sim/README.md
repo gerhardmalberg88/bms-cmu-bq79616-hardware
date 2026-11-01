@@ -37,15 +37,10 @@ it there is no Verilog-A path.
 
 ### KiCad and vendor tools
 
-**KiCad 10 bundles ngspice** as `bin/ngspice.dll`, together with the seven
-standard XSPICE code models in `lib/ngspice/` — `analog.cm`, `digital.cm`,
-`table.cm`, `tlines.cm`, `xtradev.cm`, `xtraevt.cm`, `spice2poly.cm`. Two
-consequences:
-
-- Standard XSPICE primitives are available to KiCad's own GUI simulator without
-  installing anything, and **must not be vendored** into `lib/`.
-- That DLL cannot be driven from a script. `kicad-cli` has no simulate
-  subcommand, so `run.sh` needs a standalone ngspice build.
+KiCad's Linux GUI simulator uses the ngspice shared library and distribution-provided
+XSPICE code models. Do not vendor these standard libraries into `lib/`.
+The scripts require the standalone `ngspice` executable on PATH; `kicad-cli`
+does not provide a simulation subcommand.
 
 The LTC3639 vendor model targets LTspice. No compatible ngspice model is
 distributed here. Any translated or behavioral model needs its own validation
@@ -178,3 +173,27 @@ bounded study runner and native results.
   CMU-004 §4.
 - No `check.py` exists yet for any simulation. Until one does, `run.sh` exits 4
   rather than reporting a pass.
+
+### Verifying results after the LF source migration
+
+The saved FEM records retain their original source and artifact hashes. The
+2026-11-01 line-ending migration is recorded in
+[source-normalization.json](source-normalization.json): verification reads the
+named historical Git blobs and requires that replacing CRLF with LF produces
+exactly the current source bytes. Any other edit fails. A shallow checkout
+without the recorded historical objects cannot perform this verification;
+fetch the recorded history first. Fresh simulations still use exact current hashes.
+
+To republish existing EM evidence without rerunning FEM, from the repository root:
+
+```bash
+bash sim/em/transformer-coupling/run.sh --source-normalization /project/sim/source-normalization.json
+python3 sim/em/publish.py --source-normalization sim/source-normalization.json
+```
+
+The first command only recomposes the completed PCB networks with the component
+model. During migration verification, the pinned container reproduced the previous CSV
+and both Touchstone files byte-for-byte; no physical parameters changed.
+Published provenance includes both original source hashes and verified current
+hashes. The thermal publisher accepts the same explicit `--source-normalization`
+option. Existing domain-convergence and hardware-correlation limitations still apply.

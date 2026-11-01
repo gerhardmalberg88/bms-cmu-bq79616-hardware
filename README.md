@@ -1,12 +1,14 @@
 # BMS Cell Monitoring Unit (CMU) — Hardware
 
+Supported platform: **Linux**.
+
 Native KiCad 10 design files for the cell-monitoring unit of open-source battery management system. Built around the **Texas Instruments BQ79616-Q1** 16-cell battery monitor, supporting a modular **6S to 16S** stack.
 
-Latest prepared package: **revision 0.1, 16S, exported 2026-10-24**.
+Latest prepared package: **revision 0.1, 16S, exported 2026-11-01**.
 
-- **Manufacturing files:** [package index](manufacturing/rev0.1-2026-10-24/README.md), [complete package ZIP](manufacturing/rev0.1-2026-10-24/complete-package.zip), and [fabrication-only ZIP](manufacturing/rev0.1-2026-10-24/fabrication.zip).
+- **Manufacturing files:** [package index](manufacturing/rev0.1-2026-11-01/README.md), [complete package ZIP](manufacturing/rev0.1-2026-11-01/complete-package.zip), and [fabrication-only ZIP](manufacturing/rev0.1-2026-11-01/fabrication.zip).
 - **KiCad design files:** [schematics, PCB and project files](design/).
-- **3D PCB:** [open the latest populated STL](manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S.stl) in GitHub.
+- **3D PCB:** [open the latest populated STL](manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S.stl) in GitHub.
 - **COMH/COML EM — reduced CPU study complete; provisional results:** [board-only report](sim/em/report/README.md).
 - **Thermal simulations — steady scope complete; provisional results:** [balancing-resistor cases](sim/thermal/README.md).
 
@@ -17,7 +19,7 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-10-24**.
     <th width="33%">Thermal simulation</th>
   </tr>
   <tr>
-    <td align="center"><a href="manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S-raytraced.png"><img src="manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S-raytraced.png" width="320" alt="Ray-traced populated PCB, angled top view"></a></td>
+    <td align="center"><a href="manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S-raytraced.png"><img src="manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S-raytraced.png" width="320" alt="Ray-traced populated PCB, angled top view"></a></td>
     <td align="center"><a href="sim/em/report/comh-section.png"><img src="sim/em/report/comh-section.png" width="320" alt="COMH normalized differential electric-field section at 4 MHz; provisional EM result"></a><br><a href="sim/em/report/README.md">COMH/COML board-only EM results</a></td>
     <td align="center"><a href="sim/thermal/cell-balancing-resistors/report/isometric.png"><img src="sim/thermal/cell-balancing-resistors/report/isometric.png" width="320" alt="Provisional automatic balancing temperature simulation, isometric view, 25 degrees Celsius ambient and h=10 W/m²K"></a><br><a href="sim/thermal/cell-balancing-resistors/README.md">Automatic balancing: 61.24 °C maximum</a></td>
   </tr>
@@ -25,11 +27,11 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-10-24**.
 
 **Revision 0.1 — routed prototype, manufacturing package prepared.** The saved
 schematic and eight-layer PCB pass the configured ERC and refilled DRC with
-zero violations, unconnected items or schematic/PCB mismatches (KiCad 10.0.4,
-2026-10-24). This is file-level validation; thermal, SI, fault and hardware
+zero violations, unconnected items or schematic/PCB mismatches (KiCad 10.0.8,
+2026-11-01). This is file-level validation; thermal, SI, fault and hardware
 bring-up validation remain open.
 
-The [manufacturing package](manufacturing/rev0.1-2026-10-24/README.md) contains
+The [manufacturing package](manufacturing/rev0.1-2026-11-01/README.md) contains
 fabrication, assembly, schematic, mechanical and purchasing files. Purchase
 **194 components**: 157 fitted plus all 37 DNP parts retained unfitted. See the
 [manufacturing record](docs/CMU-009-manufacturing.md) for acceptance limits.
@@ -254,7 +256,7 @@ names its page and adding parts to one sheet never renumbers another.
 
 ## Manufacturing
 
-The current package is [`manufacturing/rev0.1-2026-10-24/`](manufacturing/rev0.1-2026-10-24/README.md).
+The current package is [`manufacturing/rev0.1-2026-11-01/`](manufacturing/rev0.1-2026-11-01/README.md).
 It targets Eurocircuits and the current 16S assembly, retaining revision 0.1.
 `fabrication.zip` contains only bare-board production data and fabrication
 instructions. `complete-package.zip` also includes assembly, purchasing,
@@ -262,7 +264,7 @@ schematic PDF, STEP/STL and verification records.
 
 See [`docs/CMU-009-manufacturing.md`](docs/CMU-009-manufacturing.md) for the
 repeatable export commands, population rules and open confirmations. View the
-[populated STL](manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S.stl) directly
+[populated STL](manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S.stl) directly
 in GitHub's 3D viewer. The binary mesh is below 10 MB and must remain a normal
 Git file for that viewer.
 

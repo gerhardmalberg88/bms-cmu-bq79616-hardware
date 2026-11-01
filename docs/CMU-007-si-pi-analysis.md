@@ -172,8 +172,7 @@ g++ -O3 -std=c++11 tools/estimate_com_cross_section.cpp -o estimate_com_cross_se
 ./estimate_com_cross_section 0.005 2.0 0.21 0.25
 ```
 
-Arguments are grid spacing, domain extent, width and gap, in mm. On Windows
-use the corresponding `.exe`. The C++ calculation uses the fixed H, T, Er and
+Arguments are grid spacing, domain extent, width and gap, in mm. The C++ calculation uses the fixed H, T, Er and
 mask inputs listed above; unlike the Python cross-check it **does not read
 KiCad**. Review its constants after a stackup change. No executable is stored
 in the repository.
@@ -218,7 +217,7 @@ acceptance remain open engineering decisions.
 
 ### 2.2 Configuration verification, 2026-09-20
 
-KiCad 10.0.4 loaded `CMU_COM_TOP` for exactly the 12 intended communication nets;
+KiCad 10.0.8 loaded `CMU_COM_TOP` for exactly the 12 intended communication nets;
 all other nets retained `Default`. The selected dimensions meet the current
 global manufacturing minima. The only project JSON changes are the class's
 track and differential widths, 0.24 to 0.21 mm. The board changes are the six
@@ -372,7 +371,7 @@ Do not introduce extra trace length merely to obtain a uniform cross-section.
 Reopen the project so the router loads the new class, and use netclass-derived
 differential-pair dimensions when rerouting.
 
-KiCad 10.0.4 loaded the new class for exactly the 12 intended nets with
+KiCad 10.0.8 loaded the new class for exactly the 12 intended nets with
 0.450 mm Track Width / DP Width and 0.200 mm DP Gap; all other nets retained
 Default. A structural project comparison confirmed only the new class and six
 assignment changes. The original class definition is identical, and hashes of

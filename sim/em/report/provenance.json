@@ -19,6 +19,7 @@
   "cases": {
     "comh-2d": {
       "case": "sim/em/isospi-2d/comh.json",
+      "recorded_case": "sim/em/isospi-2d/comh.yaml",
       "case_sha256": "ecdc141a8d61c23f5c7cf85c607629fcba346d2e7090e49e7661e3be43c4589f",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -96,11 +97,11 @@
         "solve": "3b33644d30697898e6ec84f9cf4ffdc628e4ffda58c566c6736f7bbca8138fb7",
         "postprocess": "98aa090051c247bf85498db65b48b7aabb8cf0397be726a9a0421380c5b4d90a"
       },
-      "latest_invocation_seconds": 0.2163243293762207,
-      "recorded_case": "sim/em/isospi-2d/comh.yaml"
+      "latest_invocation_seconds": 0.2163243293762207
     },
     "comh-filter-2d": {
       "case": "sim/em/isospi-2d/comh-filter.json",
+      "recorded_case": "sim/em/isospi-2d/comh-filter.yaml",
       "case_sha256": "670420bba24d336567eea79011a9c2a47256a9efdda0e68da7552abc927e7aaa",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -179,11 +180,11 @@
         "solve": "84e1f1bd3f185d3e7a10f0f7f81187c10149a828c9f0435dd4922fa19f9b432d",
         "postprocess": "fc7d2751307de71cf6dca53d3c88593290fb20ac97fc4638ddef5941a9cf1c4c"
       },
-      "latest_invocation_seconds": 19.586604595184326,
-      "recorded_case": "sim/em/isospi-2d/comh-filter.yaml"
+      "latest_invocation_seconds": 19.586604595184326
     },
     "comh-connector-3d": {
       "case": "sim/em/isospi-3d/comh.json",
+      "recorded_case": "sim/em/isospi-3d/comh.yaml",
       "case_sha256": "69cca7c711421e87d429cfaebd96ae03c8e62b7ad8566b440bf684d658b861f6",
       "physical_configuration": {
         "air_margin_mm": 3,
@@ -376,11 +377,11 @@
         "solve": "da79c7191f65d40a2cd18a2590e83f0db1d12813325218a36ee6031bb00d69cb",
         "postprocess": "019ca84365e3ddda8b299c2e568c51e292a1eed207b8bc77dbe2bc1697bd92c5"
       },
-      "latest_invocation_seconds": 1.732010841369629,
-      "recorded_case": "sim/em/isospi-3d/comh.yaml"
+      "latest_invocation_seconds": 1.732010841369629
     },
     "coml-2d": {
       "case": "sim/em/isospi-2d/coml.json",
+      "recorded_case": "sim/em/isospi-2d/coml.yaml",
       "case_sha256": "bafc1d504f7ccb6dfca14490286ca334f059c226a18060a1f4f5a5921112299d",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -458,11 +459,11 @@
         "solve": "c8ee4dcdaad8615bdbf03416e12a809726c88f010a082198ae2229f49966078a",
         "postprocess": "4ea49e3f5adcb67723596fd4e64c6fe1c1c75895d2d3bfdbd923261f4a7c909e"
       },
-      "latest_invocation_seconds": 0.2129662036895752,
-      "recorded_case": "sim/em/isospi-2d/coml.yaml"
+      "latest_invocation_seconds": 0.2129662036895752
     },
     "coml-filter-2d": {
       "case": "sim/em/isospi-2d/coml-filter.json",
+      "recorded_case": "sim/em/isospi-2d/coml-filter.yaml",
       "case_sha256": "64e941b58d61de343d6004a67d2c976506a0413646687cedf67c2c95b8e2a785",
       "physical_configuration": {
         "analysis": "boundary-mode",
@@ -553,11 +554,11 @@
         "solve": "ce99fee97981fab86c1967bc74c0627c7e8ff9e3c60d62660f8025d3011bbd05",
         "postprocess": "4e8b6ce7369f3cf658cb8e0745cb40f53cf0af63401ea0c0a3f3d197c17dd530"
       },
-      "latest_invocation_seconds": 51.91202211380005,
-      "recorded_case": "sim/em/isospi-2d/coml-filter.yaml"
+      "latest_invocation_seconds": 51.91202211380005
     },
     "coml-connector-3d": {
       "case": "sim/em/isospi-3d/coml.json",
+      "recorded_case": "sim/em/isospi-3d/coml.yaml",
       "case_sha256": "b058f25a3bf9a2db26e17389e79900b8e34bff7d55842d13732954a8faaca782",
       "physical_configuration": {
         "air_margin_mm": 3,
@@ -750,8 +751,7 @@
         "solve": "6859b185eb7bbca47d34b2d20e05dad094546d82e5b7cc4bfe62a497d28e0b1c",
         "postprocess": "e2e89b43aac449f694187510d1cee8de3668fa5d08c31e1b5ca613010d56c392"
       },
-      "latest_invocation_seconds": 1.5976011753082275,
-      "recorded_case": "sim/em/isospi-3d/coml.yaml"
+      "latest_invocation_seconds": 1.5976011753082275
     }
   },
   "combined_network": {
@@ -1004,7 +1004,7 @@
       "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Vishay_RCL1225_2W.step": "ddd50019864c40a6873fe497016d99e4c5f6fda81f049036c8d82e546d26350d"
     },
     "model_sha256": "23616447e34972c0bba71f8d403a546a7cfd887eb971d122d1c55c13ac3265c5",
-    "script_sha256": "cf7be5f3f608a5005ba7cca5ad8e7560a2e8b9240410beb7c485b0004f7c6c0e",
+    "script_sha256": "3900f0742a5ec3366bc2c326312edb56cfe81568addcb1292199de7dec7667ce",
     "saved_stackup": [
       {
         "epsilon_r": null,
@@ -1329,6 +1329,68 @@
   "session_timing": {
     "budget_minutes": 180,
     "elapsed_seconds": 9831.202333688736
+  },
+  "current_source_hashes": {
+    "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa",
+    "design/battery_management_system_cell_monitoring_unit.kicad_pro": "007ba89fb531fafda2115564570d40f9a787d7665c6c71f23fd5da7b06613879",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/BQ79616-Q1.step": "41b99cd7e32a69e6e3da87575abfb2f5ed00fc2688880b8f00a260158521884c",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_CDSOD323-TxxC_SOD-323.step": "5b29fb8b5dd86221571a10578f7f264d105f1c6280618da7ee0e6fd3201f97fe",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_SMBJ-Q_DO-214AA.step": "3225f341ec46e1b6f3e6a42b91edc047326aeedce45c3f48c67a5c1f89d0c655",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5001642.step": "a64015144fb948042acb7ffe41719916c4f4680959d3bf409dd7d463f331e85b",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5002042.step": "147a5b52db77f30e274437e5c3405f40d35fddf308390d3755e67ce9eb0e5426",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5T10442MC.step": "d9e3c29bafd8378310180b20ad4395b272146228313e4a69d25d32bc76badddb",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/LTC3639_MSE16-12.step": "8fa7bc9b18da5da93552dfac7c4a877a187990f59e769f51c672e79d55e747ec",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/L_Wuerth_WE-PD-Robust-7332.step": "dbd2c78dd97e3461c1e9513aad11f8f7e74ae6c95b1b94ce51d5dcb1418ad1f9",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Littelfuse_470-Series_Fuse.step": "794bd63f8def800dc09ddfd7d10e234be1538f42423c78880e7cc59fe4e28c4b",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/SM91502AL.step": "4541f0e9c35b25d518ae435a1999c5bfd00563061cc62ab779ca532fe8f840d6",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Vishay_RCL1225_2W.step": "ddd50019864c40a6873fe497016d99e4c5f6fda81f049036c8d82e546d26350d"
+  },
+  "source_normalization": {
+    "manifest_sha256": "9003f0e1fd11fdfa481edf7db38b985682c6b708ab967d6ed049c27af78742ec",
+    "git_revision": "a624385bf70bde549b4e82bcc85f1f1657c48e05",
+    "transformation": "CRLF-to-LF",
+    "verified_files": {
+      "design/balance.kicad_sch": {
+        "original_sha256": "f72d5be73c4ce5fb63f59de68bf0715ab9d257690e79507c0d3d5d6ed392ffbc",
+        "normalized_sha256": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a"
+      },
+      "design/battery_management_system_cell_monitoring_unit.kicad_pcb": {
+        "original_sha256": "48b66ed63de190eae573f29474e5cdcfea27ddef977f4239acc6ed46ef62e249",
+        "normalized_sha256": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+      },
+      "design/battery_management_system_cell_monitoring_unit.kicad_sch": {
+        "original_sha256": "0e585b799806d814c996a20831415a55f61e659dcf610c184fa9ed5ecc3d8230",
+        "normalized_sha256": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649"
+      },
+      "design/batterypositive_to_8V8.kicad_sch": {
+        "original_sha256": "de07d32a0281e32f2904e9f044a90f58feb4a34fa086b4ba7ccb82a6390a7fdc",
+        "normalized_sha256": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8"
+      },
+      "design/bq79616.kicad_sch": {
+        "original_sha256": "115eb5cbb6dff28c11d56c0a392f343975d8fc4be3ea0d977e0a086b8fe8bdaf",
+        "normalized_sha256": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088"
+      },
+      "design/cells.kicad_sch": {
+        "original_sha256": "6fd21112e3a4849b7c777a0b7ea0d512f6942a6660d2de0f44bbb176bb159f3a",
+        "normalized_sha256": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156"
+      },
+      "design/com.kicad_sch": {
+        "original_sha256": "c0fa6d359745dbf323c95a96cf26db776d29a79b96902b9421663fc0db75729d",
+        "normalized_sha256": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f"
+      },
+      "design/fp-lib-table": {
+        "original_sha256": "c45e13be6af24d2af5707728b647ce2e172411d71275b112fcf956ee60c42290",
+        "normalized_sha256": "1242f97312754abe9a6f9f602d9a6c3b0a9aca8f493593e1095acdf58e18e38a"
+      },
+      "design/mechanical.kicad_sch": {
+        "original_sha256": "467f344262a168ab51a2c7b9a7faa993df7a2b82ea8ef3724affdd7f1ad99681",
+        "normalized_sha256": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4"
+      },
+      "design/sym-lib-table": {
+        "original_sha256": "b4ba457845dd8f7772068173fd052cab3f44bbeae3dc0e411ba72663072dd1b7",
+        "normalized_sha256": "d980a150f89e4445cdc874740b0c8e25fd7000167edf02822f0b57cb325676db"
+      }
+    }
   },
   "published_artifacts": {
     "board-path.csv": "3a0d33bd7f8a54c6e824b75f7478c794ecf78141ebedde28ae5209e513ffddff",

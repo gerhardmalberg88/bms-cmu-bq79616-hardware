@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/usr/bin/kicad-cli",
+    "pcb",
+    "export",
+    "ipcd356",
+    "-o",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/fabrication/electrical-test.d356",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_pcb"
+  ],
+  "returncode": 0,
+  "stdout": "Successfully created IPC-D-356 file\n",
+  "stderr": ""
+}

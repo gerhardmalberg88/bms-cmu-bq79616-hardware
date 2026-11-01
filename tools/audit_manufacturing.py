@@ -19,7 +19,7 @@ def write_json(path, value):
 
 
 def normalize_ipc(release):
-    """Repair KiCad 10.0.4's invalid via soldermask field using actual tenting.
+    """Validate and normalize exported via soldermask fields using actual tenting.
 
     Native geometry/net names are kept; only the soldermask field and record
     padding are normalized. CUST 0 is intentionally retained (0.0001 inch).
@@ -59,7 +59,7 @@ def normalize_ipc(release):
         assert len(line)==80
         output.append(line)
     path.write_text('\n'.join(output)+'\n',encoding='ascii')
-    write_json(release.out/'verification/ipc-normalization.json',dict(native_version='10.0.4',
+    write_json(release.out/'verification/ipc-normalization.json',dict(native_version=pcbnew.Version(), via_mask_fields_corrected=changed,
         invalid_via_mask_fields_corrected=len(re.findall(rb'S-?\d{2,}',original.read_bytes())),via_count=len(vias),
         correction='Soldermask fields from actual via tenting; correct blank/padding to 80 columns. Geometry/net tokens retained.',
         units='CUST 0: 0.0001 inch (native IPC export); same origin as mm fabrication data',
@@ -146,9 +146,15 @@ def audit(release):
     assert all((fab/x['Path']).exists() for x in job['FilesAttributes'])
     # Existing native STEP readback: independently load with FreeCAD/OpenCascade.
     code='''import json,sys\nfrom pathlib import Path\nimport FreeCAD,Part\np=Path(sys.argv[1]); result={}\nfor f in sorted((p/'3d').glob('*.step')):\n s=Part.Shape();s.read(str(f));b=s.BoundBox\n assert s.isValid()\n result[f.name]={'valid':True,'solids':len(s.Solids),'bbox_mm':[b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax]}\n(p/'verification/step-geometry.json').write_text(json.dumps(result,indent=2)+'\\n')\n'''
-    freecad=Path(release.args.freecad_python)
-    subprocess.run([str(freecad),'-c',code,str(out)],check=True,capture_output=True,text=True)
+    code += "(p/'verification/freecad-version.json').write_text(json.dumps({'version':list(FreeCAD.Version())},indent=2)+'\\n')\n"
+    from linux_tools import run_freecad
+    target=v/'step-geometry.json'
+    target.unlink(missing_ok=True)
+    run_freecad(release.args, release.work, code, out, v/'freecad-readback.log')
+    assert target.is_file(), 'FreeCAD did not produce readback evidence; inspect freecad-readback.log'
     geometry=json.loads((v/'step-geometry.json').read_text())
+    assert set(geometry)=={p.name for p in (out/'3d').glob('*.step')}, 'Incomplete STEP readback'
+    assert all(item['solids'] > 0 for item in geometry.values()), 'STEP contains no solids'
     stepbb=geometry['CMU-rev0.1-16S.step']['bbox_mm']
     assert all(abs(a-b)<0.001 for a,b in zip(bb[0]+bb[1],stepbb))
     report=dict(drills_match_source=True,drill_max_coordinate_quantization_mm=max_drill_error,plated_holes=sum(actual.values()),nonplated_holes=0,
@@ -166,5 +172,9 @@ def audit(release):
 if __name__=='__main__':
     from manufacturing_release import Release
     import argparse
-    args=argparse.Namespace(date=sys.argv[1],resume=True,kicad_cli='C:/Program Files/KiCad/10.0/bin/kicad-cli.exe',freecad_python='C:/Program Files/FreeCAD 1.1/bin/python.exe')
+    from linux_tools import add_tool_arguments
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--date',required=True)
+    add_tool_arguments(parser)
+    args=parser.parse_args(); args.resume=True
     audit(Release(args))

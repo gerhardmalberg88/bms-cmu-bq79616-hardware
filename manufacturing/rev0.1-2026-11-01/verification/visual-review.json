@@ -1,0 +1,12 @@
+{
+  "reviewed_utc": "2026-11-01T15:53:50.664375+00:00",
+  "image": "3d/CMU-rev0.1-16S-raytraced.png",
+  "sha256": "cca47d4fa4a527b7295db1ec7f89c54e47018e0f20698e678299136c256de6e6",
+  "method": "Visual inspection of the fresh native KiCad render",
+  "observations": [
+    "Populated resistor banks, IC, connectors and magnetics are visible.",
+    "Full board outline and all four mounting holes are visible.",
+    "Stackup colors and silkscreen are visible; no dark bare-board rendering failure."
+  ],
+  "scope": "Illustration review; component counts and geometry are checked separately in export-readback.json."
+}

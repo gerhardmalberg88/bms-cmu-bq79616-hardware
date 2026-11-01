@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/usr/bin/kicad-cli",
+    "pcb",
+    "export",
+    "pdf",
+    "--layers",
+    "B.Fab,B.Silkscreen,Edge.Cuts",
+    "--mode-single",
+    "--scale",
+    "3",
+    "--black-and-white",
+    "--mirror",
+    "--include-border-title",
+    "-o",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/assembly/assembly-bottom.pdf",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_pcb"
+  ],
+  "returncode": 0,
+  "stdout": "Plotted to '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/assembly/assembly-bottom.pdf'.\nDone.\n",
+  "stderr": ""
+}

@@ -10,18 +10,18 @@ license: CERN-OHL-P-2.0
 
 # CMU-009 — Manufacturing and prototype release
 
-The 2026-10-24 package targets Eurocircuits and preserves revision **0.1** and
+The 2026-11-01 Linux package targets Eurocircuits and preserves revision **0.1** and
 the design issue date **2026-09-04**. The saved schematic/PCB are routed and
 consistent; this supersedes the former README description of an obsolete PCB.
 Source files, routing, placement, footprint geometry, stackup and rules were
 not edited during package generation.
 
-The same unpublished package was refreshed on **2026-10-24** with consolidated
-documentation, license notices and a native KiCad ray-traced PCB image.
-Manufacturing artwork, BOM quantities, placements, schematic PDF and STEP/STL
-geometry remain unchanged. [NOTICE.md](../NOTICE.md) records licensing and
-imported-asset provenance. The complete package, source snapshot and
-fabrication-only ZIP each carry `LICENSE`, `NOTICE.md` and `LICENSES/`.
+The package was freshly exported and independently read back on **2026-11-01**
+with Linux KiCad 10.0.8 and FreeCAD 1.1.4. Saved design files were normalized
+from CRLF to LF before export; their content otherwise remains unchanged.
+The previous package remains in Git history. [NOTICE.md](../NOTICE.md) records
+licensing and imported-asset provenance. Complete and fabrication ZIPs include
+license notices; the source snapshot records the normalized inputs and tools.
 
 ## Configuration and purchasing
 
@@ -70,7 +70,7 @@ a live stock reservation, price quotation or assurance of exact-quantity supply.
 
 ## Files and coordinates
 
-The package is under [`../manufacturing/rev0.1-2026-10-24/`](../manufacturing/rev0.1-2026-10-24/README.md).
+The package is under [`../manufacturing/rev0.1-2026-11-01/`](../manufacturing/rev0.1-2026-11-01/README.md).
 It contains bare-board Gerbers/drills, Gerber job metadata, electrical test
 netlist, fabrication notes/drawings, fitted and DNP BOMs, placements, assembly
 drawings, variant paste, seven-sheet schematic PDF, STEP/STL and verification
@@ -150,10 +150,9 @@ included separately. They do not constitute newly waived violations, and
 the authoritative rules remain unchanged. Pin connectivity and exported
 population are verified independently.
 
-KiCad 10.0.4 emitted invalid via soldermask numbers in its IPC-D-356 output.
-The release tool corrects only those fields from each via's actual tenting
-state, inserts the prescribed blank before the mask field and pads records
-to 80 columns. The original output, correction record and net/coordinate
+KiCad 10.0.8 emitted correct via soldermask values: the independent check
+required **zero via-mask corrections**. The release tool checks each via's
+actual tenting state and normalizes test-file record padding to 80 columns. The original output, correction record and net/coordinate
 readback are included. This changes the derived test file, not the design.
 
 The audit independently parses/renders all Gerbers, checks drills and
@@ -170,13 +169,26 @@ qualification is implied by connector choice or a clean DRC.
 
 ## Reproducing the package
 
-Use KiCad **10.0.4** with its standard libraries and Python, FreeCAD **1.1**
-Python for independent STEP readback, and the dependencies pinned in
-`tools/manufacturing-requirements.txt`. From the repository root, PowerShell:
+Use Linux KiCad **10.0.8** with its standard libraries and system Python bindings,
+FreeCAD **1.1.4** for independent STEP readback, and the pinned manufacturing
+dependencies. From the repository root in Bash:
 
-```powershell
-& 'C:/Program Files/KiCad/10.0/bin/python.exe' -m pip install --target build/python-deps -r tools/manufacturing-requirements.txt
-& 'C:/Program Files/KiCad/10.0/bin/python.exe' -B tools/manufacturing_release.py --date YYYY-MM-DD
+```bash
+/usr/bin/python3 -m venv --system-site-packages build/manufacturing-venv
+build/manufacturing-venv/bin/pip install -r tools/manufacturing-requirements.txt
+build/manufacturing-venv/bin/python3 -B tools/manufacturing_release.py --date YYYY-MM-DD --freecad-appimage /path/to/FreeCAD_1.1.4-Linux-x86_64-py311.AppImage
+```
+
+The AppImage is extracted into an ignored, SHA256-keyed build cache. Its bundled
+FreeCAD runtime is separate from the manufacturing Python environment. Alternatively,
+use `freecadcmd` on PATH or `--freecad-python` with an explicitly compatible interpreter.
+The two FreeCAD overrides are mutually exclusive. KiCad resolves from PATH unless
+`--kicad-cli` supplies an explicit executable.
+
+After generation, independently check all package checksums and ZIP contents:
+
+```bash
+python3 tools/verify_release.py manufacturing/rev0.1-YYYY-MM-DD
 ```
 
 Use the actual export date. The tool creates an isolated build copy and local
@@ -199,17 +211,18 @@ fitted models remain. The renderer does not modify manufacturing geometry.
 After preparing the snapshot, this command builds the rendering copy and local
 appearance preset, verifies population and produces the 2400 × 1600 PNG:
 
-```powershell
-& 'C:/Program Files/KiCad/10.0/bin/python.exe' -B tools/manufacturing_release.py --date 2026-10-24 --phase render --resume
+```bash
+build/manufacturing-venv/bin/python3 -B tools/manufacturing_release.py --date YYYY-MM-DD --phase render --resume --freecad-appimage /path/to/FreeCAD.AppImage
 ```
 
 The native invocation, with the build's `KICAD_CONFIG_HOME` and model paths, is:
 
 ```text
-kicad-cli pcb render --width 2432 --height 1632 --side top --quality high --background opaque --preset "CMU neutral" --perspective --rotate 325,0,25 --zoom 1 -o <native.png> <render-copy.kicad_pcb>
+kicad-cli pcb render --width 2432 --height 1632 --side top --quality high --background opaque --preset "CMU neutral" --use-board-stackup-colors --perspective --rotate 325,0,25 --zoom 1 -o <native.png> <render-copy.kicad_pcb>
 ```
 
-Stackup colours are enabled by default. KiCad 10.0.4 quantises its ray-packet
+Stackup colours are enabled explicitly. The isolated `XDG_CACHE_HOME` under
+`build/` must be writable for KiCad to load its STEP preview models. KiCad 10.0.8 quantises its ray-packet
 buffer and produces 2408 × 1600 pixels for that request. The script trims four
 empty-background pixels from each side to deliver exactly 2400 × 1600; no
 resampling, model alteration or synthetic image content is applied. The
@@ -224,16 +237,15 @@ license notices, source snapshot, archives and hashes.
 
 Regenerate documentation with KiCad's Python and the build configuration:
 
-```powershell
-$env:KICAD_CONFIG_HOME = (Resolve-Path 'build/manufacturing-rev0.1-YYYY-MM-DD/config').Path
-$env:KICAD_DOCUMENTS_HOME = (Resolve-Path 'build/manufacturing-rev0.1-YYYY-MM-DD/documents').Path
-& 'C:/Program Files/KiCad/10.0/bin/python.exe' -B tools/gen_doc_tables.py
-& 'C:/Program Files/KiCad/10.0/bin/python.exe' -B tools/gen_doc_tables.py --check
+```bash
+export KICAD_CONFIG_HOME="$PWD/build/manufacturing-rev0.1-YYYY-MM-DD/config"
+export KICAD_DOCUMENTS_HOME="$PWD/build/manufacturing-rev0.1-YYYY-MM-DD/documents"
+build/manufacturing-venv/bin/python3 -B tools/gen_doc_tables.py
+build/manufacturing-venv/bin/python3 -B tools/gen_doc_tables.py --check
 ```
 
 Current generated tables distinguish fitted PCB population from schematic-only
 alternatives. Analysis prose still requires engineering review after changes.
 Intentional release outputs and the STL preview may be committed; scratch
-exports, editor state and dependency caches remain ignored. This repository
-currently has no initial Git commit. Exact source hashes plus the source ZIP
-identify this local package; no commit/tag/publication was created.
+exports, editor state and dependency caches remain ignored. The recorded Git revision, exact source hashes and source ZIP identify the package.
+Generation does not create a commit, tag or publication.

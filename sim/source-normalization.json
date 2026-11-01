@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "transformation": "CRLF-to-LF",
+  "git_revision": "a624385bf70bde549b4e82bcc85f1f1657c48e05",
+  "files": {
+    "design/balance.kicad_sch": {
+      "original_sha256": "f72d5be73c4ce5fb63f59de68bf0715ab9d257690e79507c0d3d5d6ed392ffbc",
+      "normalized_sha256": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a"
+    },
+    "design/battery_management_system_cell_monitoring_unit.kicad_pcb": {
+      "original_sha256": "48b66ed63de190eae573f29474e5cdcfea27ddef977f4239acc6ed46ef62e249",
+      "normalized_sha256": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+    },
+    "design/battery_management_system_cell_monitoring_unit.kicad_sch": {
+      "original_sha256": "0e585b799806d814c996a20831415a55f61e659dcf610c184fa9ed5ecc3d8230",
+      "normalized_sha256": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649"
+    },
+    "design/batterypositive_to_8V8.kicad_sch": {
+      "original_sha256": "de07d32a0281e32f2904e9f044a90f58feb4a34fa086b4ba7ccb82a6390a7fdc",
+      "normalized_sha256": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8"
+    },
+    "design/bq79616.kicad_sch": {
+      "original_sha256": "115eb5cbb6dff28c11d56c0a392f343975d8fc4be3ea0d977e0a086b8fe8bdaf",
+      "normalized_sha256": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088"
+    },
+    "design/cells.kicad_sch": {
+      "original_sha256": "6fd21112e3a4849b7c777a0b7ea0d512f6942a6660d2de0f44bbb176bb159f3a",
+      "normalized_sha256": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156"
+    },
+    "design/com.kicad_sch": {
+      "original_sha256": "c0fa6d359745dbf323c95a96cf26db776d29a79b96902b9421663fc0db75729d",
+      "normalized_sha256": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f"
+    },
+    "design/fp-lib-table": {
+      "original_sha256": "c45e13be6af24d2af5707728b647ce2e172411d71275b112fcf956ee60c42290",
+      "normalized_sha256": "1242f97312754abe9a6f9f602d9a6c3b0a9aca8f493593e1095acdf58e18e38a"
+    },
+    "design/mechanical.kicad_sch": {
+      "original_sha256": "467f344262a168ab51a2c7b9a7faa993df7a2b82ea8ef3724affdd7f1ad99681",
+      "normalized_sha256": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4"
+    },
+    "design/sym-lib-table": {
+      "original_sha256": "b4ba457845dd8f7772068173fd052cab3f44bbeae3dc0e411ba72663072dd1b7",
+      "normalized_sha256": "d980a150f89e4445cdc874740b0c8e25fd7000167edf02822f0b57cb325676db"
+    }
+  }
+}

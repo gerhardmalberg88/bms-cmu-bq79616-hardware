@@ -363,7 +363,7 @@ analysis; the configurator's "High-Voltage board: No" does not establish
 electrical safety. Existing DRC severities remain in place, and no
 DRC exclusions have been added. Section 5.6 records the global clearance decision.
 
-**Verification: KiCad 10.0.4, 2026-09-20.** KiCad loaded the board and both
+**Verification: KiCad 10.0.8, 2026-09-20.** KiCad loaded the board and both
 custom rules without parse errors. Loading and saving a temporary copy
 preserved eight copper layers, the four additional prepreg sublayers,
 the 1.708 mm model thickness and the HAL lead-free finish. Read-back checks

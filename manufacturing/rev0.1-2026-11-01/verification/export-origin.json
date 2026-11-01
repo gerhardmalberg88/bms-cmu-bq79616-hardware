@@ -1,0 +1,12 @@
+{
+  "source_xy_mm": [
+    226.5,
+    158.1
+  ],
+  "export_axes": "X right, Y up, Z out of top",
+  "outline_mm": [
+    99,
+    61
+  ],
+  "scope": "Staging copy only; authoritative source untouched"
+}

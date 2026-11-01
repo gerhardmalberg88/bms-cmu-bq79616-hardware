@@ -24,6 +24,8 @@ def write_documents(release):
     report=json.loads((out/'verification/export-readback.json').read_text())
     rows=json.loads((out/'verification/component-inventory.json').read_text())
     stamp=release.args.date
+    ipc=json.loads((out/"verification/ipc-normalization.json").read_text())
+    version=ipc["native_version"]
     fabrication=f'''# Eurocircuits fabrication instructions — CMU rev 0.1
 
 Export: {stamp}. Single PCB, 99.0 x 61.0 mm, outline corner radius 3.5 mm.
@@ -81,8 +83,8 @@ X right, Y up. No fabrication file is mirrored. Bottom layers are supplied
 in normal top-view coordinates for CAM, not mirrored artwork.
 The IPC-D-356 test file declares CUST 0 (0.0001 inch); its coordinates/net
 partition were checked against the same origin. Its via soldermask fields
-were normalized from the actual open-via settings after a KiCad 10.0.4
-export defect; geometry and net tokens are unchanged.
+were checked against the actual via settings: {ipc["via_mask_fields_corrected"]}
+fields corrected for KiCad {version}; geometry and net tokens are unchanged.
 Use copper/mask/outline files as the fabrication data; PDFs are drawings.
 The paste Gerber belongs to assembly/stencil, not bare-board copper.
 
@@ -210,7 +212,7 @@ no source rule settings, exclusions, wiring or footprint geometry changed.
 See the full supplemental reports for every affected item.
 
 ## Export-specific findings handled
-The native KiCad IPC exporter produced invalid via soldermask integers.
+KiCad {version} IPC readback identified {ipc["via_mask_fields_corrected"]} via soldermask fields requiring correction.
 The derived file was normalized to actual per-via tenting and 80-column
 records. Original output and correction evidence are retained. IPC units
 are CUST 0 (0.0001 inch); other manufacturing coordinates are mm.
@@ -259,7 +261,7 @@ for enclosure fit. These models do not include mating cables or screw travel.
 ''',encoding='utf-8')
     readme=f'''# CMU revision 0.1 — 16S prototype package
 
-Exported {stamp} with KiCad 10.0.4. Target: Eurocircuits.
+Exported {stamp} with KiCad {version}. Target: Eurocircuits.
 **Files prepared and checked; supplier/process confirmations remain open.**
 Read [readiness](verification/readiness.md) before ordering.
 

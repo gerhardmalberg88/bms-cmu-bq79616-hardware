@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/usr/bin/kicad-cli",
+    "pcb",
+    "export",
+    "stl",
+    "--force",
+    "--no-dnp",
+    "--subst-models",
+    "--drill-origin",
+    "--cut-vias-in-body",
+    "-o",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S.stl",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_pcb"
+  ],
+  "returncode": 0,
+  "stdout": "STL file '/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S.stl' created.\n\nExport time 5.502 s\n",
+  "stderr": ""
+}

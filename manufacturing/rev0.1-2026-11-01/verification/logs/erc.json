@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/kicad-cli",
+    "sch",
+    "erc",
+    "--format",
+    "json",
+    "--severity-all",
+    "--exit-code-violations",
+    "-o",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/verification/erc.json",
+    "/home/gerhardm/repos/bms-cmu-bq79616-hardware/build/manufacturing-rev0.1-2026-11-01/design/battery_management_system_cell_monitoring_unit.kicad_sch"
+  ],
+  "returncode": 0,
+  "stdout": "Found 0 violations\nSaved ERC Report to /home/gerhardm/repos/bms-cmu-bq79616-hardware/manufacturing/rev0.1-2026-11-01/verification/erc.json\n",
+  "stderr": ""
+}

@@ -14,4 +14,4 @@ exec "$ENGINE" run --rm --init --network=none "${USER_FLAGS[@]}" \
   --env OMP_NUM_THREADS=1 --env OPENBLAS_NUM_THREADS=1 \
   --volume "$PROJECT:/project:ro" --volume "$OUT:/work:rw" --entrypoint '' \
   localhost/pcb-em-tools:0.1 pcb-python /project/sim/em/transformer-coupling/model.py \
-  --project /project --output /work
+  --project /project --output /work "$@"
