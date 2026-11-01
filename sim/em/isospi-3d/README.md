@@ -1,37 +1,42 @@
-# Bounded communication PCB models
+# COMH/COML transformer-to-connector 3D models
 
-[comh.yaml](comh.yaml) and [coml.yaml](coml.yaml) model the isolated-side PCB routing
-and board-mounted J501/J502 contacts. Follow the [EM workflow](../../../../pcb-em-lab/README.md#em-workflow)
-and its [validation status](../../../../pcb-em-lab/docs/validation.md).
-Both CPU pipelines and their QucsatorRF/ngspice handoffs passed. The supplied
-coarse meshes demonstrate the pipeline; they do not establish converged PCB
-field predictions.
+Copyright (C) 2021-2026 Gerhard Malberg.
+SPDX-License-Identifier: CERN-OHL-P-2.0
 
-Both ports are differential. J501 pin 1 is COMHP and pin 2 COMHN; J502 pin 2 is
-COMLP and pin 1 COMLN. The input calibration plane lies between straight,
-parallel secondary traces near the connector, giving a rectangular uniform-port
-gap. Copper extending back to the cropped transformer pads remains as open
-stubs; this is not a network calibrated at the transformer terminals. Coordinates
-are checked against the saved copper net. The output ends at connector contacts;
-no cable, mating connector or external assembly is included.
+[comh.yaml](comh.yaml) and [coml.yaml](coml.yaml) model the actual transformer
+secondary pads through the saved PCB copper to J501/J502 contact heads. They
+exclude cables, mating connectors, package windings and connector housings.
+Contacts are editable 0.5 mm square, 5 mm tall approximations. Copper is PEC;
+material properties and masks remain estimates.
 
-The initial conductor model is PEC sheet copper and plated barrel surfaces.
-Connector contacts are explicitly approximated square pins; plastic housing,
-contact resistance and conductor losses are omitted. The mesh preserves PCB
-layer heights, holes and nearby saved copper. Review each approximation before
-interpreting coupling or absolute S parameters.
+Two half-ports terminate at the transformer positive/center/negative pads.
+Their signed series connection uses `Z_reduced = Cᵀ Z C`, imposing equal
+half-port currents and zero external center-tap current. No physical ground
+connection is added to SC_CT. The output is a 100 Ω differential connector port.
+J501 pin 1 is positive / pin 2 negative; J502 pin 2 is positive / pin 1 negative.
 
-Run from the workflow checkout:
+These successful PCB networks are combined with the [2D-derived primary-side
+line equivalents](../isospi-2d/README.md) and the [balanced component
+model](../transformer-coupling/README.md). Dense 3D IC/filter models were attempted
+and rejected for degenerate tetrahedra; they are not supplied as completed cases.
+Their local diagnostic logs remain under ignored results. The published study
+contains no validated 3D field solution from U201 to the transformer primary.
+
+From the hardware repository root with installed `pcb-em`:
 
 ```bash
-./pcb-em run ../bms-cmu-bq79616-hardware/sim/em/isospi-3d/comh.yaml --mode 3d --backend cpu
+pcb-em run sim/em/isospi-3d/comh.yaml --backend cpu
+pcb-em run sim/em/isospi-3d/coml.yaml --backend cpu
 ```
 
-The driver excites every port, then assembles an ordered Touchstone network with
-explicit polarity/reference impedance. The eight-frequency 1–10 MHz sweep
-also exercises passive fitting and the ngspice handoff. A fit is exported only
-when its passivity and error checks pass; the report records rejection otherwise.
-This narrow demonstration band does not establish fast-edge transient accuracy.
-Review mesh and domain convergence against
-[CMU-007](../../../docs/CMU-007-si-pi-analysis.md); generated output is ignored under
-`sim/results/em/` and establishes no full-link acceptance.
+The solved frequencies are 1, 4 and 10 MHz. Native BREP/MSH, physical tags,
+Palace inputs/CSV/PVD/VTU, logs and ParaView states remain under
+`sim/results/em/{comh,coml}-connector-3d/`. Three samples do not support a
+qualified transient fit or interpolation claim.
+
+Field images show the first half-port excitation with other ports terminated,
+not a populated-board operating field. The main linear tolerance is 1e-8; the
+approximate flux-error estimator uses 1e-2 after a same-mesh comparison preserved
+saved port values. Positive tetrahedron orientation is checked. Very thin
+positive elements remain; 3D mesh/domain convergence and local field peaks are
+unqualified. No EMC, receiver, driver or electrical-isolation acceptance follows.

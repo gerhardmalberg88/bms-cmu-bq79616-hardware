@@ -1,0 +1,5 @@
+channel,section,frequency_hz,mode,differential_impedance_ohms,L_H_per_m,C_F_per_m
+comh,IC-side,4000000.0,1,102.1441769355,6.152499838312e-07,5.896908436561e-11
+comh,filtered-side,4000000.0,1,123.4092075929,7.175611147158e-07,4.711549610509e-11
+coml,IC-side,4000000.0,1,101.1411944746,6.096990871644e-07,5.960180169055e-11
+coml,filtered-side,4000000.0,diagnostic only,,,

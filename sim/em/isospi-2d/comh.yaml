@@ -7,7 +7,8 @@
   "output": "../../results/em/comh-2d",
   "frequency_hz": 4000000.0,
   "execution": {
-    "backend": "auto",
+    "backend": "cpu",
+    "mpi_ranks": 2,
     "threads_per_rank": 1,
     "gpu_count": 1
   },

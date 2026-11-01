@@ -324,4 +324,4 @@ Dependent repositories should pin the git tag they were built against.
 | O-1 | Connector polarisation against 180° reverse insertion — unverified (CMU-003 F-16) |
 | O-2 | Whether J501/J502 pins 3–4 become a shield — decide before layout |
 | O-3 | Module stacking order and addressing — needs the BMU |
-| O-4 | Maximum daisy-chain cable length — needs CMU-007; simulation planned at [`../sim/daisy-chain/cable-length/`](../sim/daisy-chain/cable-length/) |
+| O-4 | Maximum cable length belongs to the external interconnect/system entity; excluded from CMU board simulations |

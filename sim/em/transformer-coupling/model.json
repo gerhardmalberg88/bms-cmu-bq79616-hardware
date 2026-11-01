@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "reference_ohms": 100,
+  "series_resistance_per_leg_ohms": 49.9,
+  "input_shunt_ohms": 1000,
+  "bypass_capacitance_per_leg_F": 2.2e-10,
+  "transformer": {
+    "part": "SM91502AL",
+    "source": "https://www.bourns.com/docs/product-datasheets/SM91502AL.pdf",
+    "magnetizing_inductance_H": 0.00015,
+    "leakage_inductance_H": 5e-07,
+    "primary_resistance_ohms": 0.45,
+    "secondary_resistance_ohms": 0.85,
+    "ratio": 1,
+    "assumption": "Linear differential equivalent, using OCL minimum, leakage maximum and listed DCR limits. Ratings measured at 100 kHz are extrapolated to the solved band; these values do not bound all real devices or include core loss, frequency-dependent CMC leakage or capacitance.",
+    "polarity_note": "Primary pin 1 and secondary pin 6 have matching transformer polarity in the manufacturer schematic. COML reverses both primary and secondary pairs."
+  },
+  "channels": {
+    "comh": {
+      "ic_positive": "U201:43",
+      "ic_negative": "U201:42",
+      "positive_resistor": "R501",
+      "negative_resistor": "R503",
+      "shunt": "R502",
+      "bypass": [
+        "C501",
+        "C503"
+      ],
+      "transformer": "T501",
+      "primary_positive": "1",
+      "primary_negative": "3",
+      "secondary_positive": "6",
+      "secondary_negative": "4",
+      "connector_positive": "J501:1",
+      "connector_negative": "J501:2"
+    },
+    "coml": {
+      "ic_positive": "U201:40",
+      "ic_negative": "U201:41",
+      "positive_resistor": "R504",
+      "negative_resistor": "R506",
+      "shunt": "R505",
+      "bypass": [
+        "C504",
+        "C506"
+      ],
+      "transformer": "T502",
+      "primary_positive": "3",
+      "primary_negative": "1",
+      "secondary_positive": "4",
+      "secondary_negative": "6",
+      "connector_positive": "J502:2",
+      "connector_negative": "J502:1"
+    }
+  },
+  "assumptions": [
+    "Balanced linear differential small-signal circuit from IC pads to board connector contacts; no IC die, driver waveform, cable or mating connector.",
+    "IC-side and filtered-side routing use lossless uniform transmission-line equivalents from real 4 MHz section L/C and mean saved P/N route lengths. Bends, pads, neck-downs, asymmetric lengths and frequency dependence are not resolved along the full route. This is an approximation after the dense 3D primary meshes failed quality checks.",
+    "Only the transformer-secondary-to-connector region is a 3D field network. There is no validated 3D field solution from the IC to the transformer primary. Coupling between separately represented path sections is omitted.",
+    "COML filtered-section modes are ambiguous; the parity-screened 4.5 ohm candidate is not accepted as the signal impedance. COML uses COMH filtered-section L/C as an explicit proxy with its own saved route length. Different spacing/surroundings and common-mode mixing remain unqualified.",
+    "Half-port voltages are added and equal currents imposed using Z_reduced = C^T Z C. Center taps have zero external differential current and no added physical ground connection.",
+    "Two equal 220 pF capacitors to local ground become 110 pF differential capacitance. Their load and the 1k shunt are collapsed to the series-resistor input plane; individual pad-location effects are omitted.",
+    "The primary 100 pF center-tap bypass carries no current in this balanced reduction. Common-mode behavior, mode conversion and asymmetric loading are outside this model.",
+    "TVS nonlinear behavior and off-state capacitance, component lead/package parasitics, transformer core loss and interwinding capacitance are omitted.",
+    "3D copper is PEC sheet copper. Narrow 1-10 MHz sampling is not fast-edge, eye-diagram, BER, EMC or isolation qualification."
+  ],
+  "pcb_model": "section-derived-primary-lines-and-3d-secondary",
+  "filtered_line_proxy": {
+    "coml": "comh-filter-2d"
+  },
+  "diagnostic_sections": [
+    "coml-filter-2d"
+  ]
+}

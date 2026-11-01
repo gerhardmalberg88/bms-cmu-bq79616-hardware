@@ -10,12 +10,25 @@ license: CERN-OHL-P-2.0
 
 # CMU-007 — Signal and Power Integrity Analysis
 
-**EM simulations: coming soon.** Planned electromagnetic SI/PI models and
-results will live in [`sim/em/`](../sim/em/README.md). The preliminary
-cross-section calculations below are not a completed board-level EM validation.
-The [isoSPI communication 2D cases](../sim/em/isospi-2d/README.md)
-use the shared KiCad/Palace pipeline to evaluate the sections 2.1/2.3
-cross-sections and provisional impedance target; numerical validation is in progress.
+**2026-11-01: the reduced COMH/COML CPU study is complete.** See the
+[self-contained report](../sim/em/report/README.md), including figures, scalar
+CSV, Touchstone and portable provenance. The IC-side section impedances are
+102.144 Ω (COMH) and 101.141 Ω (COML) at 4 MHz. Limited section mesh and vertical-
+domain sensitivity checks are recorded; these are not impedance acceptance.
+
+The full board-path prediction uses 2D-derived uniform line equivalents on the
+primary side, a linear transformer/filter circuit and 3D transformer-secondary-
+to-connector networks at 1, 4 and 10 MHz. Dense primary 3D meshes failed quality
+checks and are excluded. The COML filtered-section modes are ambiguous, so the
+model explicitly uses COMH filtered-section L/C as a proxy with COML's own route
+length. There is no validated full 3D field solution from IC to connector.
+No cable or mating connector is modeled. Material confirmation, local 3D fields,
+mode conversion and hardware correlation remain unqualified. No other EM
+simulation is queued in this repository.
+
+The dated September routing calculations below are historical inputs, not the
+current saved-PCB EM results. Their older dimensions must not be substituted for
+the actual 0.45/0.20 mm IC-side cuts in the new report.
 
 > **2026-10-24 status:** the routed PCB passes the configured, refilled DRC and its manufacturing files are prepared. This does not establish measured or supplier-guaranteed impedance. See [CMU-009](CMU-009-manufacturing.md).
 
@@ -29,12 +42,12 @@ cross-sections and provisional impedance target; numerical validation is in prog
 
 ## 1. Scope
 
-The daisy chain (COMH/COML through T501/T502), the cell tap filters, and the
-NTC sense lines.
-
-Signals here are slow and the daisy chain is transformer-isolated, so SI is
-modest — but the **isolation barrier is a safety dimension**, not just a signal
-one, and that makes this document matter more than the data rate suggests.
+The on-board COMH/COML paths, from the BQ79616-Q1 U201 pads through their
+filters and T501/T502 to the board-mounted J501/J502 connector contacts.
+External cabling and mating connectors belong to a separate interconnect entity.
+No power-integrity, cell-tap, NTC or unrelated internal-magnetics simulation is
+scheduled in this repository. The physical isolation requirements remain design
+constraints; an EM network does not qualify electrical safety.
 
 ## 2. Inputs
 
@@ -367,16 +380,7 @@ the other ten design files (including the PCB and schematics) are unchanged.
 Full-board DRC was not rerun for this router-default change; rerouting and its
 DRC verification remain with the user.
 
-## 3. Cases to evaluate
-
-### Planned power-integrity work
-
-No power-integrity simulation or measured result is available. Evaluate supply
-distribution and voltage drop through the stack input, buck output and AFE
-preregulator; decoupling impedance and transient response at the ICs; and
-return paths through planes, vias and local ground connections. Inputs must
-include the saved stackup/layout, component parasitics and credible load cases
-from CMU-002. Preserve communication isolation keepouts in the models.
+## 3. Routing history and study interpretation
 
 ### Signal-integrity cases
 
@@ -393,27 +397,22 @@ copper and do not provide a 1.600 mm physical construction; see
 Recalculate if the confirmed replacement changes H, signal copper, Dk or
 mask geometry. Until then the current class remains a preliminary candidate.
 
-- [ ] Coated-pair impedance against the provisional target where the reference
-      plane exists, from supplier-confirmed stackup and actual copper geometry
-- [ ] Intra-pair skew
-- [ ] **Return path across the isolation barrier.** The return cannot cross it,
-      so the reference change must be deliberate and analysed, not incidental
-- [ ] Transformer terminations: 49R9 series, 220 pF / 100 pF C0G filtering
-- [ ] LTC3639 SW node dV/dt coupling into the tap filters and the daisy chain —
-      the highest-energy switching edge on the board
-- [ ] Cell tap RC filter corners against the AFE's sampling
-- [ ] Crosstalk between adjacent tap nets, which sit at up to 67 V DC apart
-- [ ] Maximum daisy-chain cable length (CMU-008 open item O-4)
+The board-only study evaluates local differential sections and a balanced
+small-signal path through the series resistors, bypasses and transformers to
+the connector contacts. It excludes cables and every other EM study. Supplier
+material confirmation, target tolerance, common-mode conversion, component
+parasitics and hardware correlation remain interpretation limits. They are not
+additional queued simulation cases.
 
-## 4. Acceptance
+## 4. Acceptance limits
 
-- [ ] Target and tolerance agreed and verified for the applicable routed sections
-- [ ] Transitions into plane-free isolation regions evaluated in full-link SI
-- [ ] Isolation barrier uncrossed by any copper on any layer
-- [ ] Filter corners consistent with the AFE sampling in CMU-004
+The completed numerical scope does not establish an agreed impedance tolerance,
+transition/common-mode performance or electrical isolation qualification.
+The all-layer copper keepout and isolation constraints remain design
+requirements; neither an exploratory FEM image nor a low solver residual proves
+those requirements are satisfied. No other EM simulation is scheduled here.
 
 ## 5. Validation (post-test)
 
-- [ ] Eye diagram on the daisy chain at maximum cable length
-- [ ] Bit error rate over the operating temperature range
-- [ ] Injected-noise margin
+Hardware correlation is separate from the completed numerical runs. No cable,
+eye-diagram, BER or injected-noise simulation is scheduled in this board repository.

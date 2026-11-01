@@ -26,3 +26,8 @@ Thumbs.db
 
 # VS Code Local History extension
 .history/
+
+# Python simulation helpers
+sim/**/__pycache__/
+.pytest_cache/
+sim/em/report-pending/

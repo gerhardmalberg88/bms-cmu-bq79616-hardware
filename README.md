@@ -7,7 +7,7 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-10-24**.
 - **Manufacturing files:** [package index](manufacturing/rev0.1-2026-10-24/README.md), [complete package ZIP](manufacturing/rev0.1-2026-10-24/complete-package.zip), and [fabrication-only ZIP](manufacturing/rev0.1-2026-10-24/fabrication.zip).
 - **KiCad design files:** [schematics, PCB and project files](design/).
 - **3D PCB:** [open the latest populated STL](manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S.stl) in GitHub.
-- **EM simulations — coming soon:** [models and planned results](sim/em/README.md).
+- **COMH/COML EM — reduced CPU study complete; provisional results:** [board-only report](sim/em/report/README.md).
 - **Thermal simulations — steady scope complete; provisional results:** [balancing-resistor cases](sim/thermal/README.md).
 
 <table>
@@ -18,7 +18,7 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-10-24**.
   </tr>
   <tr>
     <td align="center"><a href="manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S-raytraced.png"><img src="manufacturing/rev0.1-2026-10-24/3d/CMU-rev0.1-16S-raytraced.png" width="320" alt="Ray-traced populated PCB, angled top view"></a></td>
-    <td align="center"><a href="sim/em/README.md">Coming soon</a></td>
+    <td align="center"><a href="sim/em/report/comh-section.png"><img src="sim/em/report/comh-section.png" width="320" alt="COMH normalized differential electric-field section at 4 MHz; provisional EM result"></a><br><a href="sim/em/report/README.md">COMH/COML board-only EM results</a></td>
     <td align="center"><a href="sim/thermal/cell-balancing-resistors/report/isometric.png"><img src="sim/thermal/cell-balancing-resistors/report/isometric.png" width="320" alt="Provisional automatic balancing temperature simulation, isometric view, 25 degrees Celsius ambient and h=10 W/m²K"></a><br><a href="sim/thermal/cell-balancing-resistors/README.md">Automatic balancing: 61.24 °C maximum</a></td>
   </tr>
 </table>
@@ -130,8 +130,7 @@ bms-cmu-bq79616-hardware/
 |   |-- README.md               index; every sim names the claim it verifies
 |   |-- lib/                    shared params and vendor models
 |   |-- transient/
-|   |-- daisy-chain/
-|   |-- em/                     coming soon
+|   |-- em/                     COMH/COML board-only EM cases and reports
 |   `-- thermal/                balancing-resistor cases
 `-- tools/
     `-- gen_doc_tables.py       regenerates doc tables from the netlist

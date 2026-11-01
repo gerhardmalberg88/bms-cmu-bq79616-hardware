@@ -1,10 +1,11 @@
 # CMU simulations
 
 Simulation cases and results for the CMU design in `../design/`.
-[EM](em/README.md) cases use the sibling
-[pcb-em-lab](../../pcb-em-lab/README.md) toolchain. All eight supplied
-EM CPU pipelines passed; see its [validation record](../../pcb-em-lab/docs/validation.md)
-for CUDA status and model limitations. No reviewed EM result is supplied here.
+[EM](em/README.md) is limited to the on-board COMH/COML paths from U201 to
+J501/J502, including their filters and isolation transformers. Cables, mating
+connectors, unrelated magnetics and other EM studies are outside this repository's
+simulation scope. Native results stay under ignored `sim/results/em/`; compact
+reviewable outputs are published beside the EM cases.
 [Thermal](thermal/README.md) contains twelve completed steady cases and their
 provisional results; its BMS simulation scope is closed.
 The circuit cases below use the existing Qucs-S/ngspice scaffolding.
@@ -15,7 +16,7 @@ The circuit cases below use the existing Qucs-S/ngspice scaffolding.
 
 ## Tooling
 
-**No completed circuit simulation is supplied.** Each circuit case currently contains notes
+**No completed transient circuit simulation is supplied.** Each transient case currently contains notes
 and a launcher, with no circuit netlist, checked baseline or validated model.
 `run.sh` exits 2 until its netlist exists. The routed PCB and manufacturing
 exports do not change this status. Local tool installation is not a property
@@ -61,19 +62,16 @@ sim/
 │  ├─ vendor/                  third-party models - GITIGNORED, fetched at run time
 │  ├─ MODELS_PROVENANCE.csv    one row per model, including absent vendor ones
 │  └─ common.inc               shared params, traced to ../docs/
-├─ em/                         Palace cases; shared workflow in sibling repository
+├─ em/                         COMH/COML cases; installed pcb-em toolchain
 │  ├─ isospi-2d/               COMH/COML cross-section inputs
-│  ├─ isospi-3d/               bounded routing and connector-contact inputs
-│  └─ internal-magnetics/      approximate T501/T502/CMC and L601 inputs
+│  ├─ isospi-3d/               COMH/COML IC, filter and connector PCB regions
+│  └─ transformer-coupling/    balanced component model joining the PCB networks
 ├─ thermal/                    completed steady thermal scope; provisional results
 │  └─ cell-balancing-resistors/ completed steady cases and compact result snapshot
 ├─ transient/
 │  ├─ buck-fail-short/
 │  ├─ cell-tap-mis-mate/
 │  └─ startup-inrush/
-├─ daisy-chain/
-│  ├─ transformer-coupling/
-│  └─ cable-length/
 └─ results/                    generated output; gitignored
 ```
 
@@ -81,8 +79,8 @@ The following is the intended structure once a case is implemented. Currently
 only `run.sh` and `notes.md` are present in each circuit case. EM includes case
 inputs for its shared pipeline; thermal includes completed steady inputs and
 results with documented limitations.
-Workflow diagrams are Mermaid charts in the sibling repository README. The table below applies
-to circuit cases:
+The EM model flow is shown in [em/README.md](em/README.md). The table below
+applies to transient circuit cases:
 
 | File | Committed? | Why |
 |---|---|---|
@@ -102,13 +100,11 @@ is not evidence.
 
 | Simulation | Verifies | Status |
 |---|---|---|
-| [isoSPI communication — 2D EM](em/isospi-2d/README.md) | CMU-007 §§2.1/2.3 and §4: communication cross-sections against the provisional impedance target | CPU pipeline and mesh/domain sweeps passed; physical assumptions and target acceptance remain open |
+| [COMH/COML board-only EM](em/README.md) | CMU-007: U201 pads through filters/transformers to board connector contacts | CPU finite-element and balanced component model; provisional outputs and numerical limitations are recorded in the EM report |
 | [Cell balancing resistors — thermal](thermal/cell-balancing-resistors/README.md) | CMU-006: resistor-only steady heating and PCB cooling | 12 CPU cases complete; simulation scope closed; domain-unconverged results published |
 | `transient/buck-fail-short` | CMU-003 F-01 and CMU-002 §9 — 6.7 A through the ~8 Ω loop, F601 clearing in ~640 µs, energy into D601 | skeleton |
 | `transient/cell-tap-mis-mate` | CMU-003 F-14 and CMU-004 §5.1 — re-derive the fault current and check the `CBn` to `CBn-1` excursion; the historical ~133 mA estimate is unverified | skeleton |
 | `transient/startup-inrush` | CMU-002 §4 — 20 mA `ISTARTUP` against the rail and the VCollector ≥ 8 V floor | skeleton |
-| `daisy-chain/transformer-coupling` | CMU-007 and CMU-008 §4 — SM91502AL coupling with the 49R9 termination and C0G filtering | skeleton |
-| `daisy-chain/cable-length` | CMU-008 open item O-4 — maximum daisy-chain cable length | skeleton, blocked on CMU-001 |
 
 The mis-mate simulation matters most: it is the dominant hazard in the FMEA and
 the only one whose mitigation (the two 20 R resistors) has never been checked
@@ -159,17 +155,18 @@ Exit codes, so the simulations can gate a release the way ERC does:
 | 3 | ngspice not found |
 | 4 | ran, but there is no `check.py`, so nothing was verified |
 
-All five currently exit 2.
+The three transient skeletons currently exit 2. The EM workflow has its own
+bounded study runner and native results.
 
 ## Limits of the planned circuit simulations
 
 - **Thermal behaviour.** Junction temperatures need copper geometry and
-  enclosure conditions — see [planned thermal work](thermal/README.md).
+  enclosure conditions — see [completed steady thermal scope](thermal/README.md).
 - **Real fuse clearing.** `I²t` is a datasheet figure; a SPICE fuse is a switch
   with a threshold, so a clearing time from simulation is arithmetic dressed up
   as a waveform. Treat it as a sanity check, not evidence.
 - **Signal integrity from the stackup.** Requires geometry/material analysis
-  beyond these circuit models — see [planned EM work](em/README.md).
+  beyond these circuit models — see [COMH/COML EM scope](em/README.md).
 
 ## Open items
 

@@ -1,0 +1,1343 @@
+{
+  "schema": 1,
+  "scope": "Balanced COMH/COML IC-pad to board-connector hybrid EM/circuit model; no cable",
+  "source_hashes": {
+    "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "48b66ed63de190eae573f29474e5cdcfea27ddef977f4239acc6ed46ef62e249",
+    "design/battery_management_system_cell_monitoring_unit.kicad_pro": "007ba89fb531fafda2115564570d40f9a787d7665c6c71f23fd5da7b06613879",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/BQ79616-Q1.step": "41b99cd7e32a69e6e3da87575abfb2f5ed00fc2688880b8f00a260158521884c",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_CDSOD323-TxxC_SOD-323.step": "5b29fb8b5dd86221571a10578f7f264d105f1c6280618da7ee0e6fd3201f97fe",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_SMBJ-Q_DO-214AA.step": "3225f341ec46e1b6f3e6a42b91edc047326aeedce45c3f48c67a5c1f89d0c655",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5001642.step": "a64015144fb948042acb7ffe41719916c4f4680959d3bf409dd7d463f331e85b",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5002042.step": "147a5b52db77f30e274437e5c3405f40d35fddf308390d3755e67ce9eb0e5426",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5T10442MC.step": "d9e3c29bafd8378310180b20ad4395b272146228313e4a69d25d32bc76badddb",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/LTC3639_MSE16-12.step": "8fa7bc9b18da5da93552dfac7c4a877a187990f59e769f51c672e79d55e747ec",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/L_Wuerth_WE-PD-Robust-7332.step": "dbd2c78dd97e3461c1e9513aad11f8f7e74ae6c95b1b94ce51d5dcb1418ad1f9",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Littelfuse_470-Series_Fuse.step": "794bd63f8def800dc09ddfd7d10e234be1538f42423c78880e7cc59fe4e28c4b",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/SM91502AL.step": "4541f0e9c35b25d518ae435a1999c5bfd00563061cc62ab779ca532fe8f840d6",
+    "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Vishay_RCL1225_2W.step": "ddd50019864c40a6873fe497016d99e4c5f6fda81f049036c8d82e546d26350d"
+  },
+  "cases": {
+    "comh-2d": {
+      "case": "sim/em/isospi-2d/comh.yaml",
+      "case_sha256": "ecdc141a8d61c23f5c7cf85c607629fcba346d2e7090e49e7661e3be43c4589f",
+      "physical_configuration": {
+        "analysis": "boundary-mode",
+        "assumptions": [
+          "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+          "Flat soldermask approximation; ideal PEC copper.",
+          "4 MHz is an exploratory operating point, not an agreed communications band."
+        ],
+        "cross_section": {
+          "air_margin_mm": 6,
+          "line_mm": [
+            [
+              292,
+              123
+            ],
+            [
+              302,
+              123
+            ]
+          ],
+          "modes": 2,
+          "pair": [
+            "/bq79616/COMHP",
+            "/bq79616/COMHN"
+          ],
+          "target_index": 1.8
+        },
+        "frequency_hz": 4000000.0,
+        "materials": {
+          "soldermask_epsilon_r": 3.3,
+          "substrate_epsilon_r": 4.5
+        },
+        "mesh": {
+          "coarse_mm": 1.5,
+          "fine_mm": 0.05,
+          "order": 2,
+          "scale": 1.0
+        },
+        "mode": "2d",
+        "name": "comh-2d",
+        "verifies": "CMU-007 sections 2 and 4; actual saved cross-section, not netclass defaults"
+      },
+      "execution": {
+        "backend": "cpu",
+        "gpu_count": 0,
+        "mpi_ranks": 2,
+        "threads_per_rank": 1
+      },
+      "mesh_sha256": "43708c5524b6264f32901b04f9fbef47cca3c01133f8d211aa76770ae64f5f89",
+      "mesh_nodes": 10163,
+      "mesh_quality": null,
+      "ports": null,
+      "diagnostic_only": false,
+      "mode_classification": [
+        {
+          "common_voltage_ratio": 0.12605701281333168,
+          "differential_candidate": true,
+          "differential_voltage_ratio": 0.9999593653589028,
+          "mode": 1
+        },
+        {
+          "common_voltage_ratio": 0.9999005488959313,
+          "differential_candidate": false,
+          "differential_voltage_ratio": 0.2237176216312556,
+          "mode": 2
+        }
+      ],
+      "max_singular_value": null,
+      "reciprocity_max_abs_error": null,
+      "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+      "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+      "stages": {
+        "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+        "mesh": "1bc2d7944a2cd9199e63bb9970e2beee15ed5d3791cb52b1fbf589e05e52ec2d",
+        "solve": "3b33644d30697898e6ec84f9cf4ffdc628e4ffda58c566c6736f7bbca8138fb7",
+        "postprocess": "98aa090051c247bf85498db65b48b7aabb8cf0397be726a9a0421380c5b4d90a"
+      },
+      "latest_invocation_seconds": 0.2163243293762207
+    },
+    "comh-filter-2d": {
+      "case": "sim/em/isospi-2d/comh-filter.yaml",
+      "case_sha256": "670420bba24d336567eea79011a9c2a47256a9efdda0e68da7552abc927e7aaa",
+      "physical_configuration": {
+        "analysis": "boundary-mode",
+        "assumptions": [
+          "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+          "Flat soldermask approximation; ideal PEC copper.",
+          "4 MHz is an exploratory operating point, not an agreed communications band.",
+          "Uniform local filtered-pair section; its real per-length L/C are used as a lossless route-length line approximation in the reduced board-path model."
+        ],
+        "cross_section": {
+          "air_margin_mm": 6,
+          "line_mm": [
+            [
+              303.8,
+              116.5
+            ],
+            [
+              303.8,
+              124.0
+            ]
+          ],
+          "modes": 2,
+          "pair": [
+            "/com/FILT_COMHP",
+            "/com/FILT_COMHN"
+          ],
+          "target_index": 1.8
+        },
+        "frequency_hz": 4000000.0,
+        "materials": {
+          "soldermask_epsilon_r": 3.3,
+          "substrate_epsilon_r": 4.5
+        },
+        "mesh": {
+          "coarse_mm": 1.5,
+          "fine_mm": 0.05,
+          "order": 2,
+          "scale": 1.0
+        },
+        "mode": "2d",
+        "name": "comh-filter-2d",
+        "verifies": "CMU-007 sections 2 and 4; actual saved cross-section, not netclass defaults"
+      },
+      "execution": {
+        "backend": "cpu",
+        "gpu_count": 0,
+        "mpi_ranks": 2,
+        "threads_per_rank": 1
+      },
+      "mesh_sha256": "df474804707b4c2a530cc500cd961f7ca90a1f3a08fb2ad1281fffd9644f5cb5",
+      "mesh_nodes": 6277,
+      "mesh_quality": null,
+      "ports": null,
+      "diagnostic_only": false,
+      "mode_classification": [
+        {
+          "common_voltage_ratio": 0.0015068272491213979,
+          "differential_candidate": true,
+          "differential_voltage_ratio": 0.9999999446287904,
+          "mode": 1
+        },
+        {
+          "common_voltage_ratio": 0.9999984212258904,
+          "differential_candidate": false,
+          "differential_voltage_ratio": 0.01210528434973152,
+          "mode": 2
+        }
+      ],
+      "max_singular_value": null,
+      "reciprocity_max_abs_error": null,
+      "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+      "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+      "stages": {
+        "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+        "mesh": "f12a54e66030cdc82cd09035ea035a5c67ab48b6c5bceb3be7e268f256462299",
+        "solve": "84e1f1bd3f185d3e7a10f0f7f81187c10149a828c9f0435dd4922fa19f9b432d",
+        "postprocess": "fc7d2751307de71cf6dca53d3c88593290fb20ac97fc4638ddef5941a9cf1c4c"
+      },
+      "latest_invocation_seconds": 19.586604595184326
+    },
+    "comh-connector-3d": {
+      "case": "sim/em/isospi-3d/comh.yaml",
+      "case_sha256": "69cca7c711421e87d429cfaebd96ae03c8e62b7ad8566b440bf684d658b861f6",
+      "physical_configuration": {
+        "air_margin_mm": 3,
+        "analysis": "driven",
+        "assumptions": [
+          "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+          "Connector pins are editable 0.5 mm square, 5 mm tall approximations; housing omitted.",
+          "PEC sheet copper; conductor loss is not predicted.",
+          "Uniform soldermask slabs; pad-window geometry is not extracted.",
+          "Connector through-holes have ideal PEC solder fill joining each contact to its barrel.",
+          "Three spot frequencies (1, 4 and 10 MHz); no fitted transient model, fast-edge bandwidth or interpolation accuracy is established.",
+          "Two half-ports terminate at actual transformer secondary pads using SC_CT only as an internal port reference. Equal half-port currents enforce zero external SC_CT current in the reduced differential network. SC_CT has no added physical ground connection.",
+          "Flux-error estimator tolerance is 1e-2 for bounded runtime; the field solve remains at 1e-8. Error indicators are approximate diagnostics, not a convergence qualification."
+        ],
+        "connectors": [
+          {
+            "height_mm": 5,
+            "pin_width_mm": 0.5,
+            "ref": "J501"
+          }
+        ],
+        "engineering_context": "CMU-007 sections 2 and 4: bounded PCB communication routing and connector coupling; no full-link acceptance",
+        "frequencies_hz": [
+          1000000.0,
+          4000000.0,
+          10000000.0
+        ],
+        "materials": {
+          "soldermask_epsilon_r": 3.3,
+          "substrate_epsilon_r": 4.5
+        },
+        "mesh": {
+          "algorithm_3d": 1,
+          "coarse_mm": 2,
+          "fine_mm": 0.15,
+          "order": 1,
+          "scale": 1.0,
+          "threads": 1
+        },
+        "mode": "3d",
+        "name": "comh-connector-3d",
+        "numerics": {
+          "estimator_max_iterations": 1000,
+          "estimator_multigrid": true,
+          "estimator_tolerance": 0.01,
+          "linear_tolerance": 1e-08,
+          "max_iterations": 200
+        },
+        "ports": [
+          {
+            "name": "transformer-positive-half",
+            "negative": "T501:5",
+            "negative_net": "unconnected-(T501-SC_CT-Pad5)",
+            "positive": "T501:6",
+            "positive_net": "/com/ISO_COMHP",
+            "reference_ohms": 50
+          },
+          {
+            "name": "transformer-negative-half",
+            "negative": "T501:4",
+            "negative_net": "/com/ISO_COMHN",
+            "positive": "T501:5",
+            "positive_net": "unconnected-(T501-SC_CT-Pad5)",
+            "reference_ohms": 50
+          },
+          {
+            "name": "connector-contact",
+            "negative": "J501:2",
+            "negative_net": "/com/ISO_COMHN",
+            "positive": "J501:1",
+            "positive_net": "/com/ISO_COMHP",
+            "reference_ohms": 100
+          }
+        ],
+        "region_mm": [
+          315.7,
+          116.5,
+          323.3,
+          124.0
+        ]
+      },
+      "execution": {
+        "backend": "cpu",
+        "gpu_count": 0,
+        "mpi_ranks": 2,
+        "threads_per_rank": 1
+      },
+      "mesh_sha256": "60257b944d728331c6ca927570d0a88246bee28d344f90973a068ae6bbdbba45",
+      "mesh_nodes": 25240,
+      "mesh_quality": {
+        "below_0_01": 375,
+        "minimum_minSICN": 5.957070471258438e-07,
+        "tetrahedra": 142134
+      },
+      "ports": [
+        {
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "endpoints_mm": [
+            [
+              316.89,
+              117.66,
+              -0.0175
+            ],
+            [
+              316.89,
+              120.2,
+              -0.0175
+            ]
+          ],
+          "index": 1,
+          "name": "transformer-positive-half",
+          "negative": "T501:5",
+          "nets": [
+            "/com/ISO_COMHP",
+            "unconnected-(T501-SC_CT-Pad5)"
+          ],
+          "positive": "T501:6",
+          "reference_ohms": 50.0
+        },
+        {
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "endpoints_mm": [
+            [
+              316.89,
+              120.2,
+              -0.0175
+            ],
+            [
+              316.89,
+              122.74,
+              -0.0175
+            ]
+          ],
+          "index": 2,
+          "name": "transformer-negative-half",
+          "negative": "T501:4",
+          "nets": [
+            "unconnected-(T501-SC_CT-Pad5)",
+            "/com/ISO_COMHN"
+          ],
+          "positive": "T501:5",
+          "reference_ohms": 50.0
+        },
+        {
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "endpoints_mm": [
+            [
+              320.2,
+              119.25,
+              5.0
+            ],
+            [
+              320.2,
+              121.25,
+              5.0
+            ]
+          ],
+          "index": 3,
+          "name": "connector-contact",
+          "negative": "J501:2",
+          "nets": [
+            "/com/ISO_COMHP",
+            "/com/ISO_COMHN"
+          ],
+          "positive": "J501:1",
+          "reference_ohms": 100.0
+        }
+      ],
+      "diagnostic_only": false,
+      "mode_classification": null,
+      "max_singular_value": 0.9999999992342649,
+      "reciprocity_max_abs_error": 9.266677157419148e-10,
+      "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+      "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+      "stages": {
+        "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+        "mesh": "1097c6d2d085d842de09a5bf174d3ab158648b6857a076962c1498ddd425b3cb",
+        "solve": "da79c7191f65d40a2cd18a2590e83f0db1d12813325218a36ee6031bb00d69cb",
+        "postprocess": "019ca84365e3ddda8b299c2e568c51e292a1eed207b8bc77dbe2bc1697bd92c5"
+      },
+      "latest_invocation_seconds": 1.732010841369629
+    },
+    "coml-2d": {
+      "case": "sim/em/isospi-2d/coml.yaml",
+      "case_sha256": "bafc1d504f7ccb6dfca14490286ca334f059c226a18060a1f4f5a5921112299d",
+      "physical_configuration": {
+        "analysis": "boundary-mode",
+        "assumptions": [
+          "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+          "Flat soldermask approximation; ideal PEC copper.",
+          "4 MHz is an exploratory operating point, not an agreed communications band."
+        ],
+        "cross_section": {
+          "air_margin_mm": 6,
+          "line_mm": [
+            [
+              292,
+              132.5
+            ],
+            [
+              302,
+              132.5
+            ]
+          ],
+          "modes": 2,
+          "pair": [
+            "/bq79616/COMLP",
+            "/bq79616/COMLN"
+          ],
+          "target_index": 1.8
+        },
+        "frequency_hz": 4000000.0,
+        "materials": {
+          "soldermask_epsilon_r": 3.3,
+          "substrate_epsilon_r": 4.5
+        },
+        "mesh": {
+          "coarse_mm": 1.5,
+          "fine_mm": 0.05,
+          "order": 2,
+          "scale": 1.0
+        },
+        "mode": "2d",
+        "name": "coml-2d",
+        "verifies": "CMU-007 sections 2 and 4; actual saved cross-section, not netclass defaults"
+      },
+      "execution": {
+        "backend": "cpu",
+        "gpu_count": 0,
+        "mpi_ranks": 2,
+        "threads_per_rank": 1
+      },
+      "mesh_sha256": "e9d180a916028439771a3beab17ba62a83742c8fed841727d769d4dc7d4cebee",
+      "mesh_nodes": 10594,
+      "mesh_quality": null,
+      "ports": null,
+      "diagnostic_only": false,
+      "mode_classification": [
+        {
+          "common_voltage_ratio": 0.0823271605043274,
+          "differential_candidate": true,
+          "differential_voltage_ratio": 0.9999848488786245,
+          "mode": 1
+        },
+        {
+          "common_voltage_ratio": 0.9999650697639608,
+          "differential_candidate": false,
+          "differential_voltage_ratio": 0.16285149069666585,
+          "mode": 2
+        }
+      ],
+      "max_singular_value": null,
+      "reciprocity_max_abs_error": null,
+      "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+      "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+      "stages": {
+        "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+        "mesh": "e6559174e65e862266ca31befba8d8c76314287014c6dcd7bef9d4838b8e16d7",
+        "solve": "c8ee4dcdaad8615bdbf03416e12a809726c88f010a082198ae2229f49966078a",
+        "postprocess": "4ea49e3f5adcb67723596fd4e64c6fe1c1c75895d2d3bfdbd923261f4a7c909e"
+      },
+      "latest_invocation_seconds": 0.2129662036895752
+    },
+    "coml-filter-2d": {
+      "case": "sim/em/isospi-2d/coml-filter.yaml",
+      "case_sha256": "64e941b58d61de343d6004a67d2c976506a0413646687cedf67c2c95b8e2a785",
+      "physical_configuration": {
+        "analysis": "boundary-mode",
+        "assumptions": [
+          "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+          "Flat soldermask approximation; ideal PEC copper.",
+          "4 MHz is an exploratory operating point, not an agreed communications band.",
+          "Uniform local filtered-pair section; its real per-length L/C are used as a lossless route-length line approximation in the reduced board-path model."
+        ],
+        "cross_section": {
+          "air_margin_mm": 6,
+          "line_mm": [
+            [
+              303.8,
+              131.9
+            ],
+            [
+              303.8,
+              139.5
+            ]
+          ],
+          "modes": 4,
+          "pair": [
+            "/com/FILT_COMLP",
+            "/com/FILT_COMLN"
+          ],
+          "target_index": 1.8
+        },
+        "frequency_hz": 4000000.0,
+        "materials": {
+          "soldermask_epsilon_r": 3.3,
+          "substrate_epsilon_r": 4.5
+        },
+        "mesh": {
+          "coarse_mm": 1.5,
+          "fine_mm": 0.035,
+          "order": 2,
+          "scale": 1.0
+        },
+        "mode": "2d",
+        "name": "coml-filter-2d",
+        "verifies": "CMU-007 sections 2 and 4; actual saved cross-section, not netclass defaults"
+      },
+      "execution": {
+        "backend": "cpu",
+        "gpu_count": 0,
+        "mpi_ranks": 2,
+        "threads_per_rank": 1
+      },
+      "mesh_sha256": "ca2ac50b9b7458cf62095fa3e197b88a7c8685204817d3c6beddd6e51c6f110c",
+      "mesh_nodes": 10677,
+      "mesh_quality": null,
+      "ports": null,
+      "diagnostic_only": true,
+      "mode_classification": [
+        {
+          "common_voltage_ratio": 0.4308380154124317,
+          "differential_candidate": false,
+          "differential_voltage_ratio": 0.9997752675135748,
+          "mode": 1
+        },
+        {
+          "common_voltage_ratio": 0.4810449531337023,
+          "differential_candidate": false,
+          "differential_voltage_ratio": 0.9997561644168809,
+          "mode": 2
+        },
+        {
+          "common_voltage_ratio": 0.032608676382563644,
+          "differential_candidate": true,
+          "differential_voltage_ratio": 0.9999999839035212,
+          "mode": 3
+        },
+        {
+          "common_voltage_ratio": 0.9999963815898026,
+          "differential_candidate": false,
+          "differential_voltage_ratio": 0.1698168102767371,
+          "mode": 4
+        }
+      ],
+      "max_singular_value": null,
+      "reciprocity_max_abs_error": null,
+      "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+      "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+      "stages": {
+        "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+        "mesh": "8dcd5f78d647b2fc9ec7297062e910ccac1e51ba17d37358a1ee7616d73426a3",
+        "solve": "ce99fee97981fab86c1967bc74c0627c7e8ff9e3c60d62660f8025d3011bbd05",
+        "postprocess": "4e8b6ce7369f3cf658cb8e0745cb40f53cf0af63401ea0c0a3f3d197c17dd530"
+      },
+      "latest_invocation_seconds": 51.91202211380005
+    },
+    "coml-connector-3d": {
+      "case": "sim/em/isospi-3d/coml.yaml",
+      "case_sha256": "b058f25a3bf9a2db26e17389e79900b8e34bff7d55842d13732954a8faaca782",
+      "physical_configuration": {
+        "air_margin_mm": 3,
+        "analysis": "driven",
+        "assumptions": [
+          "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
+          "Connector pins are editable 0.5 mm square, 5 mm tall approximations; housing omitted.",
+          "PEC sheet copper; conductor loss is not predicted.",
+          "Uniform soldermask slabs; pad-window geometry is not extracted.",
+          "Connector through-holes have ideal PEC solder fill joining each contact to its barrel.",
+          "Three spot frequencies (1, 4 and 10 MHz); no fitted transient model, fast-edge bandwidth or interpolation accuracy is established.",
+          "Two half-ports terminate at actual transformer secondary pads using SC_CT only as an internal port reference. Equal half-port currents enforce zero external SC_CT current in the reduced differential network. SC_CT has no added physical ground connection.",
+          "Flux-error estimator tolerance is 1e-2 for bounded runtime; the field solve remains at 1e-8. Error indicators are approximate diagnostics, not a convergence qualification."
+        ],
+        "connectors": [
+          {
+            "height_mm": 5,
+            "pin_width_mm": 0.5,
+            "ref": "J502"
+          }
+        ],
+        "engineering_context": "CMU-007 sections 2 and 4: bounded PCB communication routing and connector coupling; no full-link acceptance",
+        "frequencies_hz": [
+          1000000.0,
+          4000000.0,
+          10000000.0
+        ],
+        "materials": {
+          "soldermask_epsilon_r": 3.3,
+          "substrate_epsilon_r": 4.5
+        },
+        "mesh": {
+          "algorithm_3d": 1,
+          "coarse_mm": 2,
+          "fine_mm": 0.15,
+          "order": 1,
+          "scale": 1.1,
+          "threads": 1
+        },
+        "mode": "3d",
+        "name": "coml-connector-3d",
+        "numerics": {
+          "estimator_max_iterations": 1000,
+          "estimator_multigrid": true,
+          "estimator_tolerance": 0.01,
+          "linear_tolerance": 1e-08,
+          "max_iterations": 200
+        },
+        "ports": [
+          {
+            "name": "transformer-positive-half",
+            "negative": "T502:5",
+            "negative_net": "unconnected-(T502-SC_CT-Pad5)",
+            "positive": "T502:4",
+            "positive_net": "/com/ISO_COMLP",
+            "reference_ohms": 50
+          },
+          {
+            "name": "transformer-negative-half",
+            "negative": "T502:6",
+            "negative_net": "/com/ISO_COMLN",
+            "positive": "T502:5",
+            "positive_net": "unconnected-(T502-SC_CT-Pad5)",
+            "reference_ohms": 50
+          },
+          {
+            "name": "J502-contacts",
+            "negative": "J502:1",
+            "negative_net": "/com/ISO_COMLN",
+            "positive": "J502:2",
+            "positive_net": "/com/ISO_COMLP",
+            "reference_ohms": 100
+          }
+        ],
+        "region_mm": [
+          315.7,
+          131.9,
+          323.29,
+          139.5
+        ]
+      },
+      "execution": {
+        "backend": "cpu",
+        "gpu_count": 0,
+        "mpi_ranks": 2,
+        "threads_per_rank": 1
+      },
+      "mesh_sha256": "400b5a139ba2013cd837121795cb3f4f6f2c27aa4137b2fc7b4eb04c00b44414",
+      "mesh_nodes": 25306,
+      "mesh_quality": {
+        "below_0_01": 464,
+        "minimum_minSICN": 1.7187446383691845e-07,
+        "tetrahedra": 142393
+      },
+      "ports": [
+        {
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "endpoints_mm": [
+            [
+              316.88,
+              138.2,
+              -0.0175
+            ],
+            [
+              316.88,
+              135.66,
+              -0.0175
+            ]
+          ],
+          "index": 1,
+          "name": "transformer-positive-half",
+          "negative": "T502:5",
+          "nets": [
+            "/com/ISO_COMLP",
+            "unconnected-(T502-SC_CT-Pad5)"
+          ],
+          "positive": "T502:4",
+          "reference_ohms": 50.0
+        },
+        {
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "endpoints_mm": [
+            [
+              316.88,
+              135.66,
+              -0.0175
+            ],
+            [
+              316.88,
+              133.12,
+              -0.0175
+            ]
+          ],
+          "index": 2,
+          "name": "transformer-negative-half",
+          "negative": "T502:6",
+          "nets": [
+            "unconnected-(T502-SC_CT-Pad5)",
+            "/com/ISO_COMLN"
+          ],
+          "positive": "T502:5",
+          "reference_ohms": 50.0
+        },
+        {
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "endpoints_mm": [
+            [
+              320.19,
+              136.72,
+              5.0
+            ],
+            [
+              320.19,
+              134.72,
+              5.0
+            ]
+          ],
+          "index": 3,
+          "name": "J502-contacts",
+          "negative": "J502:1",
+          "nets": [
+            "/com/ISO_COMLP",
+            "/com/ISO_COMLN"
+          ],
+          "positive": "J502:2",
+          "reference_ohms": 100.0
+        }
+      ],
+      "diagnostic_only": false,
+      "mode_classification": null,
+      "max_singular_value": 0.9999999996101561,
+      "reciprocity_max_abs_error": 1.5068576236985656e-10,
+      "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+      "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+      "stages": {
+        "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+        "mesh": "d20a207e103d612bce7ef9b66dccadce54e660b77e2a16849752c23df659e7d6",
+        "solve": "6859b185eb7bbca47d34b2d20e05dad094546d82e5b7cc4bfe62a497d28e0b1c",
+        "postprocess": "e2e89b43aac449f694187510d1cee8de3668fa5d08c31e1b5ca613010d56c392"
+      },
+      "latest_invocation_seconds": 1.5976011753082275
+    }
+  },
+  "combined_network": {
+    "schema": 1,
+    "scope": "Balanced COMH/COML IC-pad to board-connector hybrid EM/circuit model; no cable",
+    "assumptions": [
+      "Balanced linear differential small-signal circuit from IC pads to board connector contacts; no IC die, driver waveform, cable or mating connector.",
+      "IC-side and filtered-side routing use lossless uniform transmission-line equivalents from real 4 MHz section L/C and mean saved P/N route lengths. Bends, pads, neck-downs, asymmetric lengths and frequency dependence are not resolved along the full route. This is an approximation after the dense 3D primary meshes failed quality checks.",
+      "Only the transformer-secondary-to-connector region is a 3D field network. There is no validated 3D field solution from the IC to the transformer primary. Coupling between separately represented path sections is omitted.",
+      "COML filtered-section modes are ambiguous; the parity-screened 4.5 ohm candidate is not accepted as the signal impedance. COML uses COMH filtered-section L/C as an explicit proxy with its own saved route length. Different spacing/surroundings and common-mode mixing remain unqualified.",
+      "Half-port voltages are added and equal currents imposed using Z_reduced = C^T Z C. Center taps have zero external differential current and no added physical ground connection.",
+      "Two equal 220 pF capacitors to local ground become 110 pF differential capacitance. Their load and the 1k shunt are collapsed to the series-resistor input plane; individual pad-location effects are omitted.",
+      "The primary 100 pF center-tap bypass carries no current in this balanced reduction. Common-mode behavior, mode conversion and asymmetric loading are outside this model.",
+      "TVS nonlinear behavior and off-state capacitance, component lead/package parasitics, transformer core loss and interwinding capacitance are omitted.",
+      "3D copper is PEC sheet copper. Narrow 1-10 MHz sampling is not fast-edge, eye-diagram, BER, EMC or isolation qualification."
+    ],
+    "configuration": {
+      "schema": 1,
+      "reference_ohms": 100,
+      "series_resistance_per_leg_ohms": 49.9,
+      "input_shunt_ohms": 1000,
+      "bypass_capacitance_per_leg_F": 2.2e-10,
+      "transformer": {
+        "part": "SM91502AL",
+        "source": "https://www.bourns.com/docs/product-datasheets/SM91502AL.pdf",
+        "magnetizing_inductance_H": 0.00015,
+        "leakage_inductance_H": 5e-07,
+        "primary_resistance_ohms": 0.45,
+        "secondary_resistance_ohms": 0.85,
+        "ratio": 1,
+        "assumption": "Linear differential equivalent, using OCL minimum, leakage maximum and listed DCR limits. Ratings measured at 100 kHz are extrapolated to the solved band; these values do not bound all real devices or include core loss, frequency-dependent CMC leakage or capacitance.",
+        "polarity_note": "Primary pin 1 and secondary pin 6 have matching transformer polarity in the manufacturer schematic. COML reverses both primary and secondary pairs."
+      },
+      "channels": {
+        "comh": {
+          "ic_positive": "U201:43",
+          "ic_negative": "U201:42",
+          "positive_resistor": "R501",
+          "negative_resistor": "R503",
+          "shunt": "R502",
+          "bypass": [
+            "C501",
+            "C503"
+          ],
+          "transformer": "T501",
+          "primary_positive": "1",
+          "primary_negative": "3",
+          "secondary_positive": "6",
+          "secondary_negative": "4",
+          "connector_positive": "J501:1",
+          "connector_negative": "J501:2"
+        },
+        "coml": {
+          "ic_positive": "U201:40",
+          "ic_negative": "U201:41",
+          "positive_resistor": "R504",
+          "negative_resistor": "R506",
+          "shunt": "R505",
+          "bypass": [
+            "C504",
+            "C506"
+          ],
+          "transformer": "T502",
+          "primary_positive": "3",
+          "primary_negative": "1",
+          "secondary_positive": "4",
+          "secondary_negative": "6",
+          "connector_positive": "J502:2",
+          "connector_negative": "J502:1"
+        }
+      },
+      "assumptions": [
+        "Balanced linear differential small-signal circuit from IC pads to board connector contacts; no IC die, driver waveform, cable or mating connector.",
+        "IC-side and filtered-side routing use lossless uniform transmission-line equivalents from real 4 MHz section L/C and mean saved P/N route lengths. Bends, pads, neck-downs, asymmetric lengths and frequency dependence are not resolved along the full route. This is an approximation after the dense 3D primary meshes failed quality checks.",
+        "Only the transformer-secondary-to-connector region is a 3D field network. There is no validated 3D field solution from the IC to the transformer primary. Coupling between separately represented path sections is omitted.",
+        "COML filtered-section modes are ambiguous; the parity-screened 4.5 ohm candidate is not accepted as the signal impedance. COML uses COMH filtered-section L/C as an explicit proxy with its own saved route length. Different spacing/surroundings and common-mode mixing remain unqualified.",
+        "Half-port voltages are added and equal currents imposed using Z_reduced = C^T Z C. Center taps have zero external differential current and no added physical ground connection.",
+        "Two equal 220 pF capacitors to local ground become 110 pF differential capacitance. Their load and the 1k shunt are collapsed to the series-resistor input plane; individual pad-location effects are omitted.",
+        "The primary 100 pF center-tap bypass carries no current in this balanced reduction. Common-mode behavior, mode conversion and asymmetric loading are outside this model.",
+        "TVS nonlinear behavior and off-state capacitance, component lead/package parasitics, transformer core loss and interwinding capacitance are omitted.",
+        "3D copper is PEC sheet copper. Narrow 1-10 MHz sampling is not fast-edge, eye-diagram, BER, EMC or isolation qualification."
+      ],
+      "pcb_model": "section-derived-primary-lines-and-3d-secondary",
+      "filtered_line_proxy": {
+        "coml": "comh-filter-2d"
+      },
+      "diagnostic_sections": [
+        "coml-filter-2d"
+      ]
+    },
+    "channels": {
+      "comh": {
+        "routes": [
+          {
+            "start": "U201:43",
+            "end": "R501:1",
+            "net": "/bq79616/COMHP",
+            "length_mm": 18.234579061800602
+          },
+          {
+            "start": "R501:2",
+            "end": "T501:1",
+            "net": "/com/FILT_COMHP",
+            "length_mm": 6.047319353546487
+          },
+          {
+            "start": "T501:6",
+            "end": "J501:1",
+            "net": "/com/ISO_COMHP",
+            "length_mm": 3.9685995641732164
+          },
+          {
+            "start": "U201:42",
+            "end": "R503:1",
+            "net": "/bq79616/COMHN",
+            "length_mm": 18.229310214949784
+          },
+          {
+            "start": "R503:2",
+            "end": "T501:3",
+            "net": "/com/FILT_COMHN",
+            "length_mm": 6.138736255149922
+          },
+          {
+            "start": "T501:4",
+            "end": "J501:2",
+            "net": "/com/ISO_COMHN",
+            "length_mm": 3.927178207935924
+          }
+        ],
+        "ic_line": {
+          "section": "comh-2d",
+          "length_m": 0.018231944638375193,
+          "L_H_per_m": 6.152499838312e-07,
+          "C_F_per_m": 5.896908436561e-11,
+          "Z_ohms": 102.14417693546632,
+          "section_frequency_hz": 4000000.0,
+          "assumption": "Lossless uniform line; real 4 MHz section parameters held constant across 1/4/10 MHz"
+        },
+        "filtered_line": {
+          "section": "comh-filter-2d",
+          "length_m": 0.006093027804348205,
+          "L_H_per_m": 7.175611147158e-07,
+          "C_F_per_m": 4.711549610509e-11,
+          "Z_ohms": 123.40920759285395,
+          "section_frequency_hz": 4000000.0,
+          "assumption": "Lossless uniform line; real 4 MHz section parameters held constant across 1/4/10 MHz"
+        },
+        "checked_components": {
+          "R501": "49R9 1%",
+          "R503": "49R9 1%",
+          "C501": "220pF 50V C0G",
+          "C503": "220pF 50V C0G",
+          "T501": "SM91502AL"
+        },
+        "max_singular_value": 0.925059296738927,
+        "reciprocity_max_abs_error": 7.901638038554765e-10,
+        "transformer_sensitivity_scope": "Illustrative Lm=150/300/450 uH, leakage=0/0.25/0.5 uH; not a full tolerance or frequency-validity bound"
+      },
+      "coml": {
+        "routes": [
+          {
+            "start": "U201:40",
+            "end": "R504:1",
+            "net": "/bq79616/COMLP",
+            "length_mm": 17.777901006469538
+          },
+          {
+            "start": "R504:2",
+            "end": "T502:3",
+            "net": "/com/FILT_COMLP",
+            "length_mm": 5.983347444535129
+          },
+          {
+            "start": "T502:4",
+            "end": "J502:2",
+            "net": "/com/ISO_COMLP",
+            "length_mm": 3.92303607231217
+          },
+          {
+            "start": "U201:41",
+            "end": "R506:1",
+            "net": "/bq79616/COMLN",
+            "length_mm": 17.67298457688123
+          },
+          {
+            "start": "R506:2",
+            "end": "T502:1",
+            "net": "/com/FILT_COMLN",
+            "length_mm": 5.899909439794051
+          },
+          {
+            "start": "T502:6",
+            "end": "J502:1",
+            "net": "/com/ISO_COMLN",
+            "length_mm": 3.9727416997969436
+          }
+        ],
+        "ic_line": {
+          "section": "coml-2d",
+          "length_m": 0.017725442791675386,
+          "L_H_per_m": 6.096990871644e-07,
+          "C_F_per_m": 5.960180169055e-11,
+          "Z_ohms": 101.14119447456862,
+          "section_frequency_hz": 4000000.0,
+          "assumption": "Lossless uniform line; real 4 MHz section parameters held constant across 1/4/10 MHz"
+        },
+        "filtered_line": {
+          "section": "comh-filter-2d",
+          "length_m": 0.00594162844216459,
+          "L_H_per_m": 7.175611147158e-07,
+          "C_F_per_m": 4.711549610509e-11,
+          "Z_ohms": 123.40920759285395,
+          "section_frequency_hz": 4000000.0,
+          "assumption": "Lossless uniform line; real 4 MHz section parameters held constant across 1/4/10 MHz"
+        },
+        "checked_components": {
+          "R504": "49R9 1%",
+          "R506": "49R9 1%",
+          "C504": "220pF 50V C0G",
+          "C506": "220pF 50V C0G",
+          "T502": "SM91502AL"
+        },
+        "max_singular_value": 0.925070559078725,
+        "reciprocity_max_abs_error": 1.023709923864691e-10,
+        "transformer_sensitivity_scope": "Illustrative Lm=150/300/450 uH, leakage=0/0.25/0.5 uH; not a full tolerance or frequency-validity bound",
+        "filtered_proxy_sensitivity": {
+          "impedance_factors": [
+            0.5,
+            2.0
+          ],
+          "maximum_s21_change_db": 0.0008705885818436343,
+          "scope": "Assumed impedance variation at fixed propagation velocity; not a bound on real geometry, asymmetry or mode conversion"
+        }
+      }
+    },
+    "source_hashes": {
+      "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "48b66ed63de190eae573f29474e5cdcfea27ddef977f4239acc6ed46ef62e249",
+      "design/battery_management_system_cell_monitoring_unit.kicad_pro": "007ba89fb531fafda2115564570d40f9a787d7665c6c71f23fd5da7b06613879",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/BQ79616-Q1.step": "41b99cd7e32a69e6e3da87575abfb2f5ed00fc2688880b8f00a260158521884c",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_CDSOD323-TxxC_SOD-323.step": "5b29fb8b5dd86221571a10578f7f264d105f1c6280618da7ee0e6fd3201f97fe",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Bourns_SMBJ-Q_DO-214AA.step": "3225f341ec46e1b6f3e6a42b91edc047326aeedce45c3f48c67a5c1f89d0c655",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5001642.step": "a64015144fb948042acb7ffe41719916c4f4680959d3bf409dd7d463f331e85b",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5002042.step": "147a5b52db77f30e274437e5c3405f40d35fddf308390d3755e67ce9eb0e5426",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Harwin_Datamate_M80-5T10442MC.step": "d9e3c29bafd8378310180b20ad4395b272146228313e4a69d25d32bc76badddb",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/LTC3639_MSE16-12.step": "8fa7bc9b18da5da93552dfac7c4a877a187990f59e769f51c672e79d55e747ec",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/L_Wuerth_WE-PD-Robust-7332.step": "dbd2c78dd97e3461c1e9513aad11f8f7e74ae6c95b1b94ce51d5dcb1418ad1f9",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Littelfuse_470-Series_Fuse.step": "794bd63f8def800dc09ddfd7d10e234be1538f42423c78880e7cc59fe4e28c4b",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/SM91502AL.step": "4541f0e9c35b25d518ae435a1999c5bfd00563061cc62ab779ca532fe8f840d6",
+      "design/kicad-libraries/3d_models/custom_3dmodels.3dshapes/Vishay_RCL1225_2W.step": "ddd50019864c40a6873fe497016d99e4c5f6fda81f049036c8d82e546d26350d"
+    },
+    "model_sha256": "23616447e34972c0bba71f8d403a546a7cfd887eb971d122d1c55c13ac3265c5",
+    "script_sha256": "cf7be5f3f608a5005ba7cca5ad8e7560a2e8b9240410beb7c485b0004f7c6c0e",
+    "saved_stackup": [
+      {
+        "epsilon_r": null,
+        "kind": "dielectric",
+        "loss_tangent": 0.0,
+        "material": "Top Solder Mask",
+        "name": "F.Mask",
+        "sublayer": 0,
+        "thickness_mm": 0.035,
+        "z_bottom_mm": 0.0,
+        "z_top_mm": 0.035
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "F.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.035,
+        "z_bottom_mm": -0.035,
+        "z_top_mm": 0.0
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR1080",
+        "name": "dielectric 1",
+        "sublayer": 0,
+        "thickness_mm": 0.07,
+        "z_bottom_mm": -0.10500000000000001,
+        "z_top_mm": -0.035
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR2116",
+        "name": "dielectric 1",
+        "sublayer": 1,
+        "thickness_mm": 0.12,
+        "z_bottom_mm": -0.225,
+        "z_top_mm": -0.10500000000000001
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "In1.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.018,
+        "z_bottom_mm": -0.243,
+        "z_top_mm": -0.225
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved Tg 145-150 C",
+        "name": "dielectric 2",
+        "sublayer": 0,
+        "thickness_mm": 0.2,
+        "z_bottom_mm": -0.443,
+        "z_top_mm": -0.243
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "In2.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.018,
+        "z_bottom_mm": -0.461,
+        "z_top_mm": -0.443
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR2116",
+        "name": "dielectric 3",
+        "sublayer": 0,
+        "thickness_mm": 0.12,
+        "z_bottom_mm": -0.581,
+        "z_top_mm": -0.461
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR2116",
+        "name": "dielectric 3",
+        "sublayer": 1,
+        "thickness_mm": 0.12,
+        "z_bottom_mm": -0.701,
+        "z_top_mm": -0.581
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "In3.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.018,
+        "z_bottom_mm": -0.719,
+        "z_top_mm": -0.701
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved Tg 145-150 C",
+        "name": "dielectric 4",
+        "sublayer": 0,
+        "thickness_mm": 0.2,
+        "z_bottom_mm": -0.919,
+        "z_top_mm": -0.719
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "In4.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.018,
+        "z_bottom_mm": -0.937,
+        "z_top_mm": -0.919
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR2116",
+        "name": "dielectric 5",
+        "sublayer": 0,
+        "thickness_mm": 0.12,
+        "z_bottom_mm": -1.057,
+        "z_top_mm": -0.937
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR2116",
+        "name": "dielectric 5",
+        "sublayer": 1,
+        "thickness_mm": 0.12,
+        "z_bottom_mm": -1.177,
+        "z_top_mm": -1.057
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "In5.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.018,
+        "z_bottom_mm": -1.195,
+        "z_top_mm": -1.177
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved Tg 145-150 C",
+        "name": "dielectric 6",
+        "sublayer": 0,
+        "thickness_mm": 0.2,
+        "z_bottom_mm": -1.395,
+        "z_top_mm": -1.195
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "In6.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.018,
+        "z_bottom_mm": -1.413,
+        "z_top_mm": -1.395
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR2116",
+        "name": "dielectric 7",
+        "sublayer": 0,
+        "thickness_mm": 0.12,
+        "z_bottom_mm": -1.533,
+        "z_top_mm": -1.413
+      },
+      {
+        "epsilon_r": 4.5,
+        "kind": "dielectric",
+        "loss_tangent": 0.02,
+        "material": "FR-4 Improved PR1080",
+        "name": "dielectric 7",
+        "sublayer": 1,
+        "thickness_mm": 0.07,
+        "z_bottom_mm": -1.603,
+        "z_top_mm": -1.533
+      },
+      {
+        "epsilon_r": null,
+        "kind": "copper",
+        "loss_tangent": 0.0,
+        "material": "copper",
+        "name": "B.Cu",
+        "sublayer": 0,
+        "thickness_mm": 0.035,
+        "z_bottom_mm": -1.638,
+        "z_top_mm": -1.603
+      },
+      {
+        "epsilon_r": null,
+        "kind": "dielectric",
+        "loss_tangent": 0.0,
+        "material": "Bottom Solder Mask",
+        "name": "B.Mask",
+        "sublayer": 0,
+        "thickness_mm": 0.035,
+        "z_bottom_mm": -1.6729999999999998,
+        "z_top_mm": -1.638
+      }
+    ],
+    "declared_thickness_mm": 1.708,
+    "extraction_kicad_version": "10.0.7-10.0.7~ubuntu24.04.1",
+    "cases": {
+      "comh-2d": {
+        "provenance_sha256": "07f22e66774c64c1359af181c6ffe4fdfc0ee87d9af376436baa6e50bfda3239",
+        "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+        "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+        "stages": {
+          "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+          "mesh": "1bc2d7944a2cd9199e63bb9970e2beee15ed5d3791cb52b1fbf589e05e52ec2d",
+          "solve": "3b33644d30697898e6ec84f9cf4ffdc628e4ffda58c566c6736f7bbca8138fb7",
+          "postprocess": "98aa090051c247bf85498db65b48b7aabb8cf0397be726a9a0421380c5b4d90a"
+        }
+      },
+      "comh-filter-2d": {
+        "provenance_sha256": "970adc5afac9e1e0844e1d59ae2b513f2dc50d413016a2539d3a867c9111eaaa",
+        "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+        "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+        "stages": {
+          "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+          "mesh": "f12a54e66030cdc82cd09035ea035a5c67ab48b6c5bceb3be7e268f256462299",
+          "solve": "84e1f1bd3f185d3e7a10f0f7f81187c10149a828c9f0435dd4922fa19f9b432d",
+          "postprocess": "fc7d2751307de71cf6dca53d3c88593290fb20ac97fc4638ddef5941a9cf1c4c"
+        }
+      },
+      "comh-connector-3d": {
+        "provenance_sha256": "85c0325ffde6399624f2290bcd88747dd341f56d9a0ba732b9ce8277481aa5c9",
+        "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+        "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+        "stages": {
+          "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+          "mesh": "1097c6d2d085d842de09a5bf174d3ab158648b6857a076962c1498ddd425b3cb",
+          "solve": "da79c7191f65d40a2cd18a2590e83f0db1d12813325218a36ee6031bb00d69cb",
+          "postprocess": "019ca84365e3ddda8b299c2e568c51e292a1eed207b8bc77dbe2bc1697bd92c5"
+        }
+      },
+      "coml-2d": {
+        "provenance_sha256": "f6f99c660e61d166ef474b2d546fa17ab2a1b1c8fcb78a8fdf536d3eb418603d",
+        "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+        "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+        "stages": {
+          "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+          "mesh": "e6559174e65e862266ca31befba8d8c76314287014c6dcd7bef9d4838b8e16d7",
+          "solve": "c8ee4dcdaad8615bdbf03416e12a809726c88f010a082198ae2229f49966078a",
+          "postprocess": "4ea49e3f5adcb67723596fd4e64c6fe1c1c75895d2d3bfdbd923261f4a7c909e"
+        }
+      },
+      "coml-filter-2d": {
+        "provenance_sha256": "bea4f4f60b5a82dfccdcc5b7cd193903f1db0e195776a81688f2a61da193cb18",
+        "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+        "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+        "stages": {
+          "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+          "mesh": "8dcd5f78d647b2fc9ec7297062e910ccac1e51ba17d37358a1ee7616d73426a3",
+          "solve": "ce99fee97981fab86c1967bc74c0627c7e8ff9e3c60d62660f8025d3011bbd05",
+          "postprocess": "4e8b6ce7369f3cf658cb8e0745cb40f53cf0af63401ea0c0a3f3d197c17dd530"
+        }
+      },
+      "coml-connector-3d": {
+        "provenance_sha256": "63a9ef168e52852e41f692826da31af1aa5b805651ca169b023eb3cae7c7931d",
+        "tools_image": "00d1596d86e95bfd54b91b63fcecf2f224b1241490945dbd863c3038a36a605b",
+        "solver_image": "7d33035aa6e9277c9f9bd2ac031b4c3e26cd0cc1178cdc4503265c11330b23b7",
+        "stages": {
+          "extract": "d98f83e85ef05c850d143c396866bd3da3375481ae2225e797753745812ed00c",
+          "mesh": "d20a207e103d612bce7ef9b66dccadce54e660b77e2a16849752c23df659e7d6",
+          "solve": "6859b185eb7bbca47d34b2d20e05dad094546d82e5b7cc4bfe62a497d28e0b1c",
+          "postprocess": "e2e89b43aac449f694187510d1cee8de3668fa5d08c31e1b5ca613010d56c392"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Unconverged 3D finite domains; limited 2D refinement is reported separately.",
+    "Balanced component equivalent; no common-mode, cable, transient, EMC or hardware qualification."
+  ],
+  "estimator_diagnostic": {
+    "same_mesh": true,
+    "main_field_tolerance": 1e-08,
+    "error_estimator_tolerance": 0.01,
+    "maximum_port_csv_absolute_difference": 0.0
+  },
+  "initial_audit": {
+    "date_utc": "2026-11-01T08:02:48.372751+00:00",
+    "existing_case_inputs": true,
+    "historical_completion_descriptions": true,
+    "native_COMH_COML_outputs_or_images_found_before_rerun": false,
+    "scope": "Checked the hardware and local EM lab worktrees; historical text was not accepted as native numerical evidence."
+  },
+  "session_timing": {
+    "budget_minutes": 180,
+    "elapsed_seconds": 9831.202333688736
+  },
+  "published_artifacts": {
+    "board-path.csv": "3a0d33bd7f8a54c6e824b75f7478c794ecf78141ebedde28ae5209e513ffddff",
+    "README.md": "1d70eff2cf69ffe34e08fa11187b4a2c713d3105edd6b1472512b51d176c2363",
+    "coml-filter-section.png": "def9ce1359605c74700c66f8a739c026b496bd9fa25cd35e3a816131d86e9486",
+    "routing.png": "0313d58e81066bfde18911591cd91ef9efd652e021adbf7995c6561149a1801b",
+    "convergence.csv": "5e46bd2ec3cc010c6609a375d0c00de490344ea68d80676e386050732289d319",
+    "coml-connector.png": "6d8754da2ba03a2147f808f27b048c9156f5152e4de9b3e6885cc4a039b1342f",
+    "comh-filter-section.png": "82d71e721ffc062222ca3b3f84c3fe4870c75b2bb61c7d993f142aa9381d5f6b",
+    "board-path.png": "01c65478bdcd8499390f1909ba73c78c162ab4818cdc797679f8febe948a1363",
+    "comh.s2p": "8aefb3be774702ae7129f3986a2e9c0bf846b7ebd1617666dba800696df25f14",
+    "comh-section.png": "c5bac46c6044ec8d4e02568548773058202a851c5481a8c763af45993fc55c97",
+    "coml.s2p": "2a0d02f1a747147cefa28593dd38aa33242903db652609a53f82b91949e625f5",
+    "comh-connector.png": "beb7df5acd236d612ad503baadd59ec3697f6a2727258c5c65c0a7fcdf60eac4",
+    "summary.csv": "3bbbcc3dd3fc7dc8ef7d3aba2c82fd12b4ffe6401ca42aac9c349d339c1e5f4d",
+    "coml-section.png": "6b98ed479eeddca840782348567e974a31915be007361f62f57f0f9283eadbe1"
+  }
+}

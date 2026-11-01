@@ -6,7 +6,8 @@
   "project_root": "../../..",
   "output": "../../results/em/coml-connector-3d",
   "execution": {
-    "backend": "auto",
+    "backend": "cpu",
+    "mpi_ranks": 2,
     "threads_per_rank": 1,
     "gpu_count": 1
   },
@@ -18,8 +19,9 @@
     "fine_mm": 0.15,
     "coarse_mm": 2,
     "order": 1,
-    "scale": 1.0,
-    "threads": 1
+    "scale": 1.1,
+    "threads": 1,
+    "algorithm_3d": 1
   },
   "assumptions": [
     "Saved PCB dimensions and copper fills; supplier material values remain unconfirmed.",
@@ -27,11 +29,12 @@
     "PEC sheet copper; conductor loss is not predicted.",
     "Uniform soldermask slabs; pad-window geometry is not extracted.",
     "Connector through-holes have ideal PEC solder fill joining each contact to its barrel.",
-    "The eight-frequency 1\u201310 MHz sweep exercises network fitting; it does not characterize fast-edge bandwidth or establish transient accuracy.",
-    "The input calibration plane is on the straight secondary traces near the connector; copper back to the cropped transformer pads remains as open stubs. No transformer winding network is included."
+    "Three spot frequencies (1, 4 and 10 MHz); no fitted transient model, fast-edge bandwidth or interpolation accuracy is established.",
+    "Two half-ports terminate at actual transformer secondary pads using SC_CT only as an internal port reference. Equal half-port currents enforce zero external SC_CT current in the reduced differential network. SC_CT has no added physical ground connection.",
+    "Flux-error estimator tolerance is 1e-2 for bounded runtime; the field solve remains at 1e-8. Error indicators are approximate diagnostics, not a convergence qualification."
   ],
   "region_mm": [
-    316.29,
+    315.7,
     131.9,
     323.29,
     139.5
@@ -39,12 +42,7 @@
   "air_margin_mm": 3,
   "frequencies_hz": [
     1000000.0,
-    2000000.0,
-    3000000.0,
     4000000.0,
-    5000000.0,
-    6000000.0,
-    8000000.0,
     10000000.0
   ],
   "connectors": [
@@ -56,20 +54,20 @@
   ],
   "ports": [
     {
-      "name": "secondary-trace-calibration",
+      "name": "transformer-positive-half",
       "positive": "T502:4",
-      "negative": "T502:6",
-      "reference_ohms": 100,
-      "positive_xy_mm": [
-        319.09,
-        136.72
-      ],
-      "negative_xy_mm": [
-        319.09,
-        134.72
-      ],
+      "negative": "T502:5",
       "positive_net": "/com/ISO_COMLP",
-      "negative_net": "/com/ISO_COMLN"
+      "negative_net": "unconnected-(T502-SC_CT-Pad5)",
+      "reference_ohms": 50
+    },
+    {
+      "name": "transformer-negative-half",
+      "positive": "T502:5",
+      "negative": "T502:6",
+      "positive_net": "unconnected-(T502-SC_CT-Pad5)",
+      "negative_net": "/com/ISO_COMLN",
+      "reference_ohms": 50
     },
     {
       "name": "J502-contacts",
@@ -80,5 +78,12 @@
       "negative_net": "/com/ISO_COMLN"
     }
   ],
-  "engineering_context": "CMU-007 sections 2 and 4: bounded PCB communication routing and connector coupling; no full-link acceptance"
+  "engineering_context": "CMU-007 sections 2 and 4: bounded PCB communication routing and connector coupling; no full-link acceptance",
+  "numerics": {
+    "linear_tolerance": 1e-08,
+    "max_iterations": 200,
+    "estimator_multigrid": true,
+    "estimator_tolerance": 0.01,
+    "estimator_max_iterations": 1000
+  }
 }

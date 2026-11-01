@@ -65,7 +65,7 @@ needed before changing the physical stackup.
 | Doc | Title | Status |
 |---|---|---|
 | [CMU-006](CMU-006-thermal-analysis.md) | Thermal Analysis | simulation scope closed; provisional steady results |
-| [CMU-007](CMU-007-si-pi-analysis.md) | Signal and Power Integrity Analysis | draft SI estimate; PI work planned |
+| [CMU-007](CMU-007-si-pi-analysis.md) | Signal and Power Integrity Analysis | COMH/COML board-only EM scope; provisional results |
 | [CMU-009](CMU-009-manufacturing.md) | Manufacturing and prototype release | files prepared; supplier/process confirmations open |
 
 ### Simulation
