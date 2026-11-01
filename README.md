@@ -129,9 +129,8 @@ bms-cmu-bq79616-hardware/
 |   `-- generated/              exports; never hand-edited
 |-- manufacturing/              intentional versioned prototype packages
 |-- sim/                        circuit and EM studies; completed steady thermal scope
-|   |-- README.md               index; every sim names the claim it verifies
-|   |-- lib/                    shared params and vendor models
-|   |-- transient/
+|   |-- README.md               study scope and status
+|   |-- transient/              cell-voltage-input-filter plan only
 |   |-- em/                     COMH/COML board-only EM cases and reports
 |   `-- thermal/                balancing-resistor cases
 `-- tools/

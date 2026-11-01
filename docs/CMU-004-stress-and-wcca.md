@@ -18,9 +18,9 @@ license: CERN-OHL-P-2.0
 ## 1. Scope
 
 Applied stress against rating, and tolerance stack-up against requirement.
-Transient events are analysed here rather than in a separate document because
-they are the same kind of question — stress versus rating — freeze at the same
-point, and feed the same derating tables.
+Transient risks remain recorded here alongside component stress. The only
+active circuit simulation plan is the cell-voltage input filter described in
+§5.1; other transient risks in §5.2 are outside that plan.
 
 **Pass/fail criteria come from [CMU-001](CMU-001-requirements.md)**, which is
 not yet complete. Until the environmental range is fixed, the temperature terms
@@ -111,71 +111,45 @@ OTP rail — see [CMU-003](CMU-003-fmea.md) F-07.
 - [ ] Component stress table: every part's applied voltage, current, power and
       temperature against its rating, with derating percentages
 - [ ] Confirm no part exceeds the derating policy CMU-001 sets
-- [ ] **Resolve the partial KiCad simulator setup.** `Q201` is the only
-      component carrying `Sim.Device` and `Sim.Pins` fields. KiCad's built-in
-      simulator builds its netlist from those, so a half-configured schematic
-      yields one that silently omits every other part. Either populate them
-      across everything that matters or remove them from Q201; a partial setup
-      is the worst of the three states. See [`../sim/`](../sim/).
+The [cell-voltage input-filter study](../sim/transient/cell-voltage-input-filter/README.md)
+is the only planned circuit simulation. It covers the first item above; the
+other stress/tolerance questions are engineering open items, not additional
+SPICE studies. The future Qucs-S model will explicitly map the fitted population
+and will not rely on the partial KiCad simulation fields currently present on Q201.
 
-## 5. Transient events
+## 5. Circuit simulation scope and outstanding transient risks
 
-### 5.1 Layout-independent — analyse now
+### 5.1 Active study — cell-voltage input filter
 
-- [ ] **Cell tap mis-mate / hot-plug.** The dominant hazard. Constraint is the
-      asymmetry: `VCn` to `VCn-1` tolerates ±80 V, `CBn` to `CBn-1` only
-      −0.3/+16 V. Re-derive the historical ~133 mA claim: four 4.2 V cells
-      across 40 ohms alone give 420 mA; actual clamping and current paths matter.
-      Interleaved pin order holds the worst adjacent pair to ~8.4 V.
-      **Quantify the energy and confirm the 20 R sizing.** Simulation planned
-      at [`../sim/transient/cell-tap-mis-mate/`](../sim/transient/cell-tap-mis-mate/).
-- [ ] **Connecting a healthy pack, in the correct order.** Distinct from the
-      mis-mate case above and currently unanalysed. A 20-way connector does not
-      make all contacts simultaneously even when correctly oriented, so partial
-      stack potentials appear across VC and CB pairs while it seats. Four
-      things happen at once:
+The [single study plan](../sim/transient/cell-voltage-input-filter/README.md)
+starts from the full 16-cell VC ladder, actual tap fuses, CB loading and local
+reference path. It will evaluate measurement error, settling, channel interaction
+and parasitic coupling, then compare targeted improvements. Status is planning
+only; neither a Qucs-S model nor an ngspice run has been completed.
 
-      1. **Contact sequencing.** Connecting from the bottom of the stack upward
-         bounds each channel to a single cell step, because the node below is
-         already at potential. Any other order allows several cells across one
-         pair, which is the F-14 hazard rather than this one.
-      2. **Filter charging.** Each channel charges `c_filt` 470 nF through
-         `r_filt` 100 R, τ = 47 µs, peak 42 mA for a 4.2 V step. Seventeen
-         channels, independent of one another.
-      3. **BAT pin hot-plug filter.** R202 30 R 0.5 W 150 V in series to the
-         BAT pin with C208 10 nF 250 V C0G to AVSS — a 531 kHz low-pass that
-         slows the edge the pin sees and caps the current into its ESD
-         structures at V/30, so 2.2 A initial at 67 V decaying with a 300 ns
-         time constant. Stored energy is ½CV² = 22 µJ at 67 V, dissipated in
-         R202 over roughly the same interval: ~75 W peak for 300 ns, which a
-         pulse-proof 0805 absorbs, with negligible average power. **This filter
-         exists for exactly this event and is otherwise undocumented.**
-      4. **Buck and AFE start.** The LTC3639 starts into discharged
-         C601 ∥ C602 with soft-start set by C605 on SS. `VBAT` crossing its
-         minimum triggers POR into SHUTDOWN; ACTIVE needs a WAKE ping.
+The fitted circuit has 17 sense resistors, 16 differential VC capacitors and a
+separate VC0-to-GND capacitor. The former description of 17 independent 47 µs
+cell filters was not valid for this coupled network. Even an isolated differential
+pair with two 100 Ω legs and 470 nF has a 94 µs time constant; the full ladder
+and AFE measurement chain require their own analysis.
 
-      Verify R202 pulse energy against its single-pulse rating, confirm the
-      C208 edge rate against the BAT pin specification, and confirm no VC or CB
-      pair exceeds its absolute maximum at any point in a correct-order
-      insertion. Analysis by inspection until
-      [`../sim/transient/cell-tap-mis-mate/`](../sim/transient/cell-tap-mis-mate/)
-      exists, which can cover the correct-order case as a second scenario at
-      near-zero extra cost.
-- [ ] Buck fail-short energy into F601 and D601 — 6.7 A for ~640 µs, ~69 mJ
-- [ ] Startup inrush, 20 mA `ISTARTUP`
-- [ ] OTP programming rail step, 8.8 V → 11.1 V
-- [ ] Conducted transients from the pack: contactor switching, load dump
+### 5.2 Risks outside the active simulation plan
 
-### 5.2 Layout-dependent — after routing
+The buck-failure, tap-mis-mate and supply-startup simulation plans have been
+removed. No other transient/SPICE study is scheduled. Correct-order insertion,
+mis-mating, buck-fault energy, supply startup, OTP rail transitions, conducted
+transients, ESD and switching-node immunity remain unvalidated hardware risks;
+removing a planned simulation is not an acceptance decision.
 
-- [ ] ESD immunity at every connector
-- [ ] Surge coupling
-- [ ] LTC3639 SW node ringing
-- [ ] dV/dt coupling into the daisy chain
+In particular, the historic mis-mate current estimate remains unverified:
+four 4.2 V cells across 40 Ω alone give 420 mA, while the actual path depends on
+connection order and protection behavior. Preserve the VC/CB pin constraints in
+[CMU-008 §3.1](CMU-008-interface-control.md) and the open FMEA findings. Do not
+infer a clamp characteristic or survivability from absolute-maximum ratings.
 
 ## 6. Acceptance
 
 - [ ] Every worst case has a stated criterion from CMU-001 and a pass/fail
 - [ ] No component exceeds its derating policy
 - [ ] Cell measurement accuracy meets requirement at the corner
-- [ ] Mis-mate transient survivable with margin
+Mis-mate survivability remains unvalidated and outside the active simulation plan.

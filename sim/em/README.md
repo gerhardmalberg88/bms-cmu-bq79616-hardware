@@ -95,3 +95,6 @@ Case inputs use JSON. Published provenance names the current `.json` inputs;
 `recorded_case` preserves their original names from completed runs. Renaming
 the files did not change their contents or recorded case hashes. Native run
 records remain unchanged.
+
+The existing component-network model retains its authorship and licensing record
+in [MODELS_PROVENANCE.csv](MODELS_PROVENANCE.csv).

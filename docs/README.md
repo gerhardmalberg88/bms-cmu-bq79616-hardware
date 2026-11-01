@@ -70,8 +70,11 @@ needed before changing the physical stackup.
 
 ### Simulation
 
-[`../sim/`](../sim/) holds Qucs-S + ngspice circuit simulations. Each planned case names a claim to verify and is indexed against its document.
-The current simulation scaffolding is not evidence of a completed validation run.
+The only planned circuit study is the
+[cell-voltage input filter](../sim/transient/cell-voltage-input-filter/README.md),
+using Qucs-S with ngspice. Its fitted topology has been inspected; no circuit
+model or simulation has been implemented. Other transient/SPICE plans were
+removed from the active scope, without marking their hardware hazards validated.
 [EM simulations](../sim/em/README.md) are documented separately.
 [Thermal simulations](../sim/thermal/README.md) contain the completed steady
 study and its published provisional results. The BMS thermal simulation scope
