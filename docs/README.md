@@ -70,10 +70,11 @@ needed before changing the physical stackup.
 
 ### Simulation
 
-The only planned circuit study is the
-[cell-voltage input filter](../sim/transient/cell-voltage-input-filter/README.md),
-using Qucs-S with ngspice. Its fitted topology has been inspected; no circuit
-model or simulation has been implemented. Other transient/SPICE plans were
+The only active circuit study is the
+[cell-voltage input filter](../sim/spice/cell-voltage-input-filter/README.md),
+using Qucs-S with ngspice. It includes the full editable 16S circuit, source-bound
+netlists and one repeated odd/OFF/even/OFF study with timestep verification.
+Other transient/SPICE plans were
 removed from the active scope, without marking their hardware hazards validated.
 [EM simulations](../sim/em/README.md) are documented separately.
 [Thermal simulations](../sim/thermal/README.md) contain the completed steady

@@ -1,0 +1,17 @@
+{
+  "schematic_sha256": "3867b3888e9a559d4a9c4cdf37c89843a0fd939f24f4249ceb345e9c9f890ad9",
+  "export_sha256": "9def82e1bc4194f03a3cbff136c8a7442086fc0bc445a507f7920e5d8ca914b8",
+  "components": 642,
+  "source": "Qucs-S native ngspice exporter",
+  "removed": "unused global library includes; empty control block; local paths",
+  "source_hashes": {
+    "design/balance.kicad_sch": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a",
+    "design/battery_management_system_cell_monitoring_unit.kicad_sch": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649",
+    "design/batterypositive_to_8V8.kicad_sch": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8",
+    "design/bq79616.kicad_sch": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088",
+    "design/cells.kicad_sch": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156",
+    "design/com.kicad_sch": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f",
+    "design/mechanical.kicad_sch": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4",
+    "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+  }
+}

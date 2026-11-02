@@ -1,0 +1,659 @@
+* Native Qucs-S export of cell-filter-16-cells-with-wires.sch
+R202 _net0 _net1  30 tc1=0 tc2=0
+C208 _net2 _net1  10N
+I_BAT _net1 _net2 DC 150U
+I_board _net0 _net2 DC 10M
+V_cell16 _net3 _net4 DC 3.63
+R_cell16 _net5 _net4  20M tc1=0 tc2=0
+L_cell16 _net6 _net5  20N
+R_relax16 _net7 _net6  10M tc1=0 tc2=0
+C_relax16 _net7 _net6  1
+R_wire16 _net3 _net8  50M tc1=0 tc2=0
+L_wire16 _net8 _net9  300N
+R_contact16 _net9 _net10  20M tc1=0 tc2=0
+R_F401 _net10 _net11  545.5M tc1=0 tc2=0
+L_F401 _net11 _net12  3N
+R_PCB16 _net12 _net13  10M tc1=0 tc2=0
+L_PCB16 _net13 _net0  20N
+R307 _net0 _net14  100 tc1=0 tc2=0
+L_R307 _net14 _net15  500P
+R_VCtrace16 _net15 _net16  135.204M tc1=0 tc2=0
+L_VCtrace16 _net16 _net17  21.1746N
+I_input16 _net17 _net2 DC 8U
+C_input16 _net17 _net2  8.5291P
+R_C306_ESR _net18 _net17  14.3M tc1=0 tc2=0
+L_C306_ESL _net19 _net18  420P
+C306 _net20 _net19  470N
+R_C306_leak _net20 _net17  1.06G tc1=0 tc2=0
+R313 _net0 _net21  20 tc1=0 tc2=0
+L_R313 _net21 _net22  500P
+R_CBfeed16 _net22 _net23  53.1011M tc1=0 tc2=0
+L_CBfeed16 _net23 _net24  8.3163N
+R_C305_ESR _net25 _net24  14.3M tc1=0 tc2=0
+L_C305_ESL _net26 _net25  420P
+C305 _net27 _net26  470N
+R_C305_leak _net27 _net24  1.06G tc1=0 tc2=0
+C_CBtrace16 _net2 _net24  5.45619P
+R_CBloop16 _net24 _net28  159.931M tc1=0 tc2=0
+L_CBloop16 _net28 _net29  26.4208N
+L_CBpin16 _net29 _net30  3N
+C_VC_CB16 _net17 _net24  2E-13
+S_cell16 _net30 _net32 _net31 _net32  MOD_S_cell16 OFF
+.MODEL  MOD_S_cell16 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable16 _net31 _net32 DC 0
+C_ds16 _net32 _net30  100P
+V_cell15 _net7 _net33 DC 3.63
+R_cell15 _net34 _net33  20M tc1=0 tc2=0
+L_cell15 _net35 _net34  20N
+R_relax15 _net36 _net35  10M tc1=0 tc2=0
+C_relax15 _net36 _net35  1
+R_wire15 _net7 _net37  50M tc1=0 tc2=0
+L_wire15 _net37 _net38  300N
+R_contact15 _net38 _net39  20M tc1=0 tc2=0
+R_F402 _net39 _net40  545.5M tc1=0 tc2=0
+L_F402 _net40 _net41  3N
+R_PCB15 _net41 _net42  10M tc1=0 tc2=0
+L_PCB15 _net42 _net43  20N
+R316 _net43 _net44  100 tc1=0 tc2=0
+L_R316 _net44 _net45  500P
+R_VCtrace15 _net45 _net46  130.906M tc1=0 tc2=0
+L_VCtrace15 _net46 _net20  20.5015N
+I_input15 _net20 _net2 DC 8U
+C_input15 _net20 _net2  8.41692P
+R_C310_ESR _net47 _net20  14.3M tc1=0 tc2=0
+L_C310_ESL _net48 _net47  420P
+C310 _net49 _net48  470N
+R_C310_leak _net49 _net20  1.06G tc1=0 tc2=0
+R320 _net43 _net50  20 tc1=0 tc2=0
+L_R320 _net50 _net51  500P
+R_CBfeed15 _net51 _net52  70.8849M tc1=0 tc2=0
+L_CBfeed15 _net52 _net27  11.1015N
+R_C309_ESR _net53 _net27  14.3M tc1=0 tc2=0
+L_C309_ESL _net54 _net53  420P
+C309 _net55 _net54  470N
+R_C309_leak _net55 _net27  1.06G tc1=0 tc2=0
+C_CBtrace15 _net2 _net27  5.46835P
+R_CBloop15 _net27 _net56  142.614M tc1=0 tc2=0
+L_CBloop15 _net56 _net57  23.7087N
+L_CBpin15 _net57 _net32  3N
+C_VC_CB15 _net20 _net27  2E-13
+S_cell15 _net32 _net59 _net58 _net59  MOD_S_cell15 OFF
+.MODEL  MOD_S_cell15 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable15 _net58 _net59 DC 0
+C_ds15 _net59 _net32  100P
+V_cell14 _net36 _net60 DC 3.63
+R_cell14 _net61 _net60  20M tc1=0 tc2=0
+L_cell14 _net62 _net61  20N
+R_relax14 _net63 _net62  10M tc1=0 tc2=0
+C_relax14 _net63 _net62  1
+R_wire14 _net36 _net64  50M tc1=0 tc2=0
+L_wire14 _net64 _net65  300N
+R_contact14 _net65 _net66  20M tc1=0 tc2=0
+R_F403 _net66 _net67  545.5M tc1=0 tc2=0
+L_F403 _net67 _net68  3N
+R_PCB14 _net68 _net69  10M tc1=0 tc2=0
+L_PCB14 _net69 _net70  20N
+R323 _net70 _net71  100 tc1=0 tc2=0
+L_R323 _net71 _net72  500P
+R_VCtrace14 _net72 _net73  115.422M tc1=0 tc2=0
+L_VCtrace14 _net73 _net49  18.0766N
+I_input14 _net49 _net2 DC 8U
+C_input14 _net49 _net2  8.01276P
+R_C314_ESR _net74 _net49  14.3M tc1=0 tc2=0
+L_C314_ESL _net75 _net74  420P
+C314 _net76 _net75  470N
+R_C314_leak _net76 _net49  1.06G tc1=0 tc2=0
+R327 _net70 _net77  20 tc1=0 tc2=0
+L_R327 _net77 _net78  500P
+R_CBfeed14 _net78 _net79  71.329M tc1=0 tc2=0
+L_CBfeed14 _net79 _net55  11.171N
+R_C313_ESR _net80 _net55  14.3M tc1=0 tc2=0
+L_C313_ESL _net81 _net80  420P
+C313 _net82 _net81  470N
+R_C313_leak _net82 _net55  1.06G tc1=0 tc2=0
+C_CBtrace14 _net2 _net55  4.94823P
+R_CBloop14 _net55 _net83  122.243M tc1=0 tc2=0
+L_CBloop14 _net83 _net84  20.5184N
+L_CBpin14 _net84 _net59  3N
+C_VC_CB14 _net49 _net55  2E-13
+S_cell14 _net59 _net86 _net85 _net86  MOD_S_cell14 OFF
+.MODEL  MOD_S_cell14 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable14 _net85 _net86 DC 0
+C_ds14 _net86 _net59  100P
+V_cell13 _net63 _net87 DC 3.63
+R_cell13 _net88 _net87  20M tc1=0 tc2=0
+L_cell13 _net89 _net88  20N
+R_relax13 _net90 _net89  10M tc1=0 tc2=0
+C_relax13 _net90 _net89  1
+R_wire13 _net63 _net91  50M tc1=0 tc2=0
+L_wire13 _net91 _net92  300N
+R_contact13 _net92 _net93  20M tc1=0 tc2=0
+R_F404 _net93 _net94  545.5M tc1=0 tc2=0
+L_F404 _net94 _net95  3N
+R_PCB13 _net95 _net96  10M tc1=0 tc2=0
+L_PCB13 _net96 _net97  20N
+R330 _net97 _net98  100 tc1=0 tc2=0
+L_R330 _net98 _net99  500P
+R_VCtrace13 _net99 _net100  100.059M tc1=0 tc2=0
+L_VCtrace13 _net100 _net76  15.6705N
+I_input13 _net76 _net2 DC 8U
+C_input13 _net76 _net2  7.61175P
+R_C318_ESR _net101 _net76  14.3M tc1=0 tc2=0
+L_C318_ESL _net102 _net101  420P
+C318 _net103 _net102  470N
+R_C318_leak _net103 _net76  1.06G tc1=0 tc2=0
+R334 _net97 _net104  20 tc1=0 tc2=0
+L_R334 _net104 _net105  500P
+R_CBfeed13 _net105 _net106  71.3919M tc1=0 tc2=0
+L_CBfeed13 _net106 _net82  11.1809N
+R_C317_ESR _net107 _net82  14.3M tc1=0 tc2=0
+L_C317_ESL _net108 _net107  420P
+C317 _net109 _net108  470N
+R_C317_leak _net109 _net82  1.06G tc1=0 tc2=0
+C_CBtrace13 _net2 _net82  4.73448P
+R_CBloop13 _net82 _net110  113.991M tc1=0 tc2=0
+L_CBloop13 _net110 _net111  19.226N
+L_CBpin13 _net111 _net86  3N
+C_VC_CB13 _net76 _net82  2E-13
+S_cell13 _net86 _net113 _net112 _net113  MOD_S_cell13 OFF
+.MODEL  MOD_S_cell13 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable13 _net112 _net113 DC 0
+C_ds13 _net113 _net86  100P
+V_cell12 _net90 _net114 DC 3.63
+R_cell12 _net115 _net114  20M tc1=0 tc2=0
+L_cell12 _net116 _net115  20N
+R_relax12 _net117 _net116  10M tc1=0 tc2=0
+C_relax12 _net117 _net116  1
+R_wire12 _net90 _net118  50M tc1=0 tc2=0
+L_wire12 _net118 _net119  300N
+R_contact12 _net119 _net120  20M tc1=0 tc2=0
+R_F405 _net120 _net121  545.5M tc1=0 tc2=0
+L_F405 _net121 _net122  3N
+R_PCB12 _net122 _net123  10M tc1=0 tc2=0
+L_PCB12 _net123 _net124  20N
+R337 _net124 _net125  100 tc1=0 tc2=0
+L_R337 _net125 _net126  500P
+R_VCtrace12 _net126 _net127  93.4252M tc1=0 tc2=0
+L_VCtrace12 _net127 _net103  14.6315N
+I_input12 _net103 _net2 DC 8U
+C_input12 _net103 _net2  7.43859P
+R_C322_ESR _net128 _net103  14.3M tc1=0 tc2=0
+L_C322_ESL _net129 _net128  420P
+C322 _net130 _net129  470N
+R_C322_leak _net130 _net103  1.06G tc1=0 tc2=0
+R341 _net124 _net131  20 tc1=0 tc2=0
+L_R341 _net131 _net132  500P
+R_CBfeed12 _net132 _net133  71.3609M tc1=0 tc2=0
+L_CBfeed12 _net133 _net109  11.176N
+R_C321_ESR _net134 _net109  14.3M tc1=0 tc2=0
+L_C321_ESL _net135 _net134  420P
+C321 _net136 _net135  470N
+R_C321_leak _net136 _net109  1.06G tc1=0 tc2=0
+C_CBtrace12 _net2 _net109  4.51828P
+R_CBloop12 _net109 _net137  105.739M tc1=0 tc2=0
+L_CBloop12 _net137 _net138  17.9337N
+L_CBpin12 _net138 _net113  3N
+C_VC_CB12 _net103 _net109  2E-13
+S_cell12 _net113 _net140 _net139 _net140  MOD_S_cell12 OFF
+.MODEL  MOD_S_cell12 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable12 _net139 _net140 DC 0
+C_ds12 _net140 _net113  100P
+V_cell11 _net117 _net141 DC 3.63
+R_cell11 _net142 _net141  20M tc1=0 tc2=0
+L_cell11 _net143 _net142  20N
+R_relax11 _net144 _net143  10M tc1=0 tc2=0
+C_relax11 _net144 _net143  1
+R_wire11 _net117 _net145  50M tc1=0 tc2=0
+L_wire11 _net145 _net146  300N
+R_contact11 _net146 _net147  20M tc1=0 tc2=0
+R_F406 _net147 _net148  545.5M tc1=0 tc2=0
+L_F406 _net148 _net149  3N
+R_PCB11 _net149 _net150  10M tc1=0 tc2=0
+L_PCB11 _net150 _net151  20N
+R344 _net151 _net152  100 tc1=0 tc2=0
+L_R344 _net152 _net153  500P
+R_VCtrace11 _net153 _net154  90.9682M tc1=0 tc2=0
+L_VCtrace11 _net154 _net130  14.2468N
+I_input11 _net130 _net2 DC 8U
+C_input11 _net130 _net2  7.37446P
+R_C326_ESR _net155 _net130  14.3M tc1=0 tc2=0
+L_C326_ESL _net156 _net155  420P
+C326 _net157 _net156  470N
+R_C326_leak _net157 _net130  1.06G tc1=0 tc2=0
+R348 _net151 _net158  20 tc1=0 tc2=0
+L_R348 _net158 _net159  500P
+R_CBfeed11 _net159 _net160  71.6392M tc1=0 tc2=0
+L_CBfeed11 _net160 _net136  11.2196N
+R_C325_ESR _net161 _net136  14.3M tc1=0 tc2=0
+L_C325_ESL _net162 _net161  420P
+C325 _net163 _net162  470N
+R_C325_leak _net163 _net136  1.06G tc1=0 tc2=0
+C_CBtrace11 _net2 _net136  4.48455P
+R_CBloop11 _net136 _net164  104.169M tc1=0 tc2=0
+L_CBloop11 _net164 _net165  17.6877N
+L_CBpin11 _net165 _net140  3N
+C_VC_CB11 _net130 _net136  2E-13
+S_cell11 _net140 _net167 _net166 _net167  MOD_S_cell11 OFF
+.MODEL  MOD_S_cell11 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable11 _net166 _net167 DC 0
+C_ds11 _net167 _net140  100P
+V_cell10 _net144 _net168 DC 3.63
+R_cell10 _net169 _net168  20M tc1=0 tc2=0
+L_cell10 _net170 _net169  20N
+R_relax10 _net171 _net170  10M tc1=0 tc2=0
+C_relax10 _net171 _net170  1
+R_wire10 _net144 _net172  50M tc1=0 tc2=0
+L_wire10 _net172 _net173  300N
+R_contact10 _net173 _net174  20M tc1=0 tc2=0
+R_F407 _net174 _net175  545.5M tc1=0 tc2=0
+L_F407 _net175 _net176  3N
+R_PCB10 _net176 _net177  10M tc1=0 tc2=0
+L_PCB10 _net177 _net178  20N
+R351 _net178 _net179  100 tc1=0 tc2=0
+L_R351 _net179 _net180  500P
+R_VCtrace10 _net180 _net181  99.3054M tc1=0 tc2=0
+L_VCtrace10 _net181 _net157  15.5525N
+I_input10 _net157 _net2 DC 8U
+C_input10 _net157 _net2  7.59208P
+R_C330_ESR _net182 _net157  14.3M tc1=0 tc2=0
+L_C330_ESL _net183 _net182  420P
+C330 _net184 _net183  470N
+R_C330_leak _net184 _net157  1.06G tc1=0 tc2=0
+R355 _net178 _net185  20 tc1=0 tc2=0
+L_R355 _net185 _net186  500P
+R_CBfeed10 _net186 _net187  71.6704M tc1=0 tc2=0
+L_CBfeed10 _net187 _net163  11.2245N
+R_C329_ESR _net188 _net163  14.3M tc1=0 tc2=0
+L_C329_ESL _net189 _net188  420P
+C329 _net190 _net189  470N
+R_C329_leak _net190 _net163  1.06G tc1=0 tc2=0
+C_CBtrace10 _net2 _net163  4.70076P
+R_CBloop10 _net163 _net191  112.421M tc1=0 tc2=0
+L_CBloop10 _net191 _net192  18.9801N
+L_CBpin10 _net192 _net167  3N
+C_VC_CB10 _net157 _net163  2E-13
+S_cell10 _net167 _net194 _net193 _net194  MOD_S_cell10 OFF
+.MODEL  MOD_S_cell10 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable10 _net193 _net194 DC 0
+C_ds10 _net194 _net167  100P
+V_cell9 _net171 _net195 DC 3.63
+R_cell9 _net196 _net195  20M tc1=0 tc2=0
+L_cell9 _net197 _net196  20N
+R_relax9 _net198 _net197  10M tc1=0 tc2=0
+C_relax9 _net198 _net197  1
+R_wire9 _net171 _net199  50M tc1=0 tc2=0
+L_wire9 _net199 _net200  300N
+R_contact9 _net200 _net201  20M tc1=0 tc2=0
+R_F408 _net201 _net202  545.5M tc1=0 tc2=0
+L_F408 _net202 _net203  3N
+R_PCB9 _net203 _net204  10M tc1=0 tc2=0
+L_PCB9 _net204 _net205  20N
+R358 _net205 _net206  100 tc1=0 tc2=0
+L_R358 _net206 _net207  500P
+R_VCtrace9 _net207 _net208  117.915M tc1=0 tc2=0
+L_VCtrace9 _net208 _net184  18.467N
+I_input9 _net184 _net2 DC 8U
+C_input9 _net184 _net2  8.07784P
+R_C334_ESR _net209 _net184  14.3M tc1=0 tc2=0
+L_C334_ESL _net210 _net209  420P
+C334 _net211 _net210  470N
+R_C334_leak _net211 _net184  1.06G tc1=0 tc2=0
+R362 _net205 _net212  20 tc1=0 tc2=0
+L_R362 _net212 _net213  500P
+R_CBfeed9 _net213 _net214  57.876M tc1=0 tc2=0
+L_CBfeed9 _net214 _net190  9.06411N
+R_C333_ESR _net215 _net190  14.3M tc1=0 tc2=0
+L_C333_ESL _net216 _net215  420P
+C333 _net217 _net216  470N
+R_C333_leak _net217 _net190  1.06G tc1=0 tc2=0
+C_CBtrace9 _net2 _net190  4.57919P
+R_CBloop9 _net190 _net218  121.558M tc1=0 tc2=0
+L_CBloop9 _net218 _net219  20.411N
+L_CBpin9 _net219 _net194  3N
+C_VC_CB9 _net184 _net190  2E-13
+S_cell9 _net194 _net221 _net220 _net221  MOD_S_cell9 OFF
+.MODEL  MOD_S_cell9 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable9 _net220 _net221 DC 0
+C_ds9 _net221 _net194  100P
+V_cell8 _net198 _net222 DC 3.63
+R_cell8 _net223 _net222  20M tc1=0 tc2=0
+L_cell8 _net224 _net223  20N
+R_relax8 _net225 _net224  10M tc1=0 tc2=0
+C_relax8 _net225 _net224  1
+R_wire8 _net198 _net226  50M tc1=0 tc2=0
+L_wire8 _net226 _net227  300N
+R_contact8 _net227 _net228  20M tc1=0 tc2=0
+R_F409 _net228 _net229  545.5M tc1=0 tc2=0
+L_F409 _net229 _net230  3N
+R_PCB8 _net230 _net231  10M tc1=0 tc2=0
+L_PCB8 _net231 _net232  20N
+R301 _net232 _net233  100 tc1=0 tc2=0
+L_R301 _net233 _net234  500P
+R_VCtrace8 _net234 _net235  73.7426M tc1=0 tc2=0
+L_VCtrace8 _net235 _net211  11.549N
+I_input8 _net211 _net2 DC 8U
+C_input8 _net211 _net2  6.92483P
+R_C302_ESR _net236 _net211  14.3M tc1=0 tc2=0
+L_C302_ESL _net237 _net236  420P
+C302 _net238 _net237  470N
+R_C302_leak _net238 _net211  1.06G tc1=0 tc2=0
+R304 _net232 _net239  20 tc1=0 tc2=0
+L_R304 _net239 _net240  500P
+R_CBfeed8 _net240 _net241  92.8769M tc1=0 tc2=0
+L_CBfeed8 _net241 _net217  14.5457N
+R_C301_ESR _net242 _net217  14.3M tc1=0 tc2=0
+L_C301_ESL _net243 _net242  420P
+C301 _net244 _net243  470N
+R_C301_leak _net244 _net217  1.06G tc1=0 tc2=0
+C_CBtrace8 _net2 _net217  4.82337P
+R_CBloop8 _net217 _net245  95.9117M tc1=0 tc2=0
+L_CBloop8 _net245 _net246  16.3945N
+L_CBpin8 _net246 _net221  3N
+C_VC_CB8 _net211 _net217  2E-13
+S_cell8 _net221 _net248 _net247 _net248  MOD_S_cell8 OFF
+.MODEL  MOD_S_cell8 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable8 _net247 _net248 DC 0
+C_ds8 _net248 _net221  100P
+V_cell7 _net225 _net249 DC 3.63
+R_cell7 _net250 _net249  20M tc1=0 tc2=0
+L_cell7 _net251 _net250  20N
+R_relax7 _net252 _net251  10M tc1=0 tc2=0
+C_relax7 _net252 _net251  1
+R_wire7 _net225 _net253  50M tc1=0 tc2=0
+L_wire7 _net253 _net254  300N
+R_contact7 _net254 _net255  20M tc1=0 tc2=0
+R_F410 _net255 _net256  545.5M tc1=0 tc2=0
+L_F410 _net256 _net257  3N
+R_PCB7 _net257 _net258  10M tc1=0 tc2=0
+L_PCB7 _net258 _net259  20N
+R306 _net259 _net260  100 tc1=0 tc2=0
+L_R306 _net260 _net261  500P
+R_VCtrace7 _net261 _net262  69.6851M tc1=0 tc2=0
+L_VCtrace7 _net262 _net238  10.9136N
+I_input7 _net238 _net2 DC 8U
+C_input7 _net238 _net2  6.81893P
+R_C304_ESR _net263 _net238  14.3M tc1=0 tc2=0
+L_C304_ESL _net264 _net263  420P
+C304 _net265 _net264  470N
+R_C304_leak _net265 _net238  1.06G tc1=0 tc2=0
+R312 _net259 _net266  20 tc1=0 tc2=0
+L_R312 _net266 _net267  500P
+R_CBfeed7 _net267 _net268  48.771M tc1=0 tc2=0
+L_CBfeed7 _net268 _net244  7.63814N
+R_C303_ESR _net269 _net244  14.3M tc1=0 tc2=0
+L_C303_ESL _net270 _net269  420P
+C303 _net271 _net270  470N
+R_C303_leak _net271 _net244  1.06G tc1=0 tc2=0
+C_CBtrace7 _net2 _net244  3.50508P
+R_CBloop7 _net244 _net272  89.5126M tc1=0 tc2=0
+L_CBloop7 _net272 _net273  15.3923N
+L_CBpin7 _net273 _net248  3N
+C_VC_CB7 _net238 _net244  2E-13
+S_cell7 _net248 _net275 _net274 _net275  MOD_S_cell7 OFF
+.MODEL  MOD_S_cell7 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable7 _net274 _net275 DC 0
+C_ds7 _net275 _net248  100P
+V_cell6 _net252 _net276 DC 3.63
+R_cell6 _net277 _net276  20M tc1=0 tc2=0
+L_cell6 _net278 _net277  20N
+R_relax6 _net279 _net278  10M tc1=0 tc2=0
+C_relax6 _net279 _net278  1
+R_wire6 _net252 _net280  50M tc1=0 tc2=0
+L_wire6 _net280 _net281  300N
+R_contact6 _net281 _net282  20M tc1=0 tc2=0
+R_F411 _net282 _net283  545.5M tc1=0 tc2=0
+L_F411 _net283 _net284  3N
+R_PCB6 _net284 _net285  10M tc1=0 tc2=0
+L_PCB6 _net285 _net286  20N
+R315 _net286 _net287  100 tc1=0 tc2=0
+L_R315 _net287 _net288  500P
+R_VCtrace6 _net288 _net289  49.6358M tc1=0 tc2=0
+L_VCtrace6 _net289 _net265  7.7736N
+I_input6 _net265 _net2 DC 8U
+C_input6 _net265 _net2  6.2956P
+R_C308_ESR _net290 _net265  14.3M tc1=0 tc2=0
+L_C308_ESL _net291 _net290  420P
+C308 _net292 _net291  470N
+R_C308_leak _net292 _net265  1.06G tc1=0 tc2=0
+R319 _net286 _net293  20 tc1=0 tc2=0
+L_R319 _net293 _net294  500P
+R_CBfeed6 _net294 _net295  37.4552M tc1=0 tc2=0
+L_CBfeed6 _net295 _net271  5.86595N
+R_C307_ESR _net296 _net271  14.3M tc1=0 tc2=0
+L_C307_ESL _net297 _net296  420P
+C307 _net298 _net297  470N
+R_C307_leak _net298 _net271  1.06G tc1=0 tc2=0
+C_CBtrace6 _net2 _net271  2.93168P
+R_CBloop6 _net271 _net299  78.8606M tc1=0 tc2=0
+L_CBloop6 _net299 _net300  13.7241N
+L_CBpin6 _net300 _net275  3N
+C_VC_CB6 _net265 _net271  2E-13
+S_cell6 _net275 _net302 _net301 _net302  MOD_S_cell6 OFF
+.MODEL  MOD_S_cell6 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable6 _net301 _net302 DC 0
+C_ds6 _net302 _net275  100P
+V_cell5 _net279 _net303 DC 3.63
+R_cell5 _net304 _net303  20M tc1=0 tc2=0
+L_cell5 _net305 _net304  20N
+R_relax5 _net306 _net305  10M tc1=0 tc2=0
+C_relax5 _net306 _net305  1
+R_wire5 _net279 _net307  50M tc1=0 tc2=0
+L_wire5 _net307 _net308  300N
+R_contact5 _net308 _net309  20M tc1=0 tc2=0
+R_F412 _net309 _net310  545.5M tc1=0 tc2=0
+L_F412 _net310 _net311  3N
+R_PCB5 _net311 _net312  10M tc1=0 tc2=0
+L_PCB5 _net312 _net313  20N
+R322 _net313 _net314  100 tc1=0 tc2=0
+L_R322 _net314 _net315  500P
+R_VCtrace5 _net315 _net316  44.2007M tc1=0 tc2=0
+L_VCtrace5 _net316 _net292  6.92239N
+I_input5 _net292 _net2 DC 8U
+C_input5 _net292 _net2  6.15373P
+R_C312_ESR _net317 _net292  14.3M tc1=0 tc2=0
+L_C312_ESL _net318 _net317  420P
+C312 _net319 _net318  470N
+R_C312_leak _net319 _net292  1.06G tc1=0 tc2=0
+R326 _net313 _net320  20 tc1=0 tc2=0
+L_R326 _net320 _net321  500P
+R_CBfeed5 _net321 _net322  40.2534M tc1=0 tc2=0
+L_CBfeed5 _net322 _net298  6.30419N
+R_C311_ESR _net323 _net298  14.3M tc1=0 tc2=0
+L_C311_ESL _net324 _net323  420P
+C311 _net325 _net324  470N
+R_C311_leak _net325 _net298  1.06G tc1=0 tc2=0
+C_CBtrace5 _net2 _net298  2.86583P
+R_CBloop5 _net298 _net326  73.5398M tc1=0 tc2=0
+L_CBloop5 _net326 _net327  12.8908N
+L_CBpin5 _net327 _net302  3N
+C_VC_CB5 _net292 _net298  2E-13
+S_cell5 _net302 _net329 _net328 _net329  MOD_S_cell5 OFF
+.MODEL  MOD_S_cell5 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable5 _net328 _net329 DC 0
+C_ds5 _net329 _net302  100P
+V_cell4 _net306 _net330 DC 3.63
+R_cell4 _net331 _net330  20M tc1=0 tc2=0
+L_cell4 _net332 _net331  20N
+R_relax4 _net333 _net332  10M tc1=0 tc2=0
+C_relax4 _net333 _net332  1
+R_wire4 _net306 _net334  50M tc1=0 tc2=0
+L_wire4 _net334 _net335  300N
+R_contact4 _net335 _net336  20M tc1=0 tc2=0
+R_F413 _net336 _net337  545.5M tc1=0 tc2=0
+L_F413 _net337 _net338  3N
+R_PCB4 _net338 _net339  10M tc1=0 tc2=0
+L_PCB4 _net339 _net340  20N
+R329 _net340 _net341  100 tc1=0 tc2=0
+L_R329 _net341 _net342  500P
+R_VCtrace4 _net342 _net343  44.3197M tc1=0 tc2=0
+L_VCtrace4 _net343 _net319  6.94103N
+I_input4 _net319 _net2 DC 8U
+C_input4 _net319 _net2  6.15684P
+R_C316_ESR _net344 _net319  14.3M tc1=0 tc2=0
+L_C316_ESL _net345 _net344  420P
+C316 _net346 _net345  470N
+R_C316_leak _net346 _net319  1.06G tc1=0 tc2=0
+R333 _net340 _net347  20 tc1=0 tc2=0
+L_R333 _net347 _net348  500P
+R_CBfeed4 _net348 _net349  39.7421M tc1=0 tc2=0
+L_CBfeed4 _net349 _net325  6.22412N
+R_C315_ESR _net350 _net325  14.3M tc1=0 tc2=0
+L_C315_ESL _net351 _net350  420P
+C315 _net352 _net351  470N
+R_C315_leak _net352 _net325  1.06G tc1=0 tc2=0
+C_CBtrace4 _net2 _net325  2.70198P
+R_CBloop4 _net325 _net353  67.7739M tc1=0 tc2=0
+L_CBloop4 _net353 _net354  11.9878N
+L_CBpin4 _net354 _net329  3N
+C_VC_CB4 _net319 _net325  2E-13
+S_cell4 _net329 _net356 _net355 _net356  MOD_S_cell4 OFF
+.MODEL  MOD_S_cell4 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable4 _net355 _net356 DC 0
+C_ds4 _net356 _net329  100P
+V_cell3 _net333 _net357 DC 3.63
+R_cell3 _net358 _net357  20M tc1=0 tc2=0
+L_cell3 _net359 _net358  20N
+R_relax3 _net360 _net359  10M tc1=0 tc2=0
+C_relax3 _net360 _net359  1
+R_wire3 _net333 _net361  50M tc1=0 tc2=0
+L_wire3 _net361 _net362  300N
+R_contact3 _net362 _net363  20M tc1=0 tc2=0
+R_F414 _net363 _net364  545.5M tc1=0 tc2=0
+L_F414 _net364 _net365  3N
+R_PCB3 _net365 _net366  10M tc1=0 tc2=0
+L_PCB3 _net366 _net367  20N
+R336 _net367 _net368  100 tc1=0 tc2=0
+L_R336 _net368 _net369  500P
+R_VCtrace3 _net369 _net370  48.7078M tc1=0 tc2=0
+L_VCtrace3 _net370 _net346  7.62826N
+I_input3 _net346 _net2 DC 8U
+C_input3 _net346 _net2  6.27138P
+R_C320_ESR _net371 _net346  14.3M tc1=0 tc2=0
+L_C320_ESL _net372 _net371  420P
+C320 _net373 _net372  470N
+R_C320_leak _net373 _net346  1.06G tc1=0 tc2=0
+R340 _net367 _net374  20 tc1=0 tc2=0
+L_R340 _net374 _net375  500P
+R_CBfeed3 _net375 _net376  42.2237M tc1=0 tc2=0
+L_CBfeed3 _net376 _net352  6.61275N
+R_C319_ESR _net377 _net352  14.3M tc1=0 tc2=0
+L_C319_ESL _net378 _net377  420P
+C319 _net379 _net378  470N
+R_C319_leak _net379 _net352  1.06G tc1=0 tc2=0
+C_CBtrace3 _net2 _net352  2.84666P
+R_CBloop3 _net352 _net380  70.835M tc1=0 tc2=0
+L_CBloop3 _net380 _net381  12.4672N
+L_CBpin3 _net381 _net356  3N
+C_VC_CB3 _net346 _net352  2E-13
+S_cell3 _net356 _net383 _net382 _net383  MOD_S_cell3 OFF
+.MODEL  MOD_S_cell3 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable3 _net382 _net383 DC 0
+C_ds3 _net383 _net356  100P
+V_cell2 _net360 _net384 DC 3.63
+R_cell2 _net385 _net384  20M tc1=0 tc2=0
+L_cell2 _net386 _net385  20N
+R_relax2 _net387 _net386  10M tc1=0 tc2=0
+C_relax2 _net387 _net386  1
+R_wire2 _net360 _net388  50M tc1=0 tc2=0
+L_wire2 _net388 _net389  300N
+R_contact2 _net389 _net390  20M tc1=0 tc2=0
+R_F415 _net390 _net391  545.5M tc1=0 tc2=0
+L_F415 _net391 _net392  3N
+R_PCB2 _net392 _net393  10M tc1=0 tc2=0
+L_PCB2 _net393 _net394  20N
+R343 _net394 _net395  100 tc1=0 tc2=0
+L_R343 _net395 _net396  500P
+R_VCtrace2 _net396 _net397  55.681M tc1=0 tc2=0
+L_VCtrace2 _net397 _net373  8.72035N
+I_input2 _net373 _net2 DC 8U
+C_input2 _net373 _net2  6.45339P
+R_C324_ESR _net398 _net373  14.3M tc1=0 tc2=0
+L_C324_ESL _net399 _net398  420P
+C324 _net400 _net399  470N
+R_C324_leak _net400 _net373  1.06G tc1=0 tc2=0
+R347 _net394 _net401  20 tc1=0 tc2=0
+L_R347 _net401 _net402  500P
+R_CBfeed2 _net402 _net403  48.6665M tc1=0 tc2=0
+L_CBfeed2 _net403 _net379  7.62178N
+R_C323_ESR _net404 _net379  14.3M tc1=0 tc2=0
+L_C323_ESL _net405 _net404  420P
+C323 _net406 _net405  470N
+R_C323_leak _net406 _net379  1.06G tc1=0 tc2=0
+C_CBtrace2 _net2 _net379  3.15445P
+R_CBloop2 _net379 _net407  76.1839M tc1=0 tc2=0
+L_CBloop2 _net407 _net408  13.3049N
+L_CBpin2 _net408 _net383  3N
+C_VC_CB2 _net373 _net379  2E-13
+S_cell2 _net383 _net410 _net409 _net410  MOD_S_cell2 OFF
+.MODEL  MOD_S_cell2 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable2 _net409 _net410 DC 0
+C_ds2 _net410 _net383  100P
+V_cell1 _net387 _net411 DC 3.63
+R_cell1 _net412 _net411  20M tc1=0 tc2=0
+L_cell1 _net413 _net412  20N
+R_relax1 0 _net413  10M tc1=0 tc2=0
+C_relax1 0 _net413  1
+R_wire1 _net387 _net414  50M tc1=0 tc2=0
+L_wire1 _net414 _net415  300N
+R_contact1 _net415 _net416  20M tc1=0 tc2=0
+R_F416 _net416 _net417  545.5M tc1=0 tc2=0
+L_F416 _net417 _net418  3N
+R_PCB1 _net418 _net419  10M tc1=0 tc2=0
+L_PCB1 _net419 _net420  20N
+R350 _net420 _net421  100 tc1=0 tc2=0
+L_R350 _net421 _net422  500P
+R_VCtrace1 _net422 _net423  70.7338M tc1=0 tc2=0
+L_VCtrace1 _net423 _net400  11.0778N
+I_input1 _net400 _net2 DC 8U
+C_input1 _net400 _net2  6.8463P
+R_C328_ESR _net424 _net400  14.3M tc1=0 tc2=0
+L_C328_ESL _net425 _net424  420P
+C328 _net426 _net425  470N
+R_C328_leak _net426 _net400  1.06G tc1=0 tc2=0
+R354 _net420 _net427  20 tc1=0 tc2=0
+L_R354 _net427 _net428  500P
+R_CBfeed1 _net428 _net429  52.2M tc1=0 tc2=0
+L_CBfeed1 _net429 _net406  8.17518N
+R_C327_ESR _net430 _net406  14.3M tc1=0 tc2=0
+L_C327_ESL _net431 _net430  420P
+C327 _net432 _net431  470N
+R_C327_leak _net432 _net406  1.06G tc1=0 tc2=0
+C_CBtrace1 _net2 _net406  3.3943P
+R_CBloop1 _net406 _net433  81.8393M tc1=0 tc2=0
+L_CBloop1 _net433 _net434  14.1906N
+L_CBpin1 _net434 _net410  3N
+C_VC_CB1 _net400 _net406  2E-13
+S_cell1 _net410 _net436 _net435 _net436  MOD_S_cell1 OFF
+.MODEL  MOD_S_cell1 sw vt=0.5 vh=0 ron=2.5 roff=10G
+V_enable1 _net435 _net436 DC 0
+C_ds1 _net436 _net410  100P
+R_wire0 0 _net437  50M tc1=0 tc2=0
+L_wire0 _net437 _net438  300N
+R_contact0 _net438 _net439  20M tc1=0 tc2=0
+R_F417 _net439 _net440  545.5M tc1=0 tc2=0
+L_F417 _net440 _net441  3N
+R_PCB0 _net441 _net442  10M tc1=0 tc2=0
+L_PCB0 _net442 _net2  20N
+R357 _net2 _net443  100 tc1=0 tc2=0
+L_R357 _net443 _net444  500P
+R_VCtrace0 _net444 _net445  84.4504M tc1=0 tc2=0
+L_VCtrace0 _net445 _net426  13.226N
+I_input0 _net426 _net2 DC 8U
+C_input0 _net426 _net2  7.20433P
+R_C332_ESR _net446 _net426  14.3M tc1=0 tc2=0
+L_C332_ESL _net447 _net446  420P
+C332 _net2 _net447  470N
+R_C332_leak _net2 _net426  1.06G tc1=0 tc2=0
+R361 _net2 _net448  20 tc1=0 tc2=0
+L_R361 _net448 _net449  500P
+R_CBfeed0 _net449 _net450  40.0749M tc1=0 tc2=0
+L_CBfeed0 _net450 _net432  6.27623N
+R_C331_ESR _net451 _net432  14.3M tc1=0 tc2=0
+L_C331_ESL _net452 _net451  420P
+C331 _net2 _net452  470N
+R_C331_leak _net2 _net432  1.06G tc1=0 tc2=0
+C_CBtrace0 _net2 _net432  3.37162P
+R_CBloop0 _net432 _net453  93.0958M tc1=0 tc2=0
+L_CBloop0 _net453 _net454  15.9535N
+L_CBpin0 _net454 _net436  3N
+C_VC_CB0 _net426 _net432  2E-13

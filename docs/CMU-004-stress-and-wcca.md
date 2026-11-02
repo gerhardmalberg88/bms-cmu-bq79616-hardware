@@ -111,21 +111,24 @@ OTP rail — see [CMU-003](CMU-003-fmea.md) F-07.
 - [ ] Component stress table: every part's applied voltage, current, power and
       temperature against its rating, with derating percentages
 - [ ] Confirm no part exceeds the derating policy CMU-001 sets
-The [cell-voltage input-filter study](../sim/transient/cell-voltage-input-filter/README.md)
-is the only planned circuit simulation. It covers the first item above; the
+The [cell-voltage input-filter study](../sim/spice/cell-voltage-input-filter/README.md)
+is the only active circuit simulation. It addresses the first item above; the
 other stress/tolerance questions are engineering open items, not additional
-SPICE studies. The future Qucs-S model will explicitly map the fitted population
-and will not rely on the partial KiCad simulation fields currently present on Q201.
+SPICE studies. Its Qucs-S model maps the fitted population and does not rely on
+the partial KiCad simulation fields currently present on Q201. Numerical checks
+do not close the measurement error budget or replace bench correlation.
 
 ## 5. Circuit simulation scope and outstanding transient risks
 
 ### 5.1 Active study — cell-voltage input filter
 
-The [single study plan](../sim/transient/cell-voltage-input-filter/README.md)
-starts from the full 16-cell VC ladder, actual tap fuses, CB loading and local
-reference path. It will evaluate measurement error, settling, channel interaction
-and parasitic coupling, then compare targeted improvements. Status is planning
-only; neither a Qucs-S model nor an ngspice run has been completed.
+The [implemented circuit study](../sim/spice/cell-voltage-input-filter/README.md)
+uses the full 16-cell VC ladder, actual tap fuses, shared CB network and local
+reference path. One repeated odd/OFF/even/OFF study checks external VC/CB
+recovery during 5 ms quiet windows and reports residual DC offsets. Cell/wiring
+impedance, input-current return paths and effective capacitance require physical
+characterization. There is no internal ADC or digital-filter model; the study
+does not close the measurement accuracy budget or guarantee firmware timing.
 
 The fitted circuit has 17 sense resistors, 16 differential VC capacitors and a
 separate VC0-to-GND capacitor. The former description of 17 independent 47 µs

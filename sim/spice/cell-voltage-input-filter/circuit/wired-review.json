@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "status": "approved_circuit_repeated_cycle_study",
+  "review_date": "2026-11-02",
+  "cell": {
+    "manufacturer": "LG Chem",
+    "model": "INR21700-M50",
+    "chemistry": "NMC / NCM",
+    "series_groups": 16,
+    "parallel_cells_per_group": 1,
+    "grouping_evidence": "16S1P review assumption, not an asserted e-bike pack configuration",
+    "capacity_Ah": 4.85,
+    "capacity_role": "C-rate reference derived from 0.2C = 970 mA; metadata only, not a separate guaranteed capacity; fixed-voltage short-time surrogate, no SOC integration",
+    "nominal_energy_Wh": 18.2
+  },
+  "sources": {
+    "ti": {
+      "url": "https://www.ti.com/lit/ds/symlink/bq79616-q1.pdf",
+      "revision": "SLUSE81F, June 2026",
+      "pages": [
+        13,
+        17,
+        20,
+        25,
+        26,
+        36,
+        37,
+        41
+      ],
+      "facts": {
+        "rdson_min_ohm": 1.45,
+        "rdson_max_ohm": 4.6,
+        "rdson_condition": "VCn >2.8 V; -40<TA<125 C",
+        "main_adc_round_robin_s": 0.000192,
+        "bci_cutoff_Hz": 100000,
+        "aaf_cutoff_Hz": 1600,
+        "digital_filter_Hz": [
+          600,
+          240,
+          111,
+          53,
+          26,
+          13,
+          6.5
+        ],
+        "digital_filter_alpha": [
+          0.5,
+          0.25,
+          0.125,
+          0.0625,
+          0.03125,
+          0.015625,
+          0.007813
+        ]
+      },
+      "unavailable": [
+        "CBFET capacitance versus voltage",
+        "CBFET turn-off edge / gate charge",
+        "CB pin package inductance",
+        "pause-command to physical FET turn-off latency"
+      ],
+      "local_pdf_sha256": "d8189170313b2edd5e83bff2c92fe3b06e728622e6c2e7f26f1e54a6b9209e9f"
+    },
+    "tdk": {
+      "url": "https://product.tdk.com/system/files/dam/technicalsupport/tvcl/pdf/capacitor_mlcc_auto_soft_cga3_ecm.pdf",
+      "revision": "2026-02-27, page 2",
+      "part": "CGA3E3X7R1E474K080AE",
+      "facts": {
+        "capacitance_F": 4.7e-07,
+        "ESL_H": 4.2e-10,
+        "ESR_ohm": 0.0143,
+        "leakage_ohm": 1060000000.0
+      },
+      "limits": "Simple constant model. No nonlinear charge / voltage-bias curve fitted."
+    },
+    "tdk_part": {
+      "url": "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA3E3X7R1E474K080AE",
+      "facts": {
+        "nominal_F": 4.7e-07,
+        "tolerance_fraction": 0.1
+      }
+    },
+    "qucs_switch": {
+      "url": "https://raw.githubusercontent.com/ra3xdh/qucs_s/26.1.1/qucs/components/relais.cpp",
+      "purpose": "Native voltage-controlled SPST connectivity and SPICE export; no source code copied."
+    },
+    "lg_m50": {
+      "url": "https://asset.conrad.com/media10/add/160267/c1/-/en/002114679DS01/datenblatt-2114679-lg-chem-inr21700-50t-spezial-akku-21700-flat-top-li-ion-36-v-5000-mah.pdf",
+      "title": "LG Chem INR21700 M50 18.2Wh product specification (manufacturer document hosted by Conrad)",
+      "document": "LRB-PS-CY18.2Wh-M50",
+      "revision": "2017-09-22, Tentative",
+      "pages": [
+        4,
+        6
+      ],
+      "facts": {
+        "nominal_voltage_V": 3.63,
+        "nominal_energy_Wh": 18.2,
+        "c_rate_reference_capacity_Ah": 4.85,
+        "c_rate_reference_derivation": "0.970 A / 0.2C",
+        "ac_impedance_max_ohm": 0.025,
+        "ac_condition": "1 kHz after standard charge",
+        "dc_resistance_ohm": 0.03,
+        "dc_resistance_tolerance_ohm": 0.006,
+        "dc_condition": "50% SOC, 0.5C load for 30 s, 25 +/- 2 C",
+        "charge_voltage_V": 4.2,
+        "discharge_cutoff_V": 2.5
+      },
+      "limits": "Tentative specification, not an identified production-lot certificate. No fitted R0/polarization split, relaxation capacitance or cell inductance. This is M50, not M50LT; mirror filename does not match the document model."
+    }
+  },
+  "parameters": {
+    "cell_voltage": {
+      "value": 3.63,
+      "unit": "V",
+      "evidence": "LG M50 nominal voltage; selected review operating point, not a measured OCV/SOC curve",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "cell_r": {
+      "value": 0.02,
+      "unit": "ohm",
+      "evidence": "Assumed partition: 20 mOhm R_cell + 10 mOhm R_relax = LG M50 nominal 30 mOhm DC resistance",
+      "conditions": "LG specifies 30 +/- 6 mOhm at 50% SOC, 0.5C for 30 s, 25 +/- 2 C; AC impedance <=25 mOhm at 1 kHz after standard charge. The 20/10 split is not manufacturer-fitted; nominal voltage is not a calibrated 50%-SOC OCV."
+    },
+    "cell_relax_r": {
+      "value": 0.01,
+      "unit": "ohm",
+      "evidence": "assumed",
+      "conditions": "Unfitted placeholder; LG M50 specification supplies no polarization RC parameters. The 20/10 mOhm resistance split and 10 ms relaxation time are assumptions, not manufacturer calibration."
+    },
+    "cell_relax_c": {
+      "value": 1.0,
+      "unit": "F",
+      "evidence": "assumed",
+      "conditions": "Unfitted placeholder; LG M50 specification supplies no polarization RC parameters. The 20/10 mOhm resistance split and 10 ms relaxation time are assumptions, not manufacturer calibration."
+    },
+    "cell_l": {
+      "value": 2e-08,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "wire_r": {
+      "value": 0.05,
+      "unit": "ohm",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "contact_r": {
+      "value": 0.02,
+      "unit": "ohm",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "wire_l": {
+      "value": 3e-07,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "fuse_r": {
+      "value": 0.5455,
+      "unit": "ohm",
+      "evidence": "Littelfuse 470 datasheet",
+      "conditions": "Nominal cold resistance for 0.500 A; uncertainty range is assumed, not a rated tolerance. Intact fuse only."
+    },
+    "fuse_l": {
+      "value": 3e-09,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "shared_pcb_r": {
+      "value": 0.01,
+      "unit": "ohm",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "shared_pcb_l": {
+      "value": 2e-08,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "trace_l_per_mm": {
+      "value": 6e-10,
+      "unit": "H/mm",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "trace_c_per_mm": {
+      "value": 1e-13,
+      "unit": "F/mm",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "sense_r": {
+      "value": 100.0,
+      "unit": "ohm",
+      "evidence": "fitted BOM",
+      "conditions": "TNPW0603100RBEEA 0.1%; temperature coefficient below is assumed pending verification."
+    },
+    "resistor_l": {
+      "value": 5e-10,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "balance_r": {
+      "value": 20.0,
+      "unit": "ohm",
+      "evidence": "fitted BOM",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "cap_c": {
+      "value": 4.7e-07,
+      "unit": "F",
+      "evidence": "fitted BOM / TDK",
+      "conditions": "CGA3E3X7R1E474K080AE; printed tolerance only, not DC-bias allowance."
+    },
+    "cap_esr": {
+      "value": 0.0143,
+      "unit": "ohm",
+      "evidence": "TDK simple-model parameter table 2026-02-27",
+      "conditions": "Scalar constant-ESR approximation; frequency/temperature dependence is not calibrated."
+    },
+    "cap_esl": {
+      "value": 4.2e-10,
+      "unit": "H",
+      "evidence": "TDK simple-model parameter table 2026-02-27",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "cap_leak": {
+      "value": 1060000000.0,
+      "unit": "ohm",
+      "evidence": "TDK simple-model parameter table 2026-02-27",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "vc_input_current": {
+      "value": 8e-06,
+      "unit": "A",
+      "evidence": "TI SLUSE81F section 6.5",
+      "conditions": "Typical 8 uA with main ADC on. Return to AVSS is an explicit surrogate assumption; retained during balancing OFF."
+    },
+    "input_pin_c": {
+      "value": 5e-12,
+      "unit": "F",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "vc_cb_c": {
+      "value": 2e-13,
+      "unit": "F",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "switch_ron": {
+      "value": 2.5,
+      "unit": "ohm",
+      "evidence": "TI SLUSE81F / assumed nominal",
+      "conditions": "2.5 ohm illustrative nominal; TI min 1.45/max 4.6 ohm at VCn >2.8 V, -40<TA<125 C. Exact typical value not tabulated."
+    },
+    "switch_roff": {
+      "value": 10000000000.0,
+      "unit": "ohm",
+      "evidence": "assumed",
+      "conditions": "Nominal assumed value; not measured."
+    },
+    "bat_current": {
+      "value": 0.00015,
+      "unit": "A",
+      "evidence": "TI SLUSE81F / assumed range",
+      "conditions": "BAT active typical; remaining rail load is separate."
+    },
+    "board_current": {
+      "value": 0.01,
+      "unit": "A",
+      "evidence": "assumed",
+      "conditions": "Top-tap to local AVSS equivalent; no regulator internals and no claim of actual board consumption."
+    },
+    "cb_package_l": {
+      "value": 3e-09,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Per CB pin, shared by adjacent switches; not a TI package specification."
+    },
+    "via_l": {
+      "value": 1e-09,
+      "unit": "H",
+      "evidence": "assumed",
+      "conditions": "Per via in the measured capacitor-bank to IC route. Not a field extraction."
+    },
+    "switch_cds": {
+      "value": 1e-10,
+      "unit": "F",
+      "evidence": "assumed",
+      "conditions": "Constant capacitance across internal switch nodes. TI Coss/Qoss versus bias not established; no guaranteed physical bound."
+    }
+  },
+  "drawing": {
+    "capacitance_model": "Nominal TDK simple model, 470 nF; no automatic DC-bias multiplier applied",
+    "switch_control": "All V_enable sources are static 0 V. Electrical SPST symbols are abstract internal CBFETs, not fitted relays. No timed switch events.",
+    "control_voltage_role": "0/1 V logic surrogate, not physical gate voltage or a TI gate-drive specification",
+    "wire_labels": false,
+    "show_values": true
+  },
+  "measurement_scope": {
+    "target": "External VC1..VC16 and CB capacitor-bank voltages",
+    "dynamic_error_band_V": 0.0001,
+    "threshold_role": "Investigation target, not a product accuracy requirement",
+    "internal_ADC_model": false,
+    "hardware_wait_guaranteed": false
+  }
+}

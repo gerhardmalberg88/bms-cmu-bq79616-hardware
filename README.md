@@ -11,6 +11,7 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-11-01**.
 - **3D PCB:** [open the latest populated STL](manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S.stl) in GitHub.
 - **COMH/COML EM — reduced CPU study complete; provisional results:** [board-only report](sim/em/report/README.md).
 - **Thermal simulations — steady scope complete; provisional results:** [balancing-resistor cases](sim/thermal/README.md).
+- **SPICE circuit simulation and model:** [cell voltage input filter](sim/spice/cell-voltage-input-filter/README.md).
 
 <table>
   <tr>
@@ -130,7 +131,7 @@ bms-cmu-bq79616-hardware/
 |-- manufacturing/              intentional versioned prototype packages
 |-- sim/                        circuit and EM studies; completed steady thermal scope
 |   |-- README.md               study scope and status
-|   |-- transient/              cell-voltage-input-filter plan only
+|   |-- spice/                  cell-voltage-input-filter circuit and study
 |   |-- em/                     COMH/COML board-only EM cases and reports
 |   `-- thermal/                balancing-resistor cases
 `-- tools/

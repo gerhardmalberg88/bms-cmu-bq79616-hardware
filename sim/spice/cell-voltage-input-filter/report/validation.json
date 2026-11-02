@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "checks": {
+    "VC_waveform_difference_V": 5.298853028593009e-06,
+    "CB_bank_waveform_difference_V": 0.00027144678598656213,
+    "cycle1_odd_VC_settling_ms_difference_s": 8.354219104869109e-07,
+    "cycle1_odd_CB_settling_ms_difference_s": 8.354219120411677e-07,
+    "cycle1_even_VC_settling_ms_difference_s": 2.303411014981105e-07,
+    "cycle1_even_CB_settling_ms_difference_s": 7.696588985028896e-07,
+    "cycle2_odd_VC_settling_ms_difference_s": 1.7968271701063187e-07,
+    "cycle2_odd_CB_settling_ms_difference_s": 8.203172829901462e-07,
+    "cycle2_even_VC_settling_ms_difference_s": 6.27955461476759e-07,
+    "cycle2_even_CB_settling_ms_difference_s": 3.7204453852413e-07,
+    "cycle3_odd_VC_settling_ms_difference_s": 5.436380099421712e-07,
+    "cycle3_odd_CB_settling_ms_difference_s": 4.5636199005882894e-07,
+    "cycle3_even_VC_settling_ms_difference_s": 6.099368511647274e-07,
+    "cycle3_even_CB_settling_ms_difference_s": 3.900631488362727e-07,
+    "odd_independent_DC_V": 2.3661073100811336e-12,
+    "odd_DC_KCL_A": 3.0122571104129747e-12,
+    "odd_native_export_DC_V": 2.7220892206969438e-11,
+    "off_independent_DC_V": 3.503686230033054e-11,
+    "off_DC_KCL_A": 1.2803091919977305e-12,
+    "off_native_export_DC_V": 3.767297585000051e-11,
+    "coordinate_translation_V": 1.2631295682602461e-06
+  },
+  "limits": {
+    "VC_waveform_difference_V": 1e-05,
+    "CB_bank_waveform_difference_V": 0.001,
+    "cycle1_odd_VC_settling_ms_difference_s": 5e-06,
+    "cycle1_odd_CB_settling_ms_difference_s": 5e-06,
+    "cycle1_even_VC_settling_ms_difference_s": 5e-06,
+    "cycle1_even_CB_settling_ms_difference_s": 5e-06,
+    "cycle2_odd_VC_settling_ms_difference_s": 5e-06,
+    "cycle2_odd_CB_settling_ms_difference_s": 5e-06,
+    "cycle2_even_VC_settling_ms_difference_s": 5e-06,
+    "cycle2_even_CB_settling_ms_difference_s": 5e-06,
+    "cycle3_odd_VC_settling_ms_difference_s": 5e-06,
+    "cycle3_odd_CB_settling_ms_difference_s": 5e-06,
+    "cycle3_even_VC_settling_ms_difference_s": 5e-06,
+    "cycle3_even_CB_settling_ms_difference_s": 5e-06,
+    "odd_independent_DC_V": 1e-07,
+    "odd_DC_KCL_A": 1e-08,
+    "odd_native_export_DC_V": 1e-07,
+    "off_independent_DC_V": 1e-07,
+    "off_DC_KCL_A": 1e-08,
+    "off_native_export_DC_V": 1e-07,
+    "coordinate_translation_V": 1e-05
+  },
+  "failed": {},
+  "input_hashes": {
+    "wired_report.py": "e90d5c6d6d3eee3a63262f017a16d6602e2550a1668cc3ca42ec05523213046c",
+    "wired_dc.py": "749125e2732091fe9d2d1155a220b743ff18824b341d85eb3f98b0cca96c17bf",
+    "tests/test_wired.py": "43ff31ae245ca795522facf572525ee2ac8c46032999b49779f8cc5e141fe29c",
+    "prepare-wired-review.py": "96f39d947e990e629fbc153e03b4eece00a277056f0e06811870605c93ee17c4"
+  },
+  "schematic_sha256": "3867b3888e9a559d4a9c4cdf37c89843a0fd939f24f4249ceb345e9c9f890ad9",
+  "export": {
+    "schematic_sha256": "3867b3888e9a559d4a9c4cdf37c89843a0fd939f24f4249ceb345e9c9f890ad9",
+    "export_sha256": "9def82e1bc4194f03a3cbff136c8a7442086fc0bc445a507f7920e5d8ca914b8",
+    "components": 642,
+    "source": "Qucs-S native ngspice exporter",
+    "removed": "unused global library includes; empty control block; local paths",
+    "source_hashes": {
+      "design/balance.kicad_sch": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a",
+      "design/battery_management_system_cell_monitoring_unit.kicad_sch": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649",
+      "design/batterypositive_to_8V8.kicad_sch": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8",
+      "design/bq79616.kicad_sch": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088",
+      "design/cells.kicad_sch": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156",
+      "design/com.kicad_sch": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f",
+      "design/mechanical.kicad_sch": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4",
+      "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+    }
+  },
+  "records": {
+    "repeated-cycle": {
+      "id": "repeated-cycle",
+      "status": "complete",
+      "fingerprint": "1d27f6f62266e2d2e55a6d911ed1922955b55411ad1d93e952222fee5aa2aa79",
+      "elapsed_s": 45.206777523009805,
+      "rows": 83273,
+      "artifacts": {
+        "case.cir": "a6df6f8685a40fc1c9e8d780fee819bd4948145e358c5fcafb51d0c2d66ae0f6",
+        "columns.json": "00d72f4910d1d329c08f3d58d7a403e000502ca8c719854dfa11d5945075abe2",
+        "solver.log": "ea4c0dac498392a230bb3b9dbd9314f04cd8a94db2199e41340e6aaf1397f61a",
+        "inputs.json": "d5cb5054d98464ab064be8d67e4733c2e1243e6f529a3b0303c51a877bc64097",
+        "response.dat": "7989d7a7cad5e8096bc68305f8d3c13ff77a33a5d094e12c7353a36b0d96cab6",
+        "final/case.cir": "db63a1415ca1f16d7f2cae0a9ce54b2008b9f333cde0538fae8ac94e3c0669e9",
+        "final/solver.log": "96644d982db1f294e95d1583d18ed40c011b87b8be39fb14fc8935761bdab8e5",
+        "final/response.dat": "d94227cb3e9c27a81cb47f02a7ca223c31f1ffd0cf17b079d8cabc0b44638e02"
+      }
+    },
+    "timestep-check": {
+      "id": "timestep-check",
+      "status": "complete",
+      "fingerprint": "3b06a5a55804f1a2a60d84798d095e3700bdaa98c080ce005b66e06cc8dbe7f6",
+      "elapsed_s": 85.4612244029995,
+      "rows": 158202,
+      "artifacts": {
+        "case.cir": "75b68ae46542ac7222c949fe18c096ea5b9ed454072ad6e4251b66815ebb130b",
+        "columns.json": "00d72f4910d1d329c08f3d58d7a403e000502ca8c719854dfa11d5945075abe2",
+        "solver.log": "3e698fbd6fd5f91db4a420561940d341711b3f4e8d86b81ae1859a218abac408",
+        "inputs.json": "ac975d81f4f3ebb1e50aa0bdb9c13d70c3ba773be9212e8e1eba6c366ff26aa2",
+        "response.dat": "f730638f0bfe69f4aba0031e452b1edc7b48be29b10660d6317007d52459d83f",
+        "final/case.cir": "db63a1415ca1f16d7f2cae0a9ce54b2008b9f333cde0538fae8ac94e3c0669e9",
+        "final/solver.log": "96644d982db1f294e95d1583d18ed40c011b87b8be39fb14fc8935761bdab8e5",
+        "final/response.dat": "d94227cb3e9c27a81cb47f02a7ca223c31f1ffd0cf17b079d8cabc0b44638e02"
+      }
+    }
+  },
+  "verification_artifacts": {
+    "off/case.cir": "d4536883f5a09bb07b7148e8a675c7e032c06e6360bc0d90a3dc195f5cf3b76d",
+    "off/solver.log": "46fa102e90dddf0f1f4eb72559770285f0a194c22fcf9ab280ea006ba82a1d22",
+    "off/response.dat": "c5f11580ef35d9a5fc9886a4082c856f9369fe1eb6028b969155bb48e4ec64e6",
+    "odd/case.cir": "d08b69670dcb36dbb8f6a9ffc258c6c72a0e21a77ced2fb07889d6535cb0e0c2",
+    "odd/solver.log": "46fa102e90dddf0f1f4eb72559770285f0a194c22fcf9ab280ea006ba82a1d22",
+    "odd/response.dat": "380dfdb642d678cbe485245982d3b68d0929e8e7389f84736f1a9395f00670f7",
+    "absolute-coordinate-check/case.cir": "0a37821086f2a5dcf381831e7b172dbe691c172d9ad028b6dd36c1a4a76c024d",
+    "absolute-coordinate-check/solver.log": "a0de548818bb3464ad2402f78a1031b272631404bacf4c0c3ede4188d5742bae",
+    "absolute-coordinate-check/response.dat": "2398558766b043121a5a50387b7fb7532f5907af52ffea167cb41307b985a731"
+  },
+  "scope": "One repeated-cycle study; second waveform is timestep verification. No ADC timing or hardware validation."
+}

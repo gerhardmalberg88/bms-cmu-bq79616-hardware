@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "study": {
+    "schema_version": 1,
+    "study": "Repeated odd / OFF / even / OFF balancing",
+    "cycles": 3,
+    "on_s": 0.02,
+    "gap_s": 0.005,
+    "edge_s": 1e-05,
+    "max_step_s": 2e-06,
+    "voltage_tolerance_V": 1e-05,
+    "settling_tolerance_s": 5e-06,
+    "settling_band_V": 0.0001,
+    "cb_tolerance_V": 0.001,
+    "assumptions": [
+      "20 ms ON plateaus are a short-time diagnostic schedule, not claimed firmware timing.",
+      "10 us smoothstep conductance transitions are assumed, not a TI switching specification.",
+      "Static input and board currents and cell RC/L follow the approved schematic.",
+      "No internal ADC or digital-filter postprocessing."
+    ]
+  },
+  "schematic_sha256": "3867b3888e9a559d4a9c4cdf37c89843a0fd939f24f4249ceb345e9c9f890ad9",
+  "export_sha256": "9def82e1bc4194f03a3cbff136c8a7442086fc0bc445a507f7920e5d8ca914b8",
+  "design_source_hashes": {
+    "design/balance.kicad_sch": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a",
+    "design/battery_management_system_cell_monitoring_unit.kicad_sch": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649",
+    "design/batterypositive_to_8V8.kicad_sch": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8",
+    "design/bq79616.kicad_sch": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088",
+    "design/cells.kicad_sch": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156",
+    "design/com.kicad_sch": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f",
+    "design/mechanical.kicad_sch": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4",
+    "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+  },
+  "parameters": {
+    "schema_version": 1,
+    "status": "approved_circuit_repeated_cycle_study",
+    "review_date": "2026-11-02",
+    "cell": {
+      "manufacturer": "LG Chem",
+      "model": "INR21700-M50",
+      "chemistry": "NMC / NCM",
+      "series_groups": 16,
+      "parallel_cells_per_group": 1,
+      "grouping_evidence": "16S1P review assumption, not an asserted e-bike pack configuration",
+      "capacity_Ah": 4.85,
+      "capacity_role": "C-rate reference derived from 0.2C = 970 mA; metadata only, not a separate guaranteed capacity; fixed-voltage short-time surrogate, no SOC integration",
+      "nominal_energy_Wh": 18.2
+    },
+    "sources": {
+      "ti": {
+        "url": "https://www.ti.com/lit/ds/symlink/bq79616-q1.pdf",
+        "revision": "SLUSE81F, June 2026",
+        "pages": [
+          13,
+          17,
+          20,
+          25,
+          26,
+          36,
+          37,
+          41
+        ],
+        "facts": {
+          "rdson_min_ohm": 1.45,
+          "rdson_max_ohm": 4.6,
+          "rdson_condition": "VCn >2.8 V; -40<TA<125 C",
+          "main_adc_round_robin_s": 0.000192,
+          "bci_cutoff_Hz": 100000,
+          "aaf_cutoff_Hz": 1600,
+          "digital_filter_Hz": [
+            600,
+            240,
+            111,
+            53,
+            26,
+            13,
+            6.5
+          ],
+          "digital_filter_alpha": [
+            0.5,
+            0.25,
+            0.125,
+            0.0625,
+            0.03125,
+            0.015625,
+            0.007813
+          ]
+        },
+        "unavailable": [
+          "CBFET capacitance versus voltage",
+          "CBFET turn-off edge / gate charge",
+          "CB pin package inductance",
+          "pause-command to physical FET turn-off latency"
+        ],
+        "local_pdf_sha256": "d8189170313b2edd5e83bff2c92fe3b06e728622e6c2e7f26f1e54a6b9209e9f"
+      },
+      "tdk": {
+        "url": "https://product.tdk.com/system/files/dam/technicalsupport/tvcl/pdf/capacitor_mlcc_auto_soft_cga3_ecm.pdf",
+        "revision": "2026-02-27, page 2",
+        "part": "CGA3E3X7R1E474K080AE",
+        "facts": {
+          "capacitance_F": 4.7e-07,
+          "ESL_H": 4.2e-10,
+          "ESR_ohm": 0.0143,
+          "leakage_ohm": 1060000000.0
+        },
+        "limits": "Simple constant model. No nonlinear charge / voltage-bias curve fitted."
+      },
+      "tdk_part": {
+        "url": "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA3E3X7R1E474K080AE",
+        "facts": {
+          "nominal_F": 4.7e-07,
+          "tolerance_fraction": 0.1
+        }
+      },
+      "qucs_switch": {
+        "url": "https://raw.githubusercontent.com/ra3xdh/qucs_s/26.1.1/qucs/components/relais.cpp",
+        "purpose": "Native voltage-controlled SPST connectivity and SPICE export; no source code copied."
+      },
+      "lg_m50": {
+        "url": "https://asset.conrad.com/media10/add/160267/c1/-/en/002114679DS01/datenblatt-2114679-lg-chem-inr21700-50t-spezial-akku-21700-flat-top-li-ion-36-v-5000-mah.pdf",
+        "title": "LG Chem INR21700 M50 18.2Wh product specification (manufacturer document hosted by Conrad)",
+        "document": "LRB-PS-CY18.2Wh-M50",
+        "revision": "2017-09-22, Tentative",
+        "pages": [
+          4,
+          6
+        ],
+        "facts": {
+          "nominal_voltage_V": 3.63,
+          "nominal_energy_Wh": 18.2,
+          "c_rate_reference_capacity_Ah": 4.85,
+          "c_rate_reference_derivation": "0.970 A / 0.2C",
+          "ac_impedance_max_ohm": 0.025,
+          "ac_condition": "1 kHz after standard charge",
+          "dc_resistance_ohm": 0.03,
+          "dc_resistance_tolerance_ohm": 0.006,
+          "dc_condition": "50% SOC, 0.5C load for 30 s, 25 +/- 2 C",
+          "charge_voltage_V": 4.2,
+          "discharge_cutoff_V": 2.5
+        },
+        "limits": "Tentative specification, not an identified production-lot certificate. No fitted R0/polarization split, relaxation capacitance or cell inductance. This is M50, not M50LT; mirror filename does not match the document model."
+      }
+    },
+    "parameters": {
+      "cell_voltage": {
+        "value": 3.63,
+        "unit": "V",
+        "evidence": "LG M50 nominal voltage; selected review operating point, not a measured OCV/SOC curve",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "cell_r": {
+        "value": 0.02,
+        "unit": "ohm",
+        "evidence": "Assumed partition: 20 mOhm R_cell + 10 mOhm R_relax = LG M50 nominal 30 mOhm DC resistance",
+        "conditions": "LG specifies 30 +/- 6 mOhm at 50% SOC, 0.5C for 30 s, 25 +/- 2 C; AC impedance <=25 mOhm at 1 kHz after standard charge. The 20/10 split is not manufacturer-fitted; nominal voltage is not a calibrated 50%-SOC OCV."
+      },
+      "cell_relax_r": {
+        "value": 0.01,
+        "unit": "ohm",
+        "evidence": "assumed",
+        "conditions": "Unfitted placeholder; LG M50 specification supplies no polarization RC parameters. The 20/10 mOhm resistance split and 10 ms relaxation time are assumptions, not manufacturer calibration."
+      },
+      "cell_relax_c": {
+        "value": 1.0,
+        "unit": "F",
+        "evidence": "assumed",
+        "conditions": "Unfitted placeholder; LG M50 specification supplies no polarization RC parameters. The 20/10 mOhm resistance split and 10 ms relaxation time are assumptions, not manufacturer calibration."
+      },
+      "cell_l": {
+        "value": 2e-08,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "wire_r": {
+        "value": 0.05,
+        "unit": "ohm",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "contact_r": {
+        "value": 0.02,
+        "unit": "ohm",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "wire_l": {
+        "value": 3e-07,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "fuse_r": {
+        "value": 0.5455,
+        "unit": "ohm",
+        "evidence": "Littelfuse 470 datasheet",
+        "conditions": "Nominal cold resistance for 0.500 A; uncertainty range is assumed, not a rated tolerance. Intact fuse only."
+      },
+      "fuse_l": {
+        "value": 3e-09,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "shared_pcb_r": {
+        "value": 0.01,
+        "unit": "ohm",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "shared_pcb_l": {
+        "value": 2e-08,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "trace_l_per_mm": {
+        "value": 6e-10,
+        "unit": "H/mm",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "trace_c_per_mm": {
+        "value": 1e-13,
+        "unit": "F/mm",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "sense_r": {
+        "value": 100.0,
+        "unit": "ohm",
+        "evidence": "fitted BOM",
+        "conditions": "TNPW0603100RBEEA 0.1%; temperature coefficient below is assumed pending verification."
+      },
+      "resistor_l": {
+        "value": 5e-10,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "balance_r": {
+        "value": 20.0,
+        "unit": "ohm",
+        "evidence": "fitted BOM",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "cap_c": {
+        "value": 4.7e-07,
+        "unit": "F",
+        "evidence": "fitted BOM / TDK",
+        "conditions": "CGA3E3X7R1E474K080AE; printed tolerance only, not DC-bias allowance."
+      },
+      "cap_esr": {
+        "value": 0.0143,
+        "unit": "ohm",
+        "evidence": "TDK simple-model parameter table 2026-02-27",
+        "conditions": "Scalar constant-ESR approximation; frequency/temperature dependence is not calibrated."
+      },
+      "cap_esl": {
+        "value": 4.2e-10,
+        "unit": "H",
+        "evidence": "TDK simple-model parameter table 2026-02-27",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "cap_leak": {
+        "value": 1060000000.0,
+        "unit": "ohm",
+        "evidence": "TDK simple-model parameter table 2026-02-27",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "vc_input_current": {
+        "value": 8e-06,
+        "unit": "A",
+        "evidence": "TI SLUSE81F section 6.5",
+        "conditions": "Typical 8 uA with main ADC on. Return to AVSS is an explicit surrogate assumption; retained during balancing OFF."
+      },
+      "input_pin_c": {
+        "value": 5e-12,
+        "unit": "F",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "vc_cb_c": {
+        "value": 2e-13,
+        "unit": "F",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "switch_ron": {
+        "value": 2.5,
+        "unit": "ohm",
+        "evidence": "TI SLUSE81F / assumed nominal",
+        "conditions": "2.5 ohm illustrative nominal; TI min 1.45/max 4.6 ohm at VCn >2.8 V, -40<TA<125 C. Exact typical value not tabulated."
+      },
+      "switch_roff": {
+        "value": 10000000000.0,
+        "unit": "ohm",
+        "evidence": "assumed",
+        "conditions": "Nominal assumed value; not measured."
+      },
+      "bat_current": {
+        "value": 0.00015,
+        "unit": "A",
+        "evidence": "TI SLUSE81F / assumed range",
+        "conditions": "BAT active typical; remaining rail load is separate."
+      },
+      "board_current": {
+        "value": 0.01,
+        "unit": "A",
+        "evidence": "assumed",
+        "conditions": "Top-tap to local AVSS equivalent; no regulator internals and no claim of actual board consumption."
+      },
+      "cb_package_l": {
+        "value": 3e-09,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Per CB pin, shared by adjacent switches; not a TI package specification."
+      },
+      "via_l": {
+        "value": 1e-09,
+        "unit": "H",
+        "evidence": "assumed",
+        "conditions": "Per via in the measured capacitor-bank to IC route. Not a field extraction."
+      },
+      "switch_cds": {
+        "value": 1e-10,
+        "unit": "F",
+        "evidence": "assumed",
+        "conditions": "Constant capacitance across internal switch nodes. TI Coss/Qoss versus bias not established; no guaranteed physical bound."
+      }
+    },
+    "drawing": {
+      "capacitance_model": "Nominal TDK simple model, 470 nF; no automatic DC-bias multiplier applied",
+      "switch_control": "All V_enable sources are static 0 V. Electrical SPST symbols are abstract internal CBFETs, not fitted relays. No timed switch events.",
+      "control_voltage_role": "0/1 V logic surrogate, not physical gate voltage or a TI gate-drive specification",
+      "wire_labels": false,
+      "show_values": true
+    },
+    "measurement_scope": {
+      "target": "External VC1..VC16 and CB capacitor-bank voltages",
+      "dynamic_error_band_V": 0.0001,
+      "threshold_role": "Investigation target, not a product accuracy requirement",
+      "internal_ADC_model": false,
+      "hardware_wait_guaranteed": false
+    }
+  },
+  "implementation_hashes": {
+    "study.py": "8ed4b6b567f1f0169f624263dd13ff8bf294f9ebf996bed87b44804f8bdeba25",
+    "extract.py": "bdc503ce4e52a17eeb712229d7b6e150d0f42d8765040eb7357a5f547fd31773",
+    "wired_report.py": "e90d5c6d6d3eee3a63262f017a16d6602e2550a1668cc3ca42ec05523213046c",
+    "setup.py": "f5182923ad9c4df43f08341b3898e77f50a6281cc3388d24db826764468d2fc0",
+    "extract-wired-routes.py": "3831df7cefbf6cddb9167dff2482579fe8c9a664f43ceacf9f1750320ed40758",
+    "wired_study.py": "5904c8c2f9f317ef2aec1fcd0dbd6bd31a2e341b73854821ac19fff764bb7854",
+    "wired_dc.py": "749125e2732091fe9d2d1155a220b743ff18824b341d85eb3f98b0cca96c17bf",
+    "prepare-wired-review.py": "96f39d947e990e629fbc153e03b4eece00a277056f0e06811870605c93ee17c4"
+  },
+  "run_inputs": {
+    "repeated-cycle": {
+      "case": {
+        "id": "repeated-cycle",
+        "analysis": "tran",
+        "event": "cycle",
+        "phase": "odd",
+        "cycles": 3,
+        "on_s": 0.02,
+        "gap_s": 0.005,
+        "edge": 1e-05,
+        "max_step": 2e-06,
+        "reltol": 1e-06,
+        "vntol": 1e-08,
+        "abstol": 1e-10,
+        "duration": 0.15011000000000002
+      },
+      "schematic_sha256": "3867b3888e9a559d4a9c4cdf37c89843a0fd939f24f4249ceb345e9c9f890ad9",
+      "source_hashes": {
+        "design/balance.kicad_sch": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a",
+        "design/battery_management_system_cell_monitoring_unit.kicad_sch": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649",
+        "design/batterypositive_to_8V8.kicad_sch": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8",
+        "design/bq79616.kicad_sch": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088",
+        "design/cells.kicad_sch": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156",
+        "design/com.kicad_sch": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f",
+        "design/mechanical.kicad_sch": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4",
+        "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+      },
+      "implementation_and_inputs": {
+        "wired_study.py": "5904c8c2f9f317ef2aec1fcd0dbd6bd31a2e341b73854821ac19fff764bb7854",
+        "wired_dc.py": "749125e2732091fe9d2d1155a220b743ff18824b341d85eb3f98b0cca96c17bf",
+        "case.json": "424ef5b3b912b370ccbf3799f70674c0cfa2019f98e7908a096155a87dfb465b",
+        "circuit/wired-review.json": "80461a1748f5640de931ee3b8f56f595e1d868b87428ce3a92452e3b512c745a",
+        "circuit/wired-review-geometry.json": "100c52994a619ce707bd79cbea6abe38c3f930516aa221c47a5e3f2a6aa2bf8f",
+        "topology.json": "2a5b998b54dd276776e6273217528bc92bd2e89f39978909905a7b64c27abf3c",
+        "circuit/wired-export.cir": "9def82e1bc4194f03a3cbff136c8a7442086fc0bc445a507f7920e5d8ca914b8",
+        "circuit/wired-export.json": "98064af1e259b89fb16ddbe03d23b0480dca332b71662b29834de394aaf3f3d6"
+      },
+      "ngspice": "******\n** ngspice-42 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2023, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html\n** Creation Date: Sun Mar 31 20:15:14 UTC 2024\n******\n",
+      "switch_representation": "Same ports; prescribed smoothstep conductance equivalent to the PWL controls; time expression avoids floating-control subtraction",
+      "relaxation_representation": "Exact R/(1+sRC) two-terminal impedance, scaled ground-referenced state",
+      "coordinates": "Exact perturbations about initial odd DC; switched bias-current terms retained and physical output offsets restored"
+    },
+    "timestep-check": {
+      "case": {
+        "id": "timestep-check",
+        "analysis": "tran",
+        "event": "cycle",
+        "phase": "odd",
+        "cycles": 3,
+        "on_s": 0.02,
+        "gap_s": 0.005,
+        "edge": 1e-05,
+        "max_step": 1e-06,
+        "reltol": 1e-06,
+        "vntol": 1e-08,
+        "abstol": 1e-10,
+        "duration": 0.15011000000000002
+      },
+      "schematic_sha256": "3867b3888e9a559d4a9c4cdf37c89843a0fd939f24f4249ceb345e9c9f890ad9",
+      "source_hashes": {
+        "design/balance.kicad_sch": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a",
+        "design/battery_management_system_cell_monitoring_unit.kicad_sch": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649",
+        "design/batterypositive_to_8V8.kicad_sch": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8",
+        "design/bq79616.kicad_sch": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088",
+        "design/cells.kicad_sch": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156",
+        "design/com.kicad_sch": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f",
+        "design/mechanical.kicad_sch": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4",
+        "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+      },
+      "implementation_and_inputs": {
+        "wired_study.py": "5904c8c2f9f317ef2aec1fcd0dbd6bd31a2e341b73854821ac19fff764bb7854",
+        "wired_dc.py": "749125e2732091fe9d2d1155a220b743ff18824b341d85eb3f98b0cca96c17bf",
+        "case.json": "424ef5b3b912b370ccbf3799f70674c0cfa2019f98e7908a096155a87dfb465b",
+        "circuit/wired-review.json": "80461a1748f5640de931ee3b8f56f595e1d868b87428ce3a92452e3b512c745a",
+        "circuit/wired-review-geometry.json": "100c52994a619ce707bd79cbea6abe38c3f930516aa221c47a5e3f2a6aa2bf8f",
+        "topology.json": "2a5b998b54dd276776e6273217528bc92bd2e89f39978909905a7b64c27abf3c",
+        "circuit/wired-export.cir": "9def82e1bc4194f03a3cbff136c8a7442086fc0bc445a507f7920e5d8ca914b8",
+        "circuit/wired-export.json": "98064af1e259b89fb16ddbe03d23b0480dca332b71662b29834de394aaf3f3d6"
+      },
+      "ngspice": "******\n** ngspice-42 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2023, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html\n** Creation Date: Sun Mar 31 20:15:14 UTC 2024\n******\n",
+      "switch_representation": "Same ports; prescribed smoothstep conductance equivalent to the PWL controls; time expression avoids floating-control subtraction",
+      "relaxation_representation": "Exact R/(1+sRC) two-terminal impedance, scaled ground-referenced state",
+      "coordinates": "Exact perturbations about initial odd DC; switched bias-current terms retained and physical output offsets restored"
+    }
+  },
+  "solver_time_s": 130.6680019260093,
+  "artifacts": {
+    "validation.json": "bafff95777ebaaa6af10f6ca701ab21d67d1b9ca28c96356d011593c7bf10cbe",
+    "channels.csv": "1a18a04fe3a2d0ca1f80e659de67a13c92e4491cdcad77927c193bb78c1a40ff",
+    "README.md": "a36d5c7017f0759fca2abbc08285bd6914d0ea827252a7ebbb734bb50b162d0c",
+    "windows.csv": "9db0248739123c76b7acd84af4d977c128e0282edae542c49497bf0898f4c9aa",
+    "repeated-cycle.png": "2524e3dfbb0989c56a11264ac3b8d15eb991e4b2c6e691fcc64187d45f17e9b5"
+  }
+}

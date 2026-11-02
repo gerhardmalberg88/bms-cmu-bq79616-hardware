@@ -1,0 +1,2436 @@
+{
+  "schema_version": 1,
+  "source_hashes": {
+    "design/balance.kicad_sch": "5b1723f0d22500174c27d9a50a4ba4e81a19c1ec13e31e9046da29cffe651d0a",
+    "design/battery_management_system_cell_monitoring_unit.kicad_sch": "945993c6d1a101e497516c008a94779a1646a5b59f9edcbc5da7b23b9430c649",
+    "design/batterypositive_to_8V8.kicad_sch": "72f36f1b03984884c2471c6d71d9e55343b72d272b3ec8183bc51d640b1183f8",
+    "design/bq79616.kicad_sch": "2f684b06aa036257138949e5af40e84399ad98686956f60aaf458b426e350088",
+    "design/cells.kicad_sch": "d35dfb457677ce2df19687c1916d51a770597b272269dc660e3319c4a92f2156",
+    "design/com.kicad_sch": "d6222e51da7abf4de008fba1fa39608fa1dd1b9df744251b7421931da71d8d2f",
+    "design/mechanical.kicad_sch": "9053bb5444f700e794e7d1dad79043292651082ee352d652bd3b94c3e85169b4",
+    "design/battery_management_system_cell_monitoring_unit.kicad_pcb": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa"
+  },
+  "taps": [
+    {
+      "tap": 0,
+      "board_net": "GND",
+      "connector_pin": "1",
+      "fuse": "F417",
+      "sense": "R357",
+      "balance": "R361",
+      "vc_cap": "C332",
+      "cb_cap": "C331",
+      "vc_pin": "35",
+      "cb_pin": "34"
+    },
+    {
+      "tap": 1,
+      "board_net": "/balance/cell1",
+      "connector_pin": "11",
+      "fuse": "F416",
+      "sense": "R350",
+      "balance": "R354",
+      "vc_cap": "C328",
+      "cb_cap": "C327",
+      "vc_pin": "33",
+      "cb_pin": "32"
+    },
+    {
+      "tap": 2,
+      "board_net": "/balance/cell2",
+      "connector_pin": "2",
+      "fuse": "F415",
+      "sense": "R343",
+      "balance": "R347",
+      "vc_cap": "C324",
+      "cb_cap": "C323",
+      "vc_pin": "31",
+      "cb_pin": "30"
+    },
+    {
+      "tap": 3,
+      "board_net": "/balance/cell3",
+      "connector_pin": "12",
+      "fuse": "F414",
+      "sense": "R336",
+      "balance": "R340",
+      "vc_cap": "C320",
+      "cb_cap": "C319",
+      "vc_pin": "29",
+      "cb_pin": "28"
+    },
+    {
+      "tap": 4,
+      "board_net": "/balance/cell4",
+      "connector_pin": "3",
+      "fuse": "F413",
+      "sense": "R329",
+      "balance": "R333",
+      "vc_cap": "C316",
+      "cb_cap": "C315",
+      "vc_pin": "27",
+      "cb_pin": "26"
+    },
+    {
+      "tap": 5,
+      "board_net": "/balance/cell5",
+      "connector_pin": "13",
+      "fuse": "F412",
+      "sense": "R322",
+      "balance": "R326",
+      "vc_cap": "C312",
+      "cb_cap": "C311",
+      "vc_pin": "25",
+      "cb_pin": "24"
+    },
+    {
+      "tap": 6,
+      "board_net": "/balance/cell6",
+      "connector_pin": "4",
+      "fuse": "F411",
+      "sense": "R315",
+      "balance": "R319",
+      "vc_cap": "C308",
+      "cb_cap": "C307",
+      "vc_pin": "23",
+      "cb_pin": "22"
+    },
+    {
+      "tap": 7,
+      "board_net": "/balance/cell7",
+      "connector_pin": "14",
+      "fuse": "F410",
+      "sense": "R306",
+      "balance": "R312",
+      "vc_cap": "C304",
+      "cb_cap": "C303",
+      "vc_pin": "21",
+      "cb_pin": "20"
+    },
+    {
+      "tap": 8,
+      "board_net": "/balance/cell8",
+      "connector_pin": "5",
+      "fuse": "F409",
+      "sense": "R301",
+      "balance": "R304",
+      "vc_cap": "C302",
+      "cb_cap": "C301",
+      "vc_pin": "19",
+      "cb_pin": "18"
+    },
+    {
+      "tap": 9,
+      "board_net": "/balance/cell9",
+      "connector_pin": "15",
+      "fuse": "F408",
+      "sense": "R358",
+      "balance": "R362",
+      "vc_cap": "C334",
+      "cb_cap": "C333",
+      "vc_pin": "17",
+      "cb_pin": "16"
+    },
+    {
+      "tap": 10,
+      "board_net": "/balance/cell10",
+      "connector_pin": "6",
+      "fuse": "F407",
+      "sense": "R351",
+      "balance": "R355",
+      "vc_cap": "C330",
+      "cb_cap": "C329",
+      "vc_pin": "15",
+      "cb_pin": "14"
+    },
+    {
+      "tap": 11,
+      "board_net": "/balance/cell11",
+      "connector_pin": "16",
+      "fuse": "F406",
+      "sense": "R344",
+      "balance": "R348",
+      "vc_cap": "C326",
+      "cb_cap": "C325",
+      "vc_pin": "13",
+      "cb_pin": "12"
+    },
+    {
+      "tap": 12,
+      "board_net": "/balance/cell12",
+      "connector_pin": "7",
+      "fuse": "F405",
+      "sense": "R337",
+      "balance": "R341",
+      "vc_cap": "C322",
+      "cb_cap": "C321",
+      "vc_pin": "11",
+      "cb_pin": "10"
+    },
+    {
+      "tap": 13,
+      "board_net": "/balance/cell13",
+      "connector_pin": "17",
+      "fuse": "F404",
+      "sense": "R330",
+      "balance": "R334",
+      "vc_cap": "C318",
+      "cb_cap": "C317",
+      "vc_pin": "9",
+      "cb_pin": "8"
+    },
+    {
+      "tap": 14,
+      "board_net": "/balance/cell14",
+      "connector_pin": "8",
+      "fuse": "F403",
+      "sense": "R323",
+      "balance": "R327",
+      "vc_cap": "C314",
+      "cb_cap": "C313",
+      "vc_pin": "7",
+      "cb_pin": "6"
+    },
+    {
+      "tap": 15,
+      "board_net": "/balance/cell15",
+      "connector_pin": "18",
+      "fuse": "F402",
+      "sense": "R316",
+      "balance": "R320",
+      "vc_cap": "C310",
+      "cb_cap": "C309",
+      "vc_pin": "5",
+      "cb_pin": "4"
+    },
+    {
+      "tap": 16,
+      "board_net": "+BATT",
+      "connector_pin": "9",
+      "fuse": "F401",
+      "sense": "R307",
+      "balance": "R313",
+      "vc_cap": "C306",
+      "cb_cap": "C305",
+      "vc_pin": "3",
+      "cb_pin": "2"
+    }
+  ],
+  "pins": {
+    "U201.1": "Net-(U201-BAT)",
+    "U201.2": "/balance/CB16",
+    "U201.3": "/balance/VC16",
+    "U201.4": "/balance/CB15",
+    "U201.5": "/balance/VC15",
+    "U201.6": "/balance/CB14",
+    "U201.7": "/balance/VC14",
+    "U201.8": "/balance/CB13",
+    "U201.9": "/balance/VC13",
+    "U201.10": "/balance/CB12",
+    "U201.11": "/balance/VC12",
+    "U201.12": "/balance/CB11",
+    "U201.13": "/balance/VC11",
+    "U201.14": "/balance/CB10",
+    "U201.15": "/balance/VC10",
+    "U201.16": "/balance/CB9",
+    "U201.17": "/balance/VC9",
+    "U201.18": "/balance/CB8",
+    "U201.19": "/balance/VC8",
+    "U201.20": "/balance/CB7",
+    "U201.21": "/balance/VC7",
+    "U201.22": "/balance/CB6",
+    "U201.23": "/balance/VC6",
+    "U201.24": "/balance/CB5",
+    "U201.25": "/balance/VC5",
+    "U201.26": "/balance/CB4",
+    "U201.27": "/balance/VC4",
+    "U201.28": "/balance/CB3",
+    "U201.29": "/balance/VC3",
+    "U201.30": "/balance/CB2",
+    "U201.31": "/balance/VC2",
+    "U201.32": "/balance/CB1",
+    "U201.33": "/balance/VC1",
+    "U201.34": "/balance/CB0",
+    "U201.35": "/balance/VC0",
+    "U201.36": "GND",
+    "U201.37": "Net-(U201-REFHP)",
+    "U201.38": "Net-(U201-AVDD)",
+    "U201.39": "GND",
+    "U201.40": "/bq79616/COMLP",
+    "U201.41": "/bq79616/COMLN",
+    "U201.42": "/bq79616/COMHN",
+    "U201.43": "/bq79616/COMHP",
+    "U201.44": "Net-(U201-NEG5V)",
+    "U201.45": "Net-(U201-CVDD)",
+    "U201.46": "GND",
+    "U201.47": "Net-(Q201-E)",
+    "U201.48": "Net-(Q201-B)",
+    "U201.49": "Net-(U201-DVDD)",
+    "U201.50": "GND",
+    "U201.51": "Net-(U201-TSREF)",
+    "U201.52": "Net-(U201-CVDD)",
+    "U201.53": "unconnected-(U201-TX-Pad53)",
+    "U201.54": "Net-(U201-GPIO8)",
+    "U201.55": "Net-(U201-GPIO7)",
+    "U201.56": "Net-(U201-GPIO6)",
+    "U201.57": "Net-(U201-GPIO5)",
+    "U201.58": "Net-(U201-GPIO4)",
+    "U201.59": "Net-(U201-GPIO3)",
+    "U201.60": "Net-(U201-GPIO2)",
+    "U201.61": "Net-(U201-GPIO1)",
+    "U201.62": "unconnected-(U201-NFAULT-Pad62)",
+    "U201.63": "unconnected-(U201-BBN-Pad63)",
+    "U201.64": "unconnected-(U201-BBP-Pad64)",
+    "U201.65": "GND",
+    "J401.1": "Net-(J401-Pin_1)",
+    "J401.2": "Net-(J401-Pin_2)",
+    "J401.3": "Net-(J401-Pin_3)",
+    "J401.4": "Net-(J401-Pin_4)",
+    "J401.5": "Net-(J401-Pin_5)",
+    "J401.6": "Net-(J401-Pin_6)",
+    "J401.7": "Net-(J401-Pin_7)",
+    "J401.8": "Net-(J401-Pin_8)",
+    "J401.9": "Net-(J401-Pin_9)",
+    "J401.10": "unconnected-(J401-Pin_10-Pad10)",
+    "J401.11": "Net-(J401-Pin_11)",
+    "J401.12": "Net-(J401-Pin_12)",
+    "J401.13": "Net-(J401-Pin_13)",
+    "J401.14": "Net-(J401-Pin_14)",
+    "J401.15": "Net-(J401-Pin_15)",
+    "J401.16": "Net-(J401-Pin_16)",
+    "J401.17": "Net-(J401-Pin_17)",
+    "J401.18": "Net-(J401-Pin_18)",
+    "J401.19": "unconnected-(J401-Pin_19-Pad19)",
+    "J401.20": "unconnected-(J401-Pin_20-Pad20)",
+    "R202.1": "+BATT",
+    "R202.2": "Net-(U201-BAT)",
+    "C208.1": "Net-(U201-BAT)",
+    "C208.2": "GND",
+    "F417.1": "Net-(J401-Pin_1)",
+    "F417.2": "GND",
+    "R357.1": "GND",
+    "R357.2": "/balance/VC0",
+    "R361.1": "GND",
+    "R361.2": "/balance/CB0",
+    "C332.1": "/balance/VC0",
+    "C332.2": "GND",
+    "C331.1": "/balance/CB0",
+    "C331.2": "GND",
+    "F416.1": "Net-(J401-Pin_11)",
+    "F416.2": "/balance/cell1",
+    "R350.1": "/balance/cell1",
+    "R350.2": "/balance/VC1",
+    "R354.1": "/balance/cell1",
+    "R354.2": "/balance/CB1",
+    "C328.1": "/balance/VC1",
+    "C328.2": "/balance/VC0",
+    "C327.1": "/balance/CB1",
+    "C327.2": "/balance/CB0",
+    "F415.1": "Net-(J401-Pin_2)",
+    "F415.2": "/balance/cell2",
+    "R343.1": "/balance/cell2",
+    "R343.2": "/balance/VC2",
+    "R347.1": "/balance/cell2",
+    "R347.2": "/balance/CB2",
+    "C324.1": "/balance/VC2",
+    "C324.2": "/balance/VC1",
+    "C323.1": "/balance/CB2",
+    "C323.2": "/balance/CB1",
+    "F414.1": "Net-(J401-Pin_12)",
+    "F414.2": "/balance/cell3",
+    "R336.1": "/balance/cell3",
+    "R336.2": "/balance/VC3",
+    "R340.1": "/balance/cell3",
+    "R340.2": "/balance/CB3",
+    "C320.1": "/balance/VC3",
+    "C320.2": "/balance/VC2",
+    "C319.1": "/balance/CB3",
+    "C319.2": "/balance/CB2",
+    "F413.1": "Net-(J401-Pin_3)",
+    "F413.2": "/balance/cell4",
+    "R329.1": "/balance/cell4",
+    "R329.2": "/balance/VC4",
+    "R333.1": "/balance/cell4",
+    "R333.2": "/balance/CB4",
+    "C316.1": "/balance/VC4",
+    "C316.2": "/balance/VC3",
+    "C315.1": "/balance/CB4",
+    "C315.2": "/balance/CB3",
+    "F412.1": "Net-(J401-Pin_13)",
+    "F412.2": "/balance/cell5",
+    "R322.1": "/balance/cell5",
+    "R322.2": "/balance/VC5",
+    "R326.1": "/balance/cell5",
+    "R326.2": "/balance/CB5",
+    "C312.1": "/balance/VC5",
+    "C312.2": "/balance/VC4",
+    "C311.1": "/balance/CB5",
+    "C311.2": "/balance/CB4",
+    "F411.1": "Net-(J401-Pin_4)",
+    "F411.2": "/balance/cell6",
+    "R315.1": "/balance/cell6",
+    "R315.2": "/balance/VC6",
+    "R319.1": "/balance/cell6",
+    "R319.2": "/balance/CB6",
+    "C308.1": "/balance/VC6",
+    "C308.2": "/balance/VC5",
+    "C307.1": "/balance/CB6",
+    "C307.2": "/balance/CB5",
+    "F410.1": "Net-(J401-Pin_14)",
+    "F410.2": "/balance/cell7",
+    "R306.1": "/balance/cell7",
+    "R306.2": "/balance/VC7",
+    "R312.1": "/balance/cell7",
+    "R312.2": "/balance/CB7",
+    "C304.1": "/balance/VC7",
+    "C304.2": "/balance/VC6",
+    "C303.1": "/balance/CB7",
+    "C303.2": "/balance/CB6",
+    "F409.1": "Net-(J401-Pin_5)",
+    "F409.2": "/balance/cell8",
+    "R301.1": "/balance/cell8",
+    "R301.2": "/balance/VC8",
+    "R304.1": "/balance/cell8",
+    "R304.2": "/balance/CB8",
+    "C302.1": "/balance/VC8",
+    "C302.2": "/balance/VC7",
+    "C301.1": "/balance/CB8",
+    "C301.2": "/balance/CB7",
+    "F408.1": "Net-(J401-Pin_15)",
+    "F408.2": "/balance/cell9",
+    "R358.1": "/balance/cell9",
+    "R358.2": "/balance/VC9",
+    "R362.1": "/balance/cell9",
+    "R362.2": "/balance/CB9",
+    "C334.1": "/balance/VC9",
+    "C334.2": "/balance/VC8",
+    "C333.1": "/balance/CB9",
+    "C333.2": "/balance/CB8",
+    "F407.1": "Net-(J401-Pin_6)",
+    "F407.2": "/balance/cell10",
+    "R351.1": "/balance/cell10",
+    "R351.2": "/balance/VC10",
+    "R355.1": "/balance/cell10",
+    "R355.2": "/balance/CB10",
+    "C330.1": "/balance/VC10",
+    "C330.2": "/balance/VC9",
+    "C329.1": "/balance/CB10",
+    "C329.2": "/balance/CB9",
+    "F406.1": "Net-(J401-Pin_16)",
+    "F406.2": "/balance/cell11",
+    "R344.1": "/balance/cell11",
+    "R344.2": "/balance/VC11",
+    "R348.1": "/balance/cell11",
+    "R348.2": "/balance/CB11",
+    "C326.1": "/balance/VC11",
+    "C326.2": "/balance/VC10",
+    "C325.1": "/balance/CB11",
+    "C325.2": "/balance/CB10",
+    "F405.1": "Net-(J401-Pin_7)",
+    "F405.2": "/balance/cell12",
+    "R337.1": "/balance/cell12",
+    "R337.2": "/balance/VC12",
+    "R341.1": "/balance/cell12",
+    "R341.2": "/balance/CB12",
+    "C322.1": "/balance/VC12",
+    "C322.2": "/balance/VC11",
+    "C321.1": "/balance/CB12",
+    "C321.2": "/balance/CB11",
+    "F404.1": "Net-(J401-Pin_17)",
+    "F404.2": "/balance/cell13",
+    "R330.1": "/balance/cell13",
+    "R330.2": "/balance/VC13",
+    "R334.1": "/balance/cell13",
+    "R334.2": "/balance/CB13",
+    "C318.1": "/balance/VC13",
+    "C318.2": "/balance/VC12",
+    "C317.1": "/balance/CB13",
+    "C317.2": "/balance/CB12",
+    "F403.1": "Net-(J401-Pin_8)",
+    "F403.2": "/balance/cell14",
+    "R323.1": "/balance/cell14",
+    "R323.2": "/balance/VC14",
+    "R327.1": "/balance/cell14",
+    "R327.2": "/balance/CB14",
+    "C314.1": "/balance/VC14",
+    "C314.2": "/balance/VC13",
+    "C313.1": "/balance/CB14",
+    "C313.2": "/balance/CB13",
+    "F402.1": "Net-(J401-Pin_18)",
+    "F402.2": "/balance/cell15",
+    "R316.1": "/balance/cell15",
+    "R316.2": "/balance/VC15",
+    "R320.1": "/balance/cell15",
+    "R320.2": "/balance/CB15",
+    "C310.1": "/balance/VC15",
+    "C310.2": "/balance/VC14",
+    "C309.1": "/balance/CB15",
+    "C309.2": "/balance/CB14",
+    "F401.1": "Net-(J401-Pin_9)",
+    "F401.2": "+BATT",
+    "R307.1": "+BATT",
+    "R307.2": "/balance/VC16",
+    "R313.1": "+BATT",
+    "R313.2": "/balance/CB16",
+    "C306.1": "/balance/VC16",
+    "C306.2": "/balance/VC15",
+    "C305.1": "/balance/CB16",
+    "C305.2": "/balance/CB15"
+  },
+  "components": {
+    "C208": {
+      "value": "10nF 250V C0G",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "mpn": "C1206X103JAGACAUTO",
+      "dk": "399-11912-2-ND"
+    },
+    "C301": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C302": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C303": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C304": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C305": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C306": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C307": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C308": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C309": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C310": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C311": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C312": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C313": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C314": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C315": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C316": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C317": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C318": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C319": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C320": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C321": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C322": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C323": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C324": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C325": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C326": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C327": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C328": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C329": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C330": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C331": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C332": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C333": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "C334": {
+      "value": "470nF 25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "CGA3E3X7R1E474K080AE",
+      "dk": "445-173660-2-ND"
+    },
+    "F401": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F402": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F403": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F404": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F405": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F406": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F407": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F408": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F409": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F410": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F411": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F412": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F413": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F414": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F415": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F416": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "F417": {
+      "value": "500mA 125V FF",
+      "footprint": "custom_footprints:Littelfuse_470-Series_Fuse_1206",
+      "mpn": "0470.500DRSNP",
+      "dk": "F6622CT-ND"
+    },
+    "J401": {
+      "value": "Conn_02x10_Top_Bottom",
+      "footprint": "custom_footprints:Harwin_Datamate_M80-5002042_2x10_P2.00mm_Vertical",
+      "mpn": "M80-5002042",
+      "dk": "952-1003-5-ND"
+    },
+    "R202": {
+      "value": "30R 1%",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "mpn": "CRCW080530R0FKEAHP",
+      "dk": "541-CRCW080530R0FKEAHPTR-ND"
+    },
+    "R301": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R304": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R306": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R307": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R312": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R313": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R315": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R316": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R319": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R320": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R322": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R323": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R326": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R327": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R329": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R330": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R333": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R334": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R336": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R337": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R340": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R341": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R343": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R344": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R347": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R348": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R350": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R351": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R354": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R355": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R357": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R358": {
+      "value": "100R 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "TNPW0603100RBEEA",
+      "dk": "TNP100AATR-ND"
+    },
+    "R361": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "R362": {
+      "value": "20R 2W",
+      "footprint": "custom_footprints:Vishay_RCL1225_2W_3.2x6.3mm",
+      "mpn": "RCL122520R0FKEG",
+      "dk": "541-RCL122520R0FKEGTR-ND"
+    },
+    "U201": {
+      "value": "BQ79616-Q1",
+      "footprint": "custom_footprints:BQ79616-Q1",
+      "mpn": "BQ79616PAPRQ1",
+      "dk": "296-BQ79616PAPRQ1CT-ND"
+    }
+  },
+  "dnp_links": [
+    "R302",
+    "R303",
+    "R305",
+    "R308",
+    "R309",
+    "R310",
+    "R311",
+    "R314",
+    "R317",
+    "R318",
+    "R321",
+    "R324",
+    "R325",
+    "R328",
+    "R331",
+    "R332",
+    "R335",
+    "R338",
+    "R339",
+    "R342",
+    "R345",
+    "R346",
+    "R349",
+    "R352",
+    "R353",
+    "R356",
+    "R359",
+    "R360"
+  ],
+  "dnp_nets": {
+    "R302": [
+      "/balance/cell7",
+      "/balance/cell8"
+    ],
+    "R303": [
+      "/balance/CB8",
+      "/balance/VC8"
+    ],
+    "R305": [
+      "/balance/VC7",
+      "/balance/CB8"
+    ],
+    "R308": [
+      "/balance/cell6",
+      "/balance/cell7"
+    ],
+    "R309": [
+      "/balance/CB7",
+      "/balance/VC7"
+    ],
+    "R310": [
+      "/balance/cell15",
+      "+BATT"
+    ],
+    "R311": [
+      "/balance/CB16",
+      "/balance/VC16"
+    ],
+    "R314": [
+      "/balance/VC15",
+      "/balance/CB16"
+    ],
+    "R317": [
+      "/balance/cell14",
+      "/balance/cell15"
+    ],
+    "R318": [
+      "/balance/CB15",
+      "/balance/VC15"
+    ],
+    "R321": [
+      "/balance/VC14",
+      "/balance/CB15"
+    ],
+    "R324": [
+      "/balance/cell13",
+      "/balance/cell14"
+    ],
+    "R325": [
+      "/balance/CB14",
+      "/balance/VC14"
+    ],
+    "R328": [
+      "/balance/VC13",
+      "/balance/CB14"
+    ],
+    "R331": [
+      "/balance/cell12",
+      "/balance/cell13"
+    ],
+    "R332": [
+      "/balance/CB13",
+      "/balance/VC13"
+    ],
+    "R335": [
+      "/balance/VC12",
+      "/balance/CB13"
+    ],
+    "R338": [
+      "/balance/cell11",
+      "/balance/cell12"
+    ],
+    "R339": [
+      "/balance/CB12",
+      "/balance/VC12"
+    ],
+    "R342": [
+      "/balance/VC11",
+      "/balance/CB12"
+    ],
+    "R345": [
+      "/balance/cell10",
+      "/balance/cell11"
+    ],
+    "R346": [
+      "/balance/CB11",
+      "/balance/VC11"
+    ],
+    "R349": [
+      "/balance/VC10",
+      "/balance/CB11"
+    ],
+    "R352": [
+      "/balance/cell9",
+      "/balance/cell10"
+    ],
+    "R353": [
+      "/balance/CB10",
+      "/balance/VC10"
+    ],
+    "R356": [
+      "/balance/VC9",
+      "/balance/CB10"
+    ],
+    "R359": [
+      "/balance/cell8",
+      "/balance/cell9"
+    ],
+    "R360": [
+      "/balance/CB9",
+      "/balance/VC9"
+    ]
+  },
+  "geometry": {
+    "0": {
+      "VC": {
+        "length_mm": 22.043313113791864,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.08445038179594926,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 33.71623517514972,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.13317064320435135,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "1": {
+      "VC": {
+        "length_mm": 18.46299782086611,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.07073379609594038,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 33.942975201604185,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.1340393094390347,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "2": {
+      "VC": {
+        "length_mm": 14.533916651786473,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.055681049572621946,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 31.544472747165443,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.12485038003580716,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "3": {
+      "VC": {
+        "length_mm": 12.71376333808248,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.04870783998856487,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 28.466600820454463,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.11305871069880777,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "4": {
+      "VC": {
+        "length_mm": 11.568376618407356,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.0443197362002984,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 27.019839995911326,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.10751600922878027,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "5": {
+      "VC": {
+        "length_mm": 11.537310601229377,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.044200718836709875,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 28.658313521948134,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.1137931833596413,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "6": {
+      "VC": {
+        "length_mm": 12.955992052357225,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.049635845107253,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 29.31676026160484,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.116315765980015,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "7": {
+      "VC": {
+        "length_mm": 18.18926789642654,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.06968510634097633,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 35.05080029295182,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.1382835104556643,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "8": {
+      "VC": {
+        "length_mm": 19.24834882716655,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.07374256306230029,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 48.233684796257265,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.1887886057527723,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "9": {
+      "VC": {
+        "length_mm": 30.778350621854038,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.11791528104905857,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 45.79193539306311,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.17943399248364625,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "10": {
+      "VC": {
+        "length_mm": 25.92078569424301,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.09930541008194432,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 47.007568516986034,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.18409121805174206,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "11": {
+      "VC": {
+        "length_mm": 23.744595949289334,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.09096818537016625,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 44.84552090765608,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.17580817343288685,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "12": {
+      "VC": {
+        "length_mm": 24.385916292848975,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.09342515486415917,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 45.18281058847492,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.17710036767673504,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "13": {
+      "VC": {
+        "length_mm": 26.117476169826123,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.10005895314840052,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 47.344797231260756,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.18538317872598564,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "14": {
+      "VC": {
+        "length_mm": 30.127598102914323,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.11542217584316508,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 49.48228639936355,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.19357213722778394,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "15": {
+      "VC": {
+        "length_mm": 34.169177105614516,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.13090591406684315,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 54.68352485596856,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.21349865967042175,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    },
+    "16": {
+      "VC": {
+        "length_mm": 35.2909685938753,
+        "width_mm": 0.25,
+        "vias": 0,
+        "resistance_ohm": 0.1352036219018689,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      },
+      "CB": {
+        "length_mm": 54.56188055396539,
+        "width_mm": 0.25,
+        "vias": 2,
+        "resistance_ohm": 0.21303262683341406,
+        "note": "Upper route estimate: includes stubs; all tracks treated as 18 um copper; 2 mOhm/via assumed. No zone-current extraction."
+      }
+    }
+  },
+  "routed_inventory": {
+    "+BATT": {
+      "length_mm": 80.98619813351647,
+      "widths_mm": [
+        0.25,
+        0.4,
+        0.5
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In6.Cu"
+      ],
+      "vias": 4
+    },
+    "/balance/CB0": {
+      "length_mm": 33.71623517514972,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB1": {
+      "length_mm": 33.942975201604185,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB10": {
+      "length_mm": 47.007568516986034,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB11": {
+      "length_mm": 44.84552090765608,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB12": {
+      "length_mm": 45.18281058847492,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB13": {
+      "length_mm": 47.344797231260756,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB14": {
+      "length_mm": 49.48228639936355,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB15": {
+      "length_mm": 54.68352485596856,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB16": {
+      "length_mm": 54.56188055396539,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB2": {
+      "length_mm": 31.544472747165443,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB3": {
+      "length_mm": 28.466600820454463,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB4": {
+      "length_mm": 27.019839995911326,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB5": {
+      "length_mm": 28.658313521948134,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu",
+        "In5.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB6": {
+      "length_mm": 29.31676026160484,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB7": {
+      "length_mm": 35.05080029295182,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB8": {
+      "length_mm": 48.233684796257265,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/CB9": {
+      "length_mm": 45.79193539306311,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/VC0": {
+      "length_mm": 22.043313113791864,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC1": {
+      "length_mm": 18.46299782086611,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC10": {
+      "length_mm": 25.92078569424301,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC11": {
+      "length_mm": 23.744595949289334,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC12": {
+      "length_mm": 24.385916292848975,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC13": {
+      "length_mm": 26.117476169826123,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC14": {
+      "length_mm": 30.127598102914323,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC15": {
+      "length_mm": 34.169177105614516,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC16": {
+      "length_mm": 35.2909685938753,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC2": {
+      "length_mm": 14.533916651786473,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC3": {
+      "length_mm": 12.71376333808248,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC4": {
+      "length_mm": 11.568376618407356,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC5": {
+      "length_mm": 11.537310601229377,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC6": {
+      "length_mm": 12.955992052357225,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC7": {
+      "length_mm": 18.18926789642654,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC8": {
+      "length_mm": 19.24834882716655,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/VC9": {
+      "length_mm": 30.778350621854038,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/balance/cell1": {
+      "length_mm": 78.95819387273491,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell10": {
+      "length_mm": 38.10061542119542,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell11": {
+      "length_mm": 34.81928658955461,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell12": {
+      "length_mm": 31.582154555198645,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell13": {
+      "length_mm": 28.490260082136093,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell14": {
+      "length_mm": 25.820716433873084,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell15": {
+      "length_mm": 24.37023303427918,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell2": {
+      "length_mm": 73.87221840802934,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell3": {
+      "length_mm": 68.64097382397794,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell4": {
+      "length_mm": 64.18430860156424,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell5": {
+      "length_mm": 60.323816536452554,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell6": {
+      "length_mm": 58.65982988091227,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell7": {
+      "length_mm": 56.4108044482741,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "/balance/cell8": {
+      "length_mm": 53.685707768355314,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/balance/cell9": {
+      "length_mm": 41.52357591143596,
+      "widths_mm": [
+        0.25,
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "/bq79616/COMHN": {
+      "length_mm": 18.385249993622775,
+      "widths_mm": [
+        0.21,
+        0.45
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/bq79616/COMHP": {
+      "length_mm": 18.393534264870233,
+      "widths_mm": [
+        0.21,
+        0.45
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/bq79616/COMLN": {
+      "length_mm": 17.839711626225952,
+      "widths_mm": [
+        0.21,
+        0.45
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "/bq79616/COMLP": {
+      "length_mm": 17.95530037125641,
+      "widths_mm": [
+        0.21,
+        0.45
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "GND": {
+      "length_mm": 64.49233567885759,
+      "widths_mm": [
+        0.25,
+        0.4,
+        0.5,
+        1.0
+      ],
+      "layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "vias": 249
+    },
+    "Net-(J401-Pin_1)": {
+      "length_mm": 17.940448583562972,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_11)": {
+      "length_mm": 18.920893206059002,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_12)": {
+      "length_mm": 23.52415222413705,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_13)": {
+      "length_mm": 31.777839352779054,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_14)": {
+      "length_mm": 40.06320600215868,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_15)": {
+      "length_mm": 45.91745700399563,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_16)": {
+      "length_mm": 35.116195834401566,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_17)": {
+      "length_mm": 23.948618318204307,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_18)": {
+      "length_mm": 25.011389603929565,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(J401-Pin_2)": {
+      "length_mm": 13.857605871088351,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_3)": {
+      "length_mm": 9.59902722732566,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_4)": {
+      "length_mm": 6.492983399593904,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_5)": {
+      "length_mm": 5.864556274847714,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_6)": {
+      "length_mm": 7.340448583562969,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_7)": {
+      "length_mm": 11.54044858356297,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_8)": {
+      "length_mm": 15.74044858356297,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(J401-Pin_9)": {
+      "length_mm": 19.94044858356297,
+      "widths_mm": [
+        0.4
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(Q201-B)": {
+      "length_mm": 16.80506709399048,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(Q201-E)": {
+      "length_mm": 34.32745513182752,
+      "widths_mm": [
+        0.25,
+        0.5
+      ],
+      "layers": [
+        "F.Cu",
+        "In6.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-AVDD)": {
+      "length_mm": 2.0914213562373094,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(U201-BAT)": {
+      "length_mm": 5.835381489572491,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(U201-CVDD)": {
+      "length_mm": 21.89343764532723,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In2.Cu",
+        "In4.Cu"
+      ],
+      "vias": 3
+    },
+    "Net-(U201-DVDD)": {
+      "length_mm": 2.05,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(U201-GPIO1)": {
+      "length_mm": 26.339659617539045,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO2)": {
+      "length_mm": 24.428184984927864,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO3)": {
+      "length_mm": 22.772059366564143,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO4)": {
+      "length_mm": 21.09181821037788,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO5)": {
+      "length_mm": 19.81608227908981,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO6)": {
+      "length_mm": 18.920970838762713,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO7)": {
+      "length_mm": 17.848094048207717,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-GPIO8)": {
+      "length_mm": 17.476804533949753,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu",
+        "In4.Cu"
+      ],
+      "vias": 2
+    },
+    "Net-(U201-NEG5V)": {
+      "length_mm": 3.3149494936611665,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(U201-REFHP)": {
+      "length_mm": 3.028061563821224,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    },
+    "Net-(U201-TSREF)": {
+      "length_mm": 54.83574888913838,
+      "widths_mm": [
+        0.25
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "vias": 0
+    }
+  },
+  "licenses": "Design-derived facts; no third-party model code imported",
+  "limitations": [
+    "PCB route R is conservative, not a solved resistance network.",
+    "Shunt/mutual C and L remain assumptions; no FEM extraction claimed."
+  ]
+}

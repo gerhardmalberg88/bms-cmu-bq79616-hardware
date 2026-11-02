@@ -1,38 +1,34 @@
 # CMU simulations
 
-Supported platform: Linux. The only planned circuit simulation is the
-[BQ79616 cell-voltage input filter](transient/cell-voltage-input-filter/README.md),
-using Qucs-S with ngspice. It is **a plan only**: no schematic, netlist, model,
-launcher or circuit simulation result is supplied yet.
+Supported platform: Linux. The active circuit study is the
+[BQ79616 cell-voltage input filter](spice/cell-voltage-input-filter/README.md),
+with an editable full 16S Qucs-S circuit and one repeated-cycle ngspice study.
+Its results are exploratory predictions with explicit cell, wiring and AFE
+assumptions, not hardware-correlated accuracy claims.
 
 ## Scope and status
 
 | Study | Scope | Status |
 |---|---|---|
-| [Cell-voltage input filter](transient/cell-voltage-input-filter/README.md) | Fitted 16S cell terminals through J401, tap fuses, VC/CB networks and realistic loading/coupling to U201 measurement inputs | Single active circuit plan; topology inspected, implementation pending |
+| [Cell-voltage input filter](spice/cell-voltage-input-filter/README.md) | Fitted 16S cell terminals through J401, tap fuses, VC/CB networks and realistic loading/coupling to U201 measurement inputs | One repeated odd/OFF/even/OFF cycle study with timestep verification |
 | [COMH/COML EM](em/README.md) | On-board U201-to-J501/J502 communication paths, filters and transformers; excludes communication cables | Completed CPU cases and component-network composition; provisional results with documented limitations |
 | [Balancing-resistor thermal](thermal/cell-balancing-resistors/README.md) | Resistor-only steady heating and PCB cooling | Twelve completed CPU cases; BMS thermal scope closed; domain-convergence limitation retained |
 
-The input-filter study will establish the actual multi-channel circuit first,
-then investigate measurement error from component bias/tolerance, input loading,
-shared impedance, capacitive/inductive coupling and balancing transitions. Its
-preferred improvement hypothesis is a measurement quiet time based on the worst
-channel, combined with matching effective filter capacitance. See the case plan
-for alternatives, evidence requirements and the full scenario matrix.
-
-The former buck-failure, tap-mis-mate and supply-startup circuit plans and their
-launchers have been removed. Their shared SPICE parameter include and unused
-model-library directories have also been removed. Related hardware hazards remain
-unvalidated; they are not additional simulation commitments. Dated manufacturing
-packages retain their historical documentation/source snapshots.
+The input-filter study tests 5 ms balancing-off windows, external VC/CB recovery
+and residual DC offsets. It includes no internal ADC or digital-filter model.
+Other electrical hazards remain engineering open items, not additional SPICE
+simulation commitments.
 
 ## Layout
 
 ```text
 sim/
-├─ transient/
+├─ spice/
 │  └─ cell-voltage-input-filter/
-│     └─ README.md              the single circuit plan; no implementation yet
+│     ├─ circuit/               full editable Qucs-S schematic and ngspice netlist
+│     ├─ case.json              single repeated-cycle settings
+│     ├─ study.py               export/run/verify/report/all/gui commands
+│     └─ report/                compact predictions and verification evidence
 ├─ em/                         COMH/COML inputs, workflows and compact results
 │  ├─ MODELS_PROVENANCE.csv     provenance for the existing EM component model
 │  └─ transformer-coupling/    existing balanced component-network composition
@@ -42,15 +38,20 @@ sim/
 └─ results/                    ignored native outputs
 ```
 
-## Future circuit workflow
+## Circuit workflow
 
-When implementation is requested, use one editable Qucs-S project and a
-reproducible ngspice netlist for the same circuit. JSON will hold case parameters
-and provenance. Record tested Linux tool versions then; no installation or model
-implementation is part of this planning change. Place eventual raw outputs under
-`sim/results/cell-voltage-input-filter/` and compact reviewed reports beside the
-case documentation. Model sources, assumptions and licensing must be recorded
-before importing third-party content.
+From the repository root:
+
+```bash
+/usr/bin/python3 sim/spice/cell-voltage-input-filter/setup.py
+/usr/bin/python3 sim/spice/cell-voltage-input-filter/study.py gui
+/usr/bin/python3 sim/spice/cell-voltage-input-filter/study.py all
+```
+
+The case README describes prerequisites, model assumptions, source-preserving
+extraction and verification. Raw outputs
+remain ignored under `sim/results/cell-voltage-input-filter/`; compact results
+live beside the case. No sibling checkout is required.
 
 The case supports the measurement-error budget in
 [CMU-004](../docs/CMU-004-stress-and-wcca.md) and the accuracy/latency requirements

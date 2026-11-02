@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "study": "Repeated odd / OFF / even / OFF balancing",
+  "cycles": 3,
+  "on_s": 0.02,
+  "gap_s": 0.005,
+  "edge_s": 1e-05,
+  "max_step_s": 2e-06,
+  "voltage_tolerance_V": 1e-05,
+  "settling_tolerance_s": 5e-06,
+  "settling_band_V": 0.0001,
+  "cb_tolerance_V": 0.001,
+  "assumptions": [
+    "20 ms ON plateaus are a short-time diagnostic schedule, not claimed firmware timing.",
+    "10 us smoothstep conductance transitions are assumed, not a TI switching specification.",
+    "Static input and board currents and cell RC/L follow the approved schematic.",
+    "No internal ADC or digital-filter postprocessing."
+  ]
+}

@@ -1,0 +1,10 @@
+# GUI scratch outputs; the approved schematic is maintained.
+*.dat
+*.dat.*
+*.dpl
+*.log
+*.plot
+*.net
+*.raw
+*.sch~
+*.sch.bak
