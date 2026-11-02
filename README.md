@@ -16,14 +16,20 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-11-01**.
 
 <table>
   <tr>
-    <th width="33%">PCB — rev 0.1, 16S</th>
-    <th width="33%">EM simulation</th>
-    <th width="33%">Thermal simulation</th>
+    <th width="50%">PCB — rev 0.1, 16S</th>
+    <th width="50%">EM simulation</th>
   </tr>
   <tr>
     <td align="center"><a href="manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S-raytraced.png"><img src="manufacturing/rev0.1-2026-11-01/3d/CMU-rev0.1-16S-raytraced.png" width="320" alt="Ray-traced populated PCB, angled top view"></a></td>
     <td align="center"><a href="sim/em/report/comh-section.png"><img src="sim/em/report/comh-section.png" width="320" alt="COMH normalized differential electric-field section at 4 MHz; provisional EM result"></a><br><a href="sim/em/report/README.md">COMH/COML board-only EM results</a></td>
+  </tr>
+  <tr>
+    <th width="50%">Thermal simulation</th>
+    <th width="50%">Modal and PSD</th>
+  </tr>
+  <tr>
     <td align="center"><a href="sim/thermal/cell-balancing-resistors/report/isometric.png"><img src="sim/thermal/cell-balancing-resistors/report/isometric.png" width="320" alt="Provisional automatic balancing temperature simulation, isometric view, 25 degrees Celsius ambient and h=10 W/m²K"></a><br><a href="sim/thermal/cell-balancing-resistors/README.md">Automatic balancing: 61.24 °C maximum</a></td>
+    <td align="center"><a href="sim/mechanical/modal-psd/report/board-response.png"><img src="sim/mechanical/modal-psd/report/board-response.png" width="320" alt="Provisional PCB acceleration RMS response to independent Z-axis base excitation of 1 g RMS over 20–2000 Hz"></a><br><a href="sim/mechanical/modal-psd/report/README.md">Modal and PSD: provisional vibration response</a></td>
   </tr>
 </table>
 
