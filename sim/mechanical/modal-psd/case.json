@@ -1,0 +1,75 @@
+{
+  "analysis": "all",
+  "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
+  "components": {
+    "enabled": true,
+    "mass_overrides_g": {}
+  },
+  "execution": {
+    "backend": "cpu",
+    "gpu_memory_gib": 4.5,
+    "host_reserve_gib": 2.0,
+    "max_memory_gib": 6.0,
+    "threads": 2,
+    "time_budget_minutes": 60
+  },
+  "material": {
+    "density_kg_m3": 1944.0,
+    "poisson": 0.165,
+    "provenance": "Generic effective PCB; https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/discovery_tech_show/Discovery/tech_show/nat_freq_analy_prnt_circ_board/c_nat_freq_mat_props.html",
+    "young_pa": 24370000000.0
+  },
+  "mesh": {
+    "layers": 2,
+    "max_dofs": 150000,
+    "mount_size_mm": 0.9,
+    "size_mm": 3.0
+  },
+  "modal": {
+    "batches": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "minimum_frequency_hz": 3000.0,
+    "orthogonality_tolerance": 1e-06,
+    "residual_tolerance": 1e-06
+  },
+  "mounts": {
+    "kind": "holes",
+    "outer_diameter_mm": 7.0,
+    "refs": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ]
+  },
+  "name": "BMS CMU modal and PSD screening",
+  "psd": {
+    "damping": 0.02,
+    "density_g2_hz": [
+      0.000505050505050505,
+      0.000505050505050505
+    ],
+    "frequency_hz": [
+      20.0,
+      2000.0
+    ],
+    "integration_tolerance": 0.01,
+    "sensitivity_damping": [
+      0.01,
+      0.05
+    ],
+    "truncation_tolerance": 0.05
+  },
+  "schema": 1,
+  "publication": {
+    "source_sha256": "1b76b7c8ea7a128470f81970f650df91c0bca88da16263814eba0b1634ba51fa",
+    "saved_thickness_mm": 1.708,
+    "historical_workflow_sha256": "d836687a0d46953a2bc85e4df533bde70ce61f31d0d489475100860b081672e5",
+    "historical_workflow_identity_note": "Recorded original implementation-fingerprint.json; original run Git commit was not recorded. This is not the later generic lab revision.",
+    "reproduction_lab_revision": "3c2232a8b95323f8ac1436c525a07656c6868692"
+  }
+}

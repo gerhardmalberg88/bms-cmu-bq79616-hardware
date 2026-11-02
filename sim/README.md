@@ -13,6 +13,7 @@ assumptions, not hardware-correlated accuracy claims.
 | [Cell-voltage input filter](spice/cell-voltage-input-filter/README.md) | Fitted 16S cell terminals through J401, tap fuses, VC/CB networks and realistic loading/coupling to U201 measurement inputs | One repeated odd/OFF/even/OFF cycle study with timestep verification |
 | [COMH/COML EM](em/README.md) | On-board U201-to-J501/J502 communication paths, filters and transformers; excludes communication cables | Completed CPU cases and component-network composition; provisional results with documented limitations |
 | [Balancing-resistor thermal](thermal/cell-balancing-resistors/README.md) | Resistor-only steady heating and PCB cooling | Twelve completed CPU cases; BMS thermal scope closed; domain-convergence limitation retained |
+| [Mechanical modal and PSD](mechanical/modal-psd/report/README.md) | Homogenized PCB, fitted-component masses, rigid mounting and independent X/Y/Z random excitation | Completed CPU/GPU runs; frequency convergence passed, componentwise RMS mesh convergence failed; provisional results |
 
 The input-filter study tests 5 ms balancing-off windows, external VC/CB recovery
 and residual DC offsets. It includes no internal ADC or digital-filter model.
@@ -33,6 +34,7 @@ sim/
 │  ├─ MODELS_PROVENANCE.csv     provenance for the existing EM component model
 │  └─ transformer-coupling/    existing balanced component-network composition
 ├─ thermal/                    completed steady cases and provisional reports
+├─ mechanical/modal-psd/        explicit mechanical case and compact modal/PSD report
 ├─ source-normalization.json   historical source-hash migration evidence
 ├─ source_normalization.py     verifier used by the existing EM workflow
 └─ results/                    ignored native outputs

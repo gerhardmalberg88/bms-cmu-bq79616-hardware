@@ -12,6 +12,7 @@ Latest prepared package: **revision 0.1, 16S, exported 2026-11-01**.
 - **COMH/COML EM — reduced CPU study complete; provisional results:** [board-only report](sim/em/report/README.md).
 - **Thermal simulations — steady scope complete; provisional results:** [balancing-resistor cases](sim/thermal/README.md).
 - **SPICE circuit simulation and model:** [cell voltage input filter](sim/spice/cell-voltage-input-filter/README.md).
+- **Mechanical modal and PSD — completed runs; provisional results:** [modal and vibration-response report](sim/mechanical/modal-psd/report/README.md).
 
 <table>
   <tr>
@@ -129,11 +130,12 @@ bms-cmu-bq79616-hardware/
 |   |-- CMU-009-manufacturing.md release and configuration record
 |   `-- generated/              exports; never hand-edited
 |-- manufacturing/              intentional versioned prototype packages
-|-- sim/                        circuit and EM studies; completed steady thermal scope
+|-- sim/                        circuit, EM, thermal and mechanical studies
 |   |-- README.md               study scope and status
 |   |-- spice/                  cell-voltage-input-filter circuit and study
 |   |-- em/                     COMH/COML board-only EM cases and reports
-|   `-- thermal/                balancing-resistor cases
+|   |-- thermal/                balancing-resistor cases
+|   `-- mechanical/             modal and PSD screening; provisional results
 `-- tools/
     `-- gen_doc_tables.py       regenerates doc tables from the netlist
 
