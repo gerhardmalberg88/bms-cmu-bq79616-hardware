@@ -38,26 +38,54 @@ pcb-thermal study "$PWD/sim/thermal/cell-balancing-resistors/config.json" \
   --section steady --schedules automatic odd even --time-budget-minutes 120
 ```
 
-The second command reproduces all three steady schedules, reusing verified
-results where possible, at h = 10, 5, 50, 20 W/m²K, sequentially on CPU with two MPI ranks and one thread
-per rank. It allows 20 minutes for the first case including preparation and
+The second command reproduces all three steady schedules at h = 10, 5, 50,
+20 W/m²K, sequentially on CPU with two MPI ranks and one thread per rank.
+Only matching results produced with the configured-source inputs can be reused.
+It allows 20 minutes for the first case including preparation and
 12 minutes per later case, within an overall 120-minute budget with two minutes
 reserved for shutdown. No further detailed-region or transient study is included.
 
 The saved design is exported without saving or refilling it. Input, implementation,
 image and artifact hashes control stage reuse. Generated runs and native Elmer
-outputs remain ignored under `sim/results/thermal/cell-balancing-resistors/`.
+outputs for the migrated cases remain ignored under
+`sim/results/thermal/cell-balancing-resistors/configured/`.
 The output parent holds `study-steady.json`, `study-steady.csv`, `study-steady.md`
 and `steady-convection.png`, checkpointed after every accepted case. Status is
 complete, failed, budget-exhausted or interrupted; failures retain prior results.
+
+## Configured-source migration
+
+The three case files now declare the resistor chain explicitly for the generic
+PCB Thermal Lab interface. Their electrical values, physical assumptions and
+odd/even resistor powers are unchanged. This migration does not run a new FEM
+study or refresh any published figure, numerical result or provenance record.
+
+Historical native outputs remain at
+`sim/results/thermal/cell-balancing-resistors/{automatic,odd,even}-h*/`.
+Future optional runs use the separate `configured/` output parent. The study
+runner rejects mixing the old implicit topology and new explicit configuration;
+keep historical resolved cases and stage manifests unchanged. The compact
+`report/` still describes the original completed study and its failed detail
+convergence check. The GUI commands below intentionally open that historical run.
+
+With the current PCB Thermal Lab installed in the active Python environment,
+verify the configured powers against the saved PCB and published inputs without
+running a solver:
+
+```bash
+python3 -m unittest discover -s sim/thermal/cell-balancing-resistors -p 'test_*.py'
+```
 
 ## Electrical operating assumption
 
 All cells stay at 4.2 V. Each CB tap has a nominal 20 Ω resistor. Using the
 BQ79616-Q1 minimum switch resistance of 1.45 Ω, one active nonadjacent balancing
 channel carries `4.2 / (20 + 20 + 1.45) = 0.101327 A`. Each resistor in its path
-then dissipates 0.205343 W. The tool checks CB0…CB16 connectivity against the
-saved PCB before assigning power; reference names alone do not establish it.
+then dissipates 0.205343 W. The case's ordered `sources.nodes` maps CB0…CB16 to
+resistor references and
+expected tap/balance nets. The generic lab verifies these assertions and the
+exact saved value `20R 2W` before assigning power. Electrical resistance remains
+the explicit `resistance_ohm` input; reference names alone do not establish it.
 
 | CB node | Resistor | CB node | Resistor |
 |---|---|---|---|

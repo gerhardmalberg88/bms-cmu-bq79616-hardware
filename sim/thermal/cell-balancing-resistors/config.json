@@ -3,7 +3,7 @@
   "name": "balancing-automatic",
   "project_root": "../../..",
   "board": "../../../design/battery_management_system_cell_monitoring_unit.kicad_pcb",
-  "output": "../../results/thermal/cell-balancing-resistors/automatic-h10",
+  "output": "../../results/thermal/cell-balancing-resistors/configured/automatic-h10",
   "analysis": "steady",
   "sources": {
     "kind": "balancing",
@@ -30,7 +30,111 @@
     "cell_voltage_v": 4.2,
     "resistance_ohm": 20.0,
     "switch_resistance_ohm": 1.45,
-    "phase_s": 5.0
+    "phase_s": 5.0,
+    "nodes": [
+      {
+        "ref": "R361",
+        "balance_net": "/balance/CB0",
+        "tap_net": "GND",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R354",
+        "balance_net": "/balance/CB1",
+        "tap_net": "/balance/cell1",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R347",
+        "balance_net": "/balance/CB2",
+        "tap_net": "/balance/cell2",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R340",
+        "balance_net": "/balance/CB3",
+        "tap_net": "/balance/cell3",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R333",
+        "balance_net": "/balance/CB4",
+        "tap_net": "/balance/cell4",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R326",
+        "balance_net": "/balance/CB5",
+        "tap_net": "/balance/cell5",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R319",
+        "balance_net": "/balance/CB6",
+        "tap_net": "/balance/cell6",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R312",
+        "balance_net": "/balance/CB7",
+        "tap_net": "/balance/cell7",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R304",
+        "balance_net": "/balance/CB8",
+        "tap_net": "/balance/cell8",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R362",
+        "balance_net": "/balance/CB9",
+        "tap_net": "/balance/cell9",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R355",
+        "balance_net": "/balance/CB10",
+        "tap_net": "/balance/cell10",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R348",
+        "balance_net": "/balance/CB11",
+        "tap_net": "/balance/cell11",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R341",
+        "balance_net": "/balance/CB12",
+        "tap_net": "/balance/cell12",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R334",
+        "balance_net": "/balance/CB13",
+        "tap_net": "/balance/cell13",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R327",
+        "balance_net": "/balance/CB14",
+        "tap_net": "/balance/cell14",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R320",
+        "balance_net": "/balance/CB15",
+        "tap_net": "/balance/cell15",
+        "expected_value": "20R 2W"
+      },
+      {
+        "ref": "R313",
+        "balance_net": "/balance/CB16",
+        "tap_net": "+BATT",
+        "expected_value": "20R 2W"
+      }
+    ]
   },
   "geometry": {
     "mode": "hybrid",

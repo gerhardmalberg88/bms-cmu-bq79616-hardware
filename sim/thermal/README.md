@@ -14,7 +14,9 @@ additional domain refinement, backend experiments and other component/fault
 thermal studies have been removed from the plan. See the
 [scope-closure record](../../docs/CMU-006-thermal-analysis.md) for their disposition.
 The standalone `pcb-thermal` CLI can reproduce the retained steady cases; no
-sibling-checkout arrangement is required.
+sibling-checkout arrangement is required. The migrated case inputs explicitly
+declare the balancing topology and write future runs beneath `configured/`;
+[historical results and provenance remain unchanged](cell-balancing-resistors/README.md#configured-source-migration).
 
 All twelve steady solves pass heat accounting, but the 10/20 mm detail check
 fails local hotspot convergence (1.831 °C, 5.03% of rise). The results therefore
