@@ -1066,7 +1066,7 @@
     "MODULE": "Universal CMU, 6S-16S, BQ79616-Q1 - module 1 of 3 (CMU / BMU / BJB)",
     "ORG": "Gerhard Malberg",
     "REV": "0.1",
-    "SOURCE": "Source: https://github.com/gerhardmalberg88/ElectricVehicleSystem"
+    "SOURCE": "Source: https://github.com/gerhardmalberg/ElectricVehicleSystem"
   },
   "tuning_profiles": {
     "meta": {

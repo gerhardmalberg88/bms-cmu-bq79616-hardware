@@ -13,7 +13,7 @@ change the project's license choice or third-party rights.
 ## Imported and generated CAD
 
 - Original custom symbols, footprints and models are imported from
-  [Gerhard Malberg's kicad-libraries](https://github.com/gerhardmalberg88/kicad-libraries)
+  [Gerhard Malberg's kicad-libraries](https://github.com/gerhardmalberg/kicad-libraries)
   under CERN-OHL-P-2.0. The project library manifest records their content
   identifiers. The 2026-10-24 publication review records the matching upstream
   provenance rows and SHA-256 hashes in `docs/generated/library-provenance.csv`.

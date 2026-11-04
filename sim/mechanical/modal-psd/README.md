@@ -47,7 +47,7 @@ run revision. Historical source paths in the native archive are left unchanged.
 ## Optional new simulations
 
 Use the separately installed, generic
-[PCB Mechanical Lab](https://github.com/gerhardmalberg88/pcb-mechanical-lab)
+[PCB Mechanical Lab](https://github.com/gerhardmalberg/pcb-mechanical-lab)
 CLI and its installed CPU/tools/CUDA images. The case-driven interface was
 checked at revision `3c2232a8b95323f8ac1436c525a07656c6868692`.
 This hardware case adds no board-specific dependency to that lab.

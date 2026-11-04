@@ -18,7 +18,7 @@ COML's filtered line explicitly uses COMH parameters as a proxy. Dense primary
 engineering acceptance is claimed.
 
 The reusable KiCad → Gmsh → Palace → ParaView toolchain is
-[PCB EM Lab](https://github.com/gerhardmalberg88/pcb-em-lab). Install its CLI and
+[PCB EM Lab](https://github.com/gerhardmalberg/pcb-em-lab). Install its CLI and
 pinned tools/CPU images first. This hardware repository owns all physical case
 inputs and the compact result snapshot. It has no mandatory sibling-checkout
 path dependency.

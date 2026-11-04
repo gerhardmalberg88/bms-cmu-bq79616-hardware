@@ -1,7 +1,7 @@
 # Project library
 
 Imported copies of the parts this board uses, from
-[`kicad-libraries`](https://github.com/gerhardmalberg88/kicad-libraries).
+[`kicad-libraries`](https://github.com/gerhardmalberg/kicad-libraries).
 
 Copyright (C) 2021-2026 Gerhard Malberg
 SPDX-License-Identifier: CERN-OHL-P-2.0
@@ -83,7 +83,7 @@ The 21 custom footprint copies include the shared library fabrication standard
 from the 2026-10-18 BMS cleanup: hidden values/descriptions and body-fitted
 references. They are byte-identical to the current shared footprint files.
 The generator, fit checker and authoring rules live in the
-[shared library standard](https://github.com/gerhardmalberg88/kicad-libraries#fabrication-layer-standard).
+[shared library standard](https://github.com/gerhardmalberg/kicad-libraries#fabrication-layer-standard).
 Stock KiCad footprints remain separate; their BMS-specific display edits are
 retained in the board. Updating these library copies does not alter placed
 footprints, board routing or schematic data.
@@ -135,4 +135,4 @@ diverged, 2 something is not from this library, 3 the upstream path is not a
 git repository.
 
 How those three methods work is documented once, in the
-[library README](https://github.com/gerhardmalberg88/kicad-libraries#version-checking).
+[library README](https://github.com/gerhardmalberg/kicad-libraries#version-checking).

@@ -26,7 +26,7 @@ five-second temperature ripple. Odd/even steady cases retain the same total watt
 but place the endpoint heat differently; they are comparison cases, not cooldown
 intervals.
 
-Install the standalone [PCB Thermal Lab CLI](https://github.com/gerhardmalberg88/pcb-thermal-lab#quick-start)
+Install the standalone [PCB Thermal Lab CLI](https://github.com/gerhardmalberg/pcb-thermal-lab#quick-start)
 and build its CPU/tools images. No sibling checkout arrangement is required.
 The results are already published; these commands are for optional reproduction,
 not pending tests. From this hardware repository's root, with the CLI environment

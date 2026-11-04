@@ -233,7 +233,7 @@
 	(property "MODULE" "Universal CMU, 6S-16S, BQ79616-Q1 - module 1 of 3 (CMU / BMU / BJB)")
 	(property "ORG" "Gerhard Malberg")
 	(property "REV" "0.1")
-	(property "SOURCE" "Source: https://github.com/gerhardmalberg88/ElectricVehicleSystem")
+	(property "SOURCE" "Source: https://github.com/gerhardmalberg/ElectricVehicleSystem")
 	(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
 		(layer "F.Cu")
 		(uuid "02771206-362c-4006-90e7-395e50e55248")

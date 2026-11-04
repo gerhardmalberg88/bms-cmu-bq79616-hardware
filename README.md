@@ -168,7 +168,7 @@ environment variable or machine-specific absolute path is required.
 ### Which repositories to clone
 
 `design/kicad-libraries` holds **imported copies of the parts this board uses**,
-taken from `github.com/gerhardmalberg88/kicad-libraries`. The path is
+taken from `github.com/gerhardmalberg/kicad-libraries`. The path is
 load-bearing — the library tables and every footprint's 3D reference resolve
 through it. It ships with this repository, so most work needs nothing else.
 
@@ -226,7 +226,7 @@ anything diverged, 2 when anything is not from that library, 3 when the upstream
 path is not a git repository. Run it before a release.
 
 The three methods, and the two things that break them, are documented once, in
-the [library README](https://github.com/gerhardmalberg88/kicad-libraries#version-checking).
+the [library README](https://github.com/gerhardmalberg/kicad-libraries#version-checking).
 They are not repeated here.
 
 ## Documentation
